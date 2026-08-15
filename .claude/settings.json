@@ -1,0 +1,15 @@
+{
+  "_aciklama": "Oturum acilis ekrani. NEDEN VAR: kaynak projede ajan bir kez kendini yanlis rolde sanip uygulamaya hazirlandi (yanlis oturum turu), bir kez de depo temiz daldan kirli bir gorev dalina gecmisken ajan bunu ancak kendisi bakinca gordu. Bu satir, oturumun ilk saniyesinde gercek durumu gosterir.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf 'dal: %s | kirli dosya: %s | bugunun gun basi raporu: %s\\n' \"$(git branch --show-current 2>/dev/null || echo '?')\" \"$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')\" \"$([ -f \"docs/gun-basi/$(date +%%Y-%%m-%%d).md\" ] && echo VAR || echo YOK)\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+#!/bin/sh
+# Commit öncesi dal kontrolü — korunan dala doğrudan KOD commit'ini reddeder.
+#
+# NEDEN VAR: AGENTS.md §9.4 "commit öncesi doğru dalda mıyım" diyor ve bu kural
+# damıtıldığı projede İKİ KEZ ihlal edildi — biri geri alınmak zorunda kaldı.
+# Kural yazıldıktan SONRA bile ihlal edildi. Bir kural ikinci kez ihlal edildiyse
+# kusur disiplinde değil kuralın kendisindedir: "dikkat et" diyen kural,
+# yapılacak bir adıma çevrilmeden kapatılmaz. Bu kanca o adımdır.
+#
+# NE YAPAR: korunan dallardayken KOD dosyalarında değişiklik varsa commit'i durdurur.
+# Yalnız doküman değişikliği ise izin verir — kural zaten böyle (AGENTS.md §9.1).
+#
+# KURULUM:  npm run kanca:kur   (ya da: git config core.hooksPath scripts/kancalar)
+# ACİL DURUM: git commit --no-verify   (bilinçli aşma — raporda yazılır)
+
+# ── PROJE AYARLARI — ŞABLONU KURARKEN DOLDURULACAK ────────────────────────────
+KORUNAN_DALLAR="develop main"
+# Kod sayılan yollar (grep -E kalıbı, | ile ayrılır)
+KOD_YOLLARI='src/|scripts/|package\.json|package-lock\.json'
+# ──────────────────────────────────────────────────────────────────────────────
+
+DAL=$(git branch --show-current)
+
+KORUNAN=0
+for d in $KORUNAN_DALLAR; do [ "$DAL" = "$d" ] && KORUNAN=1; done
+[ "$KORUNAN" = "0" ] && exit 0
+
+KOD=$(git diff --cached --name-only | grep -E "^($KOD_YOLLARI)" || true)
+
+if [ -n "$KOD" ]; then
+  echo ""
+  echo "  ✋ COMMIT DURDURULDU — '$DAL' korunan bir daldır."
+  echo ""
+  echo "  Bu commit'te kod dosyası var:"
+  echo "$KOD" | sed 's/^/      /'
+  echo ""
+  echo "  Kural (AGENTS.md §9.1, §9.2): kod her zaman kendi görev dalında yazılır;"
+  echo "  korunan dala yalnız PR ile girer."
+  echo ""
+  echo "  Ne yapmalı:"
+  echo "      git stash"
+  echo "      git checkout -b feat/kisa-ad     # ya da fix/... , chore/..."
+  echo "      git stash pop"
+  echo "      git commit ..."
+  echo ""
+  echo "  Bilinçli aşmak gerekiyorsa:  git commit --no-verify"
+  echo "  (Aşıldıysa gün sonu raporuna NEDEN aşıldığı yazılır.)"
+  echo ""
+  exit 1
+fi
+
+exit 0
