@@ -586,6 +586,26 @@ gösterme şansın var mı"*.
 
 Ayrıntı `docs/GORUNUS.md` › *Yüzey*. Sıcaklık seçimi Erdem'de, karşılaştırma düğmesi sayfada.
 
+**Tur 6 · SİNYAL HATASI VE PERDE İPTALİ — 2026-08-28.**
+
+**Yayın:** https://claude.ai/code/artifact/3590491c-7126-488d-bed0-dfcdd25c9b0d
+**Depo sürümü:** `docs/prototip-tur6.html`
+
+**Bulunan hata bir ayar değil, mantık hatasıydı.** Kaynak görsellerde **özne koyu, arka plan
+açık** (bebek şeftali, zemin krem). Ultrasonda tersi olmalı: zemin karanlık, doku parlak.
+Ajan parlaklığı doğrudan sinyal saymıştı, yani **arka planı aydınlatıp özneyi karartmıştı.**
+Hafta ilerledikçe kazanç da yükseltildiği için görüntü doyuma gidip düz krem lekeye dönüşüyordu.
+Erdem'in gönderdiği 12/16/22/28/33. hafta ekran görüntüleri bunu açıkça gösterdi.
+
+**Düzeltmeler:** sinyal artık **özne ile zemin arasındaki farktan** üretiliyor · çıkışa
+yumuşak sıkıştırma kondu, görüntü patlamıyor · kazanç ve derinlik zayıflaması aşağı çekildi ·
+netlik alt sınırı 0,30 (her hafta okunabilir).
+
+**Perde iptal** (Erdem). **Sıcaklık üç durak** oldu; *daha sıcak* beğenilmedi, *daha soğuk*
+eklendi. **Derinlik parallaksı eklendi:** görsellerin parlaklığı derinlik haritası gibi
+kullanılıyor, ışın dilimleri farklı hızda kayıyor; parmak ya da imleç takip ediliyor,
+boştayken yavaş salınım var.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.

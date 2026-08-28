@@ -95,7 +95,22 @@ bu hedef henüz doğrulanmış değil.
 
 **Yayın:** soğuk makineden sıcak çocuğa. Site bu yolu 33 hafta boyunca yürür.
 
-## Motif — perde
+## Motif — PERDE İPTAL EDİLDİ (2026-08-28, tur 6)
+
+> **Erdem:** *"perdeyi iptal et zaten benekler var görseller anlaşılmıyor."* Haklıydı.
+> Taramanın kendi paraziti zaten örtü işini görüyordu; üstüne ayrıca karartma koymak
+> görseli **okunmaz** hâle getiriyordu. **Tek örtü artık taramanın kendi beneği.**
+>
+> **Ad ve kimlik değişmedi:** babyPEÇE hâlâ Peçe ailesinin bebeği. Değişen yalnız görsel
+> jestin *ikinci bir katman* olarak durması. Aşağıdaki eski metin **geçmiş kayıt olarak**
+> duruyor, yürürlükte değildir.
+
+### Yürürlükteki kural
+
+Erken haftalarda benek baskındır, hafta ilerledikçe azalır; ama **görüntü her hafta
+okunabilir olmak zorundadır.** Netlik alt sınırı 0,30'dur ve altına inilmez.
+
+### Eski metin (yürürlükte değil) — perde
 
 Türkçede *peçe*, yüzü örten örtüdür. Şu an gerçekten olan şey de budur: bebek görünmüyor,
 ultrason bulanık bir leke, yüzünü kimse bilmiyor. Her hafta perde biraz daha inceliyor.
