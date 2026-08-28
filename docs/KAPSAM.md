@@ -487,6 +487,23 @@ görünüş kaynağı belli olmaz.
 
 `Gösterilebilir olup örneği onaylanmamış parça: 13` → **tur 1'de kapı kapanmadı**
 
+**FAZ 4 KAPISININ SON DURUMU — 2026-08-29 (tur 9 sonrası)**
+
+| Parça | Örneği var mı |
+|---|---|
+| 1 boyut · 2 benzetme · 3 odak bugünde · 4 kaynak görünür | ✔ |
+| 7 üç boyut · 8 slogan · 9 tek parça · 10 kaydırma · 12 telefon | ✔ |
+| 14 haftalık seri · 15 neye benzer · 16 aramızda | ✔ |
+| **6 espri** | **✘ örneği yok** |
+
+`Gösterilebilir olup örneği onaylanmamış parça: 1` → **kapı hâlâ kapanmadı.**
+
+**Kalan tek parça 6'dır ve teknik bir eksik değildir.** Kabul cümlesi: *her haftanın
+benzetmesinin yanında bir espri cümlesi var, hiçbiri boş değil.* Bu cümleler ancak
+`docs/GORUNUS.md` › *Henüz boş* bölümü dolarsa yazılabilir: ablanın nasıl biri olduğu,
+aralarındaki dalganın dili. **Ajanın kendi ürettiği espri, ortalamadır** ve tur 1 ile
+tur 2'de bunun bedeli ölçüldü.
+
 **Tur 1 · DENETİM SONUCU — REDDEDİLDİ (2026-08-28).** Erdem: *"tasarımların bariz bir şekilde
 Claude kokuyor, başka herhangi bir AI da değil."* Araştırma yapıldı, eleştiri doğrulandı,
 iki ayrı hata bulundu. Ayrıntı ve maliyet: `docs/KURUCU-DERSLER.md` › A22 ve A23.
@@ -650,6 +667,24 @@ planı sisli bırakıyordu. Her haftanın ölçülen zemin değeri koda gömüld
 Döküm: `docs/gorseller/00-OKU.md`.
 
 **Eski aylık seri kullanılmıyor ama silinmedi** — silme Erdem'in onayına bağlı.
+
+**Tur 9 · SON İKİ BÖLÜM — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/45d14c4a-1758-495b-a5ac-1a9d87b02c53
+**Depo sürümü:** `docs/prototip-tur9.html`
+
+**Parça 15 bilerek taramaya benzemiyor.** Element 26'nın bağlayıcı kuralı YZ görsellerinin
+bilimsel serilerden **görsel olarak ayırt edilebilir** olmasını ve yanlarında dayanağı
+olmadığının **yazılmasını** şart koşuyor. Bu yüzden o bölümde koni, benek ve sepya yok;
+düpedüz renkli fotoğraflar ve altında uyarı var.
+
+**Ayrım keyfi değil, anlamlı:** tarama bir yüz göremez. Bölüm bunu kendisi söylüyor
+(*"tarama bunu göremez, bu bölüm makinenin dışında"*). Makine ne olduğunu gösteriyor,
+o bölüm ne olabileceğini.
+
+**Parça 16 · son ekran:** bölüm görüş alanına girdiğinde **tarama gerçekten duruyor** —
+benek sönüyor, arkasından fotoğraf çıkıyor, slogan yazılıyor. Element 24'te karara bağlanan
+*"aramızda"* anı ile Faz 4'ün *soğuk makineden sıcak çocuğa* yayı burada kapanıyor.
 
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
