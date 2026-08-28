@@ -51,6 +51,32 @@ Uydurulmadı, konudan çıkarıldı.
 | **Sayılar** | Makine okuması gibi: köşelerde, eşit genişlikli yazıyla. Bu **dekoratif değil**, cihazın gerçekten yaptığı şey |
 | **Final** | *"Aramızda"* ekranı koniden ve parazitten **tamamen çıkar**, düpedüz bir fotoğraf olur. Tek sıcak ekran odur |
 
+**DÜZELTME — 2026-08-28, tur 4.** Erdem: *"açılışı ısıt, ultrason dilini koru ama düz koni
+olmasın, hareketli bir arka plan olsun, 3B havasını hissettir."*
+
+Araştırmada çıkan şey yüzeyi tamamen düzeltti: **obstetrik 3B/4B ultrason zaten sepya
+kullanır.** Hem kırmızının derinlik algısını bozması yüzünden, hem de o *"hatıra görüntüsü"*
+hissi için. Yani **sıcaklık ile gerçek ultrason dili çelişmiyor**; gerçek ultrasonun kendisi
+sıcak. Önceki soğuk/mavi tercih ajanın yorumuydu, konunun gerçeği değildi.
+
+| | Eski (tur 3) | Yeni (tur 4) |
+|---|---|---|
+| Zemin | Soğuk siyah | **Sıcak siyah** (#0A0603) |
+| Renk eşlemesi | Fosfor grisi | **Sepya**: koyu kahve → amber → krem ışık |
+| Sektör | `clip-path` ile **kesilmiş koni** | Shader içinde **yumuşayarak biten** hacim |
+| Görüntü | Duran resim + CSS bulanıklık | **Her kare hesaplanan** ışın yürütme |
+| Benek | Bir kerelik canvas gürültüsü | **Canlı**, kıpırdayan, çarpımsal |
+| Açılış | Karanlık ekran | **Sıcak ışık**, tarama onun içinden çıkar |
+
+**Teknik:** tek WebGL parça gölgelendiricisi. Simplex gürültü `stegu`/`ashima` webgl-noise
+(MIT) uygulamasından; ince benek için ucuz değer gürültüsü. 10 adımlı ışın yürütme kabartma
+ve hafif kayma veriyor, 3B hissi oradan geliyor. WebGL yoksa CSS `sepia()` yedeği devreye
+girer. Piksel oranı 1,25 ile sınırlı ve gürültü 2 oktava indirildi; ikisi de 2 saniye hedefi
+için (element 19).
+
+**Yazı tipleri:** Unbounded, Bricolage Grotesque, Martian Mono. Öncekilerden ve krem/serif
+dünyasından uzak.
+
 **Yayın:** soğuk makineden sıcak çocuğa. Site bu yolu 33 hafta boyunca yürür.
 
 ## Motif — perde

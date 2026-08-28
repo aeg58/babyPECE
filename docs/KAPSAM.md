@@ -563,6 +563,19 @@ Yasak listesine 7. madde eklendi: krem + serif + bol boşluk üçlüsü.
 ayrıca ablanın gördüğü ilk şey karanlık bir ekran olacak. Bu bilerek yapıldı (sıcaklık ancak
 sonda gelirse anlam kazanıyor) ama bir hediyede bedeli olabilir.
 
+**Tur 4 · CANLI TARAMA — 2026-08-28.** Erdem: açılışı ısıt, düz koni olmasın, hareketli arka
+plan olsun, 3B havası hissedilsin, yazı tipleri ve renkler hâlâ tanıdık.
+
+Araştırma yüzeyi düzeltti: **obstetrik 3B ultrason zaten sepya kullanır.** Sıcaklık ile gerçek
+ultrason dili çelişmiyor. Ayrıntı ve karşılaştırma tablosu `docs/GORUNUS.md` › *Yüzey*.
+
+**Yayın:** https://claude.ai/code/artifact/bd04505c-1cd0-496a-9ae5-a5229ce4ee90
+**Depo sürümü:** `docs/prototip-tur4.html`
+
+**Element 16'ya not:** Faz 3'te çatı olarak `react-three-fiber` seçilmişti. Bu prototip aynı
+işi **tek bir WebGL gölgelendiricisiyle**, kütüphanesiz yapıyor. Kütüphane gerçekten gerekli
+mi, Faz 7'de yeniden ölçülecek; şimdiden değiştirilmiyor çünkü karar Faz 3'e ait.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.
