@@ -729,6 +729,10 @@ doğrulama elle liste yerine **sayfada kullanılan her sınıfı tarayıp CSS'iy
 Aynı tarama **sekiz ölü CSS kuralı** da buldu (kaldırılmış sıcaklık düğmeleri, kaynak bloğu,
 üstteki ışık katmanı); temizlendi.
 
+**Tur 11 ONAYLANDI (2026-08-29).** Erdem: *"yatayda güzel olmuş böyle kalsın."* Sunumun yönü
+ve davranışı `docs/GORUNUS.md` › *"Kime benzeyecek" sunumu*'na tek kaynak olarak yazıldı.
+Reddedilen üç dikey kip de orada kayıtlı.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.

@@ -130,6 +130,21 @@ ultrason bulanık bir leke, yüzünü kimse bilmiyor. Her hafta perde biraz daha
 üretemeyeceği bir şey · *"önce kart, sonra yoldaş"* yapısının kendisi · geri sayımı görsel
 hâle getiriyor, sayıyı tekrar etmiyor.
 
+## "Kime benzeyecek" sunumu — KİLİTLENDİ
+
+**Yatay.** *(Erdem, 2026-08-29: "yatayda güzel olmuş böyle kalsın.")*
+
+| | |
+|---|---|
+| Yön | **Soldan sağa.** Dikey kip yok, tek çerçevede değişen kip yok |
+| Kaydırma | Tarayıcının **kendi yatay kaydırması**, taklit sürükleme değil. Kareler ortaya oturur |
+| Oynatma | Bölüm ekrana girince **kendi kendine** akar. Parmak değince durur, 5 saniye sonra devam eder |
+| Konum | **Sayfanın en altı**, *"aramızda"* ekranından sonra |
+| Ayrım | Koni yok, benek yok, sepya yok. Düpedüz renkli fotoğraf + kalıcı uyarı *(element 26'nın şartı)* |
+
+Denenip **reddedilenler:** dikey eriyerek · dikey deste · dikey şerit. Üçü de aynı çerçevede
+değişiyordu; Erdem yandan gelen bir sunum istiyordu.
+
 ## Sıcaklık — KİLİTLENDİ
 
 **Varsayılan sepya.** *(Erdem, 2026-08-29: "sıcak soğuk değil default en iyisi.")*
