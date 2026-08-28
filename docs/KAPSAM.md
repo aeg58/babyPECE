@@ -461,6 +461,32 @@ oranda** olur, taslak kabul edilmez · sorunun cevabı için sahibinin kafasınd
 
 **Faz 4 ile Faz 5 hiçbir ölçekte birleşmez. Görülmeden karar verilmez.**
 
+### Faz 4 · yürütme kaydı
+
+**Tur 1 — 2026-08-28 · üç görünüş yönü sunuldu.**
+
+**Örnek:** https://claude.ai/code/artifact/e99770f3-2e35-4186-99de-863eca4041f0
+*(babyPECE Tasarım Yönleri — üç yön, telefon oranında, kaydırılabilir)*
+
+Üç şart da karşılandı: örnek **gerçek içerikten** (2026-07-10 çapasından canlı hesap, gerçek
+meyve eşleşmeleri, gerçek kaynak satırı), **gerçek oranda** (telefon), ve sahibinin kafasında
+canlandırması gereken şey **çizildi** — görünüş sorusu örnek gösterilmeden sorulmadı.
+
+| Yön | Karakter | Gerilimlere etkisi |
+|---|---|---|
+| **A · Gece** | Karanlık, sessiz, tek ışık | 2 sn hedefini **rahat tutar** · bulantı riskine **en güvenli** |
+| **B · Mutfak** | Aydınlık, şen, meyve kahraman | En esprili · en hareketli · görselleri en sıkı küçültmeyi gerektirir |
+| **C · Defter** | Almanak, sayılar kahraman, kaynak hep görünür | 2 sn hedefini rahat tutar · anı defterine en yakın |
+
+**Üç yönde de sabit tutulanlar** (Faz 2–3 kararları, seçime bağlı değil): odak bugünde ·
+kaynak her ekranda görünür · gün sayılır ama ölçü haftalık.
+
+**Bu turda BİLEREK gösterilmeyenler:** üç boyutlu sahne, 20 aylık görsel, *"aramızda"* ekranı.
+Gerekçe: element 7'nin ertelemesi **görsel varlık üretimini yasaklıyor**; yön seçilmeden
+görünüş kaynağı belli olmaz.
+
+`Gösterilebilir olup örneği onaylanmamış parça: 13` → **kapı henüz kapanmadı**
+
 ---
 
 ## Faz 5 · Karar
