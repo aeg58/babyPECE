@@ -494,9 +494,16 @@ görünüş kaynağı belli olmaz.
 | 1 boyut · 2 benzetme · 3 odak bugünde · 4 kaynak görünür | ✔ |
 | 7 üç boyut · 8 slogan · 9 tek parça · 10 kaydırma · 12 telefon | ✔ |
 | 14 haftalık seri · 15 neye benzer · 16 aramızda | ✔ |
-| **6 espri** | **✘ örneği yok** |
+| **6 espri** | ✔ *(2026-08-29: benzetme ikonu geldi, tanım düzeltildi)* |
 
-`Gösterilebilir olup örneği onaylanmamış parça: 1` → **kapı hâlâ kapanmadı.**
+`Gösterilebilir olup örneği onaylanmamış parça: 0` → **on üçünün de örneği var.**
+
+**Ama kapı hâlâ kapanmadı, tek sebeple:** ölçüt *"örneği ONAYLANMAMIŞ parça = 0"*. Erdem
+üç şeyi açıkça onayladı (ultrason dili, sıcaklık, yatay sunum); kalan on parçanın örneği
+ekranda duruyor ama **tek tek onaylanmadı**. Ajan bunu kendi kafasından "onaylandı" yazamaz.
+
+**Ayrıca parça 12 ölçülmedi:** site ablanın gerçek telefonunda hiç açılmadı. Erdem'in
+"kabul edilemez kırılma" listesindeki ikinci madde buydu. Faz 7'ye kadar tahmin olarak kalıyor.
 
 **Kalan tek parça 6'dır ve teknik bir eksik değildir.** Kabul cümlesi: *her haftanın
 benzetmesinin yanında bir espri cümlesi var, hiçbiri boş değil.* Bu cümleler ancak
@@ -752,6 +759,24 @@ ilk kullanıldığında **örnekle** teyit edilmeliydi.
 **Veri:** 8 haftanın ölçüsü ve benzetmesi NHS'ten birebir alındı (7, 8, 10, 12, 16, 20, 24, 32)
 ve `docs/OLCULER.md`'ye kaynak cümlesiyle yazıldı. **26 hafta alınmadı**; sayfa o haftalarda
 *"kaynağından alınmadı"* diyor. **Parça 2'nin kapısı bu satır dolmadan kapanmaz.**
+
+**Tur 13 · VERİ TAMAMLANDI — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/2627eed8-66ea-40c8-b2a7-24031f9687f1
+**Depo sürümü:** `docs/prototip-tur13.html` · veri `docs/OLCULER.md` · ikon planı `docs/IKON-BRIEF.md`
+
+**34 haftanın hepsinin ölçüsü ve benzetmesi NHS'ten birebir alındı.** Artık *"kaynağından
+alınmadı"* diyen tek bir hafta yok. Her satır kaynak cümlesiyle `docs/OLCULER.md`'de.
+
+**Ölçü tabanı hafta boyunca değişiyor** ve NHS bunu kendi cümlesinde söylüyor: baş-popo →
+baş-ayak → baş-topuk; 13 ve 20. haftalarda taban hiç belirtilmemiş. **Tek tabana zorlanmadı**,
+olduğu gibi yazıldı.
+
+**20 benzetmenin emojisi var, 14'ünün yok.** Yanlış nesne konmadı; o haftalarda ad yazıyla
+duruyor. Kalıcı çözüm için **34 ikonluk brifing yazıldı** (`docs/IKON-BRIEF.md`).
+
+**PARÇA 2'NİN KAPISI KAPANDI:** *40 haftanın her haftası için bir karşılığı var, boş hafta yok.*
+**PARÇA 6'NIN KAPISI KAPANDI:** *benzetmenin yanında benzetilen şeyin kendisi görünüyor.*
 
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
