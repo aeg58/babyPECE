@@ -32,10 +32,13 @@ sisli bırakıyordu. Her haftanın ölçülen zemin değeri koda gömüldü ve e
 `benzer-*.jpg` (10 dosya) ve `aramizda.jpg`. Anne babanın fotoğraflarından üretildi.
 Rıza Erdem tarafından alındı (2026-08-28), sonra depoya alındılar.
 
-## Eski aylık seri — kullanılmıyor
+## Eski aylık seri — SİLİNDİ
 
-`ay-01.jpg` … `ay-10.jpg`. Haftalık seri geldiği için **artık kullanılmıyor** ama
-**silinmedi**: silme Erdem'in onayına bağlı bir işlem. Sitede hiçbir yerden çağrılmıyorlar.
+`ay-01.jpg` … `ay-10.jpg` **2026-08-29'da silindi** (Erdem'in kararı). Birlikte, onlara bağlı
+olan tur 2–6 prototipleri de silindi.
+
+**Geri dönüş yolu:** `git checkout f7a4ff8 -- docs/gorseller/ay-01.jpg` (ve diğerleri).
+Özgün 1254 px PNG'ler ayrıca Erdem'in kendi diskinde.
 
 ## Bu klasör nihai yeri değil
 

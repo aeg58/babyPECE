@@ -609,7 +609,10 @@ boştayken yavaş salınım var.
 **Tur 7 · KİLİTLEMELER VE HAFTALIK SERİ — 2026-08-29.**
 
 **Yayın:** https://claude.ai/code/artifact/82800f5d-4169-4998-ab5e-42010e521e2a
-**Depo sürümü:** `docs/prototip-tur7.html`
+**Depo sürümü YOK.** Ajan tur 7'de artefaktı yayınlayıp depo sürümünü senkronlamayı **atladı**,
+ama buraya *"depo sürümü şurada"* diye yazdı. Kayıt iki kayıt boyunca **olmayan bir dosyayı**
+işaret etti. Tur 7'nin bütün değişiklikleri tur 8'de zaten var; dosya sonradan üretilmedi.
+Bunu atıf denetimi yakalayamadı, sebebi `docs/KURUCU-DERSLER.md` › A24.
 
 **Kilitlenenler (Erdem):** sıcaklık **varsayılan**, karşılaştırma düğmesi kaldırıldı ·
 **yukarıdan vuran ışık huzmesi kaldırıldı**, tek ışık kaynağı taramanın kendisi.
@@ -624,6 +627,10 @@ Aylık görseller haftalık seri gelene kadar sitede kalmaya devam eder.
 
 **Kod değişikliği bekliyor:** site şu an haftayı aya çevirip görsel seçiyor. Haftalık seri
 gelince bu eşleme kalkar, hafta doğrudan dosyaya bağlanır.
+
+**Tur 2 ile 6 arası prototipler SİLİNDİ (2026-08-29, Erdem'in kararı).** Beşi de reddedilmiş
+turlardı ve silinen aylık görsellere bağlıydılar. Ne denendiği ve neden reddedildiği bu
+dosyada ve kayıt geçmişinde duruyor. Geri dönüş: `git checkout f7a4ff8 -- <yol>`.
 
 **Tur 8 · HAFTALIK SERİ DEVREDE — 2026-08-29.**
 
