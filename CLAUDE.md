@@ -337,3 +337,12 @@ yeterli değildir — boş yedek de hatasız *"başarılı"* der.
 ya da makine bunu bir daha yakalayacak.** Son alan boşsa olay kapanmamıştır.
 
 Olay kayıtları `docs/olaylar/` altına, `docs/sablonlar/olay-kaydi.md` şablonundan açılır.
+
+### Yedek
+
+**Yedek = GitHub deposu** *(kurulumda Erdem, Faz 3'te teyit — 2026-08-28)*. Ayrı yedek yok.
+
+**İçi nasıl doğrulanır:** depo boş bir klasöre klonlanır, **dosya sayısı ve son kaydın kimliği
+karşılaştırılır.** *"Yedek alındı"* sayılmaz — **sayılır.**
+
+**Kabul edilmiş risk:** GitHub hesabı kaybedilirse başka kopya yoktur.
