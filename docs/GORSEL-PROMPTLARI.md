@@ -93,6 +93,11 @@ Photorealistic, shallow depth of field. No text.
 
 ---
 
+## ÜRETİLDİ — 2026-08-28
+
+Erdem 21 görseli üretti ve seçti. Bilimsel seri depoda: `docs/gorseller/` (bkz. oradaki
+`00-OKU.md`). Benzerlik taşıyan iki seri **rıza teyidi bekliyor**, depoya alınmadı.
+
 ## Üretim sonrası — bağlayıcı
 
 1. **Her görsel Erdem tarafından tek tek onaylanır.** Onaysız görsel siteye girmez.
