@@ -1,0 +1,522 @@
+<title>babyPEÇE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600&family=Martian+Mono:wght@300;400&display=swap">
+<style>
+/* Tek görsel dünya, bilerek: obstetrik 3B/4B ultrason sepya renk eşlemesi kullanır.
+   Sıcaklık bir tercih değil, konunun gerçeği. Bütün renkler açıkça boyanır. */
+:root{
+  --void:#0A0603; --deep:#1C0E07; --edge:#2E1A0F;
+  --mid:#8A4A20; --amber:#D98B45; --glow:#F7D3A6; --paper:#FFF3E4;
+  --dim:#8A6B52;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--void);color:var(--glow);
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:38px 20px 74px}
+.hd h1{font-family:Unbounded,system-ui,sans-serif;font-weight:500;font-size:21px;letter-spacing:-.02em;
+  color:var(--paper);margin:0 0 8px}
+.hd p{margin:0 0 24px;color:var(--dim);font-size:15px;max-width:58ch}
+
+.dev{width:352px;max-width:100%;margin:0 auto;border-radius:28px;overflow:hidden;background:#000;
+  box-shadow:0 28px 70px -38px rgba(0,0,0,.95)}
+.site{height:718px;overflow-y:auto;overflow-x:hidden;background:var(--void);position:relative}
+.site::-webkit-scrollbar{width:0}
+
+/* ---- tarama ---- */
+.scan{min-height:718px;position:relative;display:flex;flex-direction:column;overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fallback{position:absolute;inset:0;background-size:cover;background-position:center;
+  filter:sepia(1) saturate(2.4) contrast(1.4) brightness(.6) blur(10px);display:none}
+.nogl .fallback{display:block}
+.open{position:absolute;inset:0;background:radial-gradient(70% 44% at 50% 34%, #F7D3A6 0%, #C4762F 40%, #1C0E07 82%);
+  z-index:5;display:flex;align-items:center;justify-content:center;
+  transition:opacity 1.9s cubic-bezier(.22,1,.36,1)}
+.open span{font-family:Unbounded,sans-serif;font-weight:300;font-size:27px;letter-spacing:-.02em;color:#2A1206}
+.lit .open{opacity:0;pointer-events:none}
+
+.hud{position:absolute;inset:0;padding:19px;pointer-events:none;
+  font-family:"Martian Mono",ui-monospace,monospace;font-size:9.5px;font-weight:300;color:rgba(247,211,166,.42)}
+.hud i{font-style:normal;position:absolute}
+.hud .a{top:19px;left:19px}.hud .b{top:19px;right:19px}
+.hud .c{bottom:36%;left:19px}
+.hud em{font-style:normal;color:rgba(247,211,166,.82)}
+
+.ttl{position:relative;z-index:3;margin-top:auto;padding:0 22px 32px}
+.ttl .nm{font-family:Unbounded,sans-serif;font-weight:700;font-size:26px;line-height:1;
+  letter-spacing:-.045em;color:var(--paper);margin:0}
+.ttl .nm b{font-weight:300;color:rgba(255,243,228,.62)}
+.big{font-family:Unbounded,sans-serif;font-weight:300;font-size:43px;line-height:1;
+  letter-spacing:-.06em;color:var(--paper);margin:15px 0 0}
+.big i{font-style:normal;font-size:15px;color:rgba(247,211,166,.55);letter-spacing:-.01em}
+.rv{opacity:0;transform:translateY(9px);transition:opacity 1s ease 1.5s,transform 1s ease 1.5s}
+.lit .rv{opacity:1;transform:none}
+
+/* ---- bölümler ---- */
+.blk{padding:44px 22px 40px;border-top:1px solid var(--edge);position:relative}
+.q{font-family:Unbounded,sans-serif;font-weight:300;font-size:23px;line-height:1.28;
+  letter-spacing:-.04em;color:var(--paper);margin:0}
+.q em{font-style:normal;font-weight:500;color:var(--amber)}
+.sb{margin:12px 0 0;color:var(--dim);font-size:14.5px;max-width:30ch}
+
+.gauge{margin:24px 0 8px;height:46px;position:relative}
+.gauge .b{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--edge)}
+.gauge .f{position:absolute;left:0;top:50%;height:1px;background:var(--amber)}
+.gauge .k{position:absolute;top:calc(50% - 5px);width:10px;height:10px;border:1px solid var(--amber);
+  transform:translateX(-50%) rotate(45deg)}
+.gauge .t{position:absolute;top:calc(50% - 26px);font-family:"Martian Mono",monospace;font-size:10px;
+  color:var(--glow);transform:translateX(-50%)}
+
+.wks{display:flex;align-items:flex-end;gap:2px;height:50px;margin:18px 0 8px}
+.wks i{flex:1;height:20%;background:var(--edge)}
+.wks i.p{background:rgba(138,74,32,.85)}
+.wks i.n{background:var(--amber);height:100%}
+.wl{display:flex;justify-content:space-between;font-family:"Martian Mono",monospace;font-size:9px;color:var(--dim)}
+
+.fin{min-height:718px;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.fin img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fin .scanoff{position:absolute;inset:0;background:var(--void);opacity:1;
+  transition:opacity 2.2s cubic-bezier(.22,1,.36,1)}
+.fin .scanoff canvas{width:100%;height:100%;display:block;opacity:.6}
+.fin.on .scanoff{opacity:0}
+.fin .sl,.fin .nt{opacity:0;transform:translateY(10px);
+  transition:opacity 1.1s ease 1.1s,transform 1.1s ease 1.1s}
+.fin.on .sl,.fin.on .nt{opacity:1;transform:none}
+.fin .sh{position:absolute;inset:0;background:linear-gradient(to top,rgba(22,10,3,.86),rgba(22,10,3,0) 54%)}
+.fin .tx{position:relative;z-index:2;padding:0 22px 40px}
+.fin .sl{font-family:Unbounded,sans-serif;font-weight:300;font-size:25px;line-height:1.24;
+  letter-spacing:-.045em;color:#FFF6EE;margin:0}
+.fin .sl b{font-weight:700}
+.fin .nt{margin:13px 0 0;font-size:13px;color:rgba(255,246,238,.7)}
+
+/* makinenin dışı */
+.out{padding:46px 0 40px;border-top:1px solid var(--edge);background:var(--deep)}
+.out .pad{padding:0 22px}
+.out .tag{font-family:"Martian Mono",monospace;font-size:9px;color:var(--mid);
+  margin:12px 0 0;line-height:1.7}
+.warn{margin:18px 22px 0;padding:11px 13px;border:1px solid rgba(217,139,69,.30);
+  border-radius:2px;font-size:12.5px;color:var(--glow);line-height:1.55}
+.warn b{font-weight:600}
+
+/* YATAY sunum: parmakla kaydırılır ve kendi kendine oynar */
+.deck{display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:18px 0 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.deck::-webkit-scrollbar{height:0;display:none}
+.slide{flex:0 0 232px;scroll-snap-align:center;transition:opacity .55s ease,transform .55s ease}
+.slide:first-child{margin-left:calc(50% - 116px)}
+.slide:last-child{margin-right:calc(50% - 116px)}
+.slide img{width:232px;height:232px;object-fit:cover;display:block;border-radius:2px;
+  border:1px solid rgba(247,211,166,.20)}
+.slide.uzak{opacity:.26;transform:scale(.88)}
+.yas{margin:14px 0 0;text-align:center;font-family:Unbounded,sans-serif;font-weight:300;
+  font-size:20px;letter-spacing:-.03em;color:var(--paper)}
+.dots{display:flex;justify-content:center;gap:5px;margin:12px 0 0}
+.dots i{width:5px;height:5px;border-radius:50%;background:rgba(247,211,166,.22);transition:background .3s}
+.dots i.on{background:var(--amber)}
+.hint{margin:14px 22px 0;text-align:center;font-family:"Martian Mono",monospace;
+  font-size:9px;color:var(--mid);line-height:1.7}
+
+/* benzetme ikonu */
+.bnz{display:flex;align-items:center;gap:13px;margin:18px 0 0}
+.bnz .ik{flex:0 0 66px;height:66px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;position:relative;
+  background:radial-gradient(circle at 36% 30%, rgba(247,211,166,.14), rgba(217,139,69,.06) 62%, transparent 78%)}
+.bnz .ik img{width:58px;height:58px;object-fit:contain;display:block;
+  filter:drop-shadow(0 3px 7px rgba(0,0,0,.55))}
+.bnz p{margin:0;color:var(--dim);font-size:15px}
+.bnz p b{color:var(--paper);font-weight:500}
+.kaldi{margin:14px 0 0;font-family:"Martian Mono",monospace;font-size:10.5px;color:var(--mid)}
+
+/* sayaç */
+.say40{display:flex;align-items:baseline;gap:9px;margin:0 0 16px}
+.say40 .n{font-family:Unbounded,sans-serif;font-weight:300;font-size:42px;line-height:1;
+  letter-spacing:-.055em;color:var(--paper)}
+.say40 .d{font-family:"Martian Mono",monospace;font-size:11px;color:var(--dim)}
+
+.ctl{max-width:352px;margin:19px auto 0;display:flex;flex-direction:column;gap:12px}
+.btn{appearance:none;border:1px solid var(--mid);background:transparent;color:var(--glow);
+  font-family:"Bricolage Grotesque",sans-serif;font-size:14px;padding:9px 14px;border-radius:2px;cursor:pointer}
+.btn:hover{border-color:var(--amber);background:rgba(217,139,69,.08)}
+.btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.sl2 label{font-size:13px;color:var(--dim);display:block;margin-bottom:5px}
+input[type=range]{width:100%;accent-color:var(--amber)}
+input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.aft{margin:30px auto 0;max-width:58ch}
+.aft h2{font-family:Unbounded,sans-serif;font-weight:500;font-size:16px;color:var(--paper);
+  margin:22px 0 8px;letter-spacing:-.03em}
+.aft p{margin:0 0 12px;color:var(--dim);font-size:15px}
+.aft p b{color:var(--paper);font-weight:600}
+@media (prefers-reduced-motion:reduce){.open,.rv{transition:none}}
+</style>
+
+<div class="page">
+  <div class="hd">
+    <h1>babyPEÇE, tur 14</h1>
+    <p><b>Emoji tamamen kalktı.</b> 34 haftanın hepsinde artık senin ürettiğin ikon var. Sürgüyü baştan sona kaydır.</p>
+  </div>
+
+  <div class="dev"><div class="site" id="site">
+
+    <section class="scan" id="s1">
+      <canvas id="gl"></canvas>
+      <div class="fallback" id="fb"></div>
+
+      <div class="open" id="op"><span>babyPEÇE</span></div>
+      <div class="hud">
+        <i class="a">GEB <em id="hw">7h 0g</em></i>
+        <i class="b" id="hd">28.08.2026</i>
+        <i class="c">CRL <em id="hm">10 mm</em></i>
+      </div>
+      <div class="ttl">
+        <p class="nm">baby<b>PEÇE</b></p>
+        <div class="rv"><p class="big"><span id="w">7</span> <i>hafta</i> <span id="g">0</span> <i>gün</i></p></div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <p class="q">Bu hafta <em id="mm">10 mm</em>.</p>
+      <div class="gauge"><span class="b"></span><span class="f" id="gf"></span>
+        <span class="k" style="left:2%"></span><span class="k" id="gk"></span><span class="t" id="gt">10 mm</span></div>
+      <div class="bnz"><span class="ik"><img id="ik" alt=""></span>
+        <p id="sy">Yaklaşık <b>bir üzüm</b> kadar.</p></div>
+    </section>
+
+    <section class="blk">
+      <div class="say40"><span class="n" id="cn">7</span><span class="d">/ 40 hafta</span></div>
+      <div class="wks" id="wk2"></div>
+      <div class="wl"><span>1</span><span id="sn">7. hafta</span><span>40</span></div>
+      <p class="kaldi" id="kalan">32 HAFTA 6 GÜN KALDI</p>
+    </section>
+
+    <section class="fin" id="fin">
+      <img id="fi" alt=""><div class="sh"></div>
+      <div class="scanoff"><canvas id="off" width="90" height="180"></canvas></div>
+      <div class="tx">
+        <p class="sl">babyPEÇE<br><b id="kl">33 hafta 0 gün</b><br>sonra aramızda.</p>
+        <p class="nt">O gün tarama durur. Geriye düpedüz bir fotoğraf kalır.</p>
+      </div>
+    </section>
+
+    <section class="out">
+      <div class="pad">
+        <p class="q">Peki <em>kime</em> benzeyecek?</p>
+        <p class="tag">TARAMA BUNU GÖREMEZ</p>
+      </div>
+      <div class="deck" id="dk"></div>
+      <p class="yas" id="yl">yenidoğan</p>
+      <div class="dots" id="dt2"></div>
+      <p class="hint">KENDİ KENDİNE OYNUYOR &middot; PARMAKLA KAYDIRABİLİRSİN</p>
+      <p class="warn"><b>Bu bir tahmindir, bilimsel dayanağı yoktur.</b> Anne babanın fotoğraflarından üretilmiş hayalî görsellerdir.</p>
+    </section>
+
+  </div></div>
+
+  <div class="ctl">
+    <button class="btn" id="rp" type="button">Açılışı tekrar oynat</button>
+    <div class="sl2">
+      <label for="wk">Haftayı ileri al <span id="wlb">7. hafta</span></label>
+      <input type="range" id="wk" min="7" max="40" value="7">
+    </div>
+
+  </div>
+
+  <div class="aft">
+    <h2>Hatanın kendisi</h2>
+    <p><b>Kaynak görsellerde özne koyu, arka plan açık.</b> Bebek şeftali tonunda, zemin krem. Ultrasonda ise tersi olmalı: zemin karanlık, doku parlak. Ben parlaklığı doğrudan sinyal saymıştım, yani <b>arka planı aydınlatıp özneyi karartmıştım</b>. Hafta ilerledikçe kazancı da yükselttiğim için görüntü tamamen doyuma gidip o krem lekeye dönüşüyordu.</p>
+    <p><b>Düzeltme:</b> sinyal artık parlaklıktan değil, <b>özne ile zemin arasındaki farktan</b> üretiliyor. Ayrıca çıkışa yumuşak bir sıkıştırma kondu; görüntü artık patlamıyor, en parlak yerde bile doku kalıyor.</p>
+    <h2>Perde kaldırıldı</h2>
+    <p>Haklısın, gereksizdi. Beneğin kendisi zaten perde işini görüyor; üstüne bir de karartma koyunca görsel okunmaz oluyordu. Artık tek örtü taramanın kendi paraziti. Erken haftalarda benek baskın, ilerledikçe azalıyor, ama <b>görüntü her hafta okunabilir</b>.</p>
+    <h2>Görsellerin üstünde 3B</h2>
+    <p>Senin ürettiğin görseller düz resim, ama <b>parlaklıkları bir derinlik haritası gibi kullanılıyor</b>. Işın yürütmedeki her dilim farklı hızda kayıyor, yani yakın ve uzak katmanlar ayrışıyor. Sonuç gerçek bir parallaks: görsel ekranın içinde bir hacim gibi duruyor.</p>
+    <p><b>Tarama alanının üstünde parmağını gezdir</b> ya da imleci dolaştır. Bebek bakışını takip ediyor. Dokunmadığın zaman da yavaşça kendi kendine salınıyor, yani ölü durmuyor.</p>
+    <h2>Espriyi yanlış anlamışım</h2>
+    <p>Turlardır senden ablanın kişiliğini istiyordum, çünkü parça 6'yı "yazılı espri cümleleri" diye anlamıştım. Kastettiğin <b>tasarım dilindeki oyun</b>muş: benzetmenin yanında benzetilen şeyin kendisi. Kayıtları düzelttim.</p>
+    <p><b>İkon geldi.</b> Emoji karşılığı olan haftalarda emoji, olmayanlarda adın kendisi yazıyla duruyor. Kayısının, eriğin, ahududunun ve kerevizin emojisi yok; yanlış meyve koymaktansa adını yazdım.</p>
+    <p>İstersen daha ileri götürebiliriz: haftalık görselleri ürettiğimiz gibi <b>34 küçük benzetme ikonu</b> da ürettirebilirsin, aynı sepya dilinde. Brifingini yazarım.</p>
+    <h2>Slogan tekrarı kalktı</h2>
+    <p>Haklıydın, iki kez geçiyordu. Şimdi ölçünün altında <b>sayaç</b> var, sloganın tamamı ise yalnız <b>son ekranda</b>, bir kez. Sayı bilgi olarak bir yerde, duygu olarak bir yerde.</p>
+    <h2>İkonlar geldi</h2>
+    <p><b>Emoji tamamen kaldırıldı.</b> 34 haftanın hepsinde kendi ikonu var; emojisi olmadığı için adı yazıyla duran on dört hafta da artık dolu.</p>
+    <p><b>Şeffaflık makineyle çıkarıldı.</b> Dosya JPEG geldi, yani alfa kanalı yoktu ve damalı desen boyanmıştı. Desen düzenli olduğu için kenardan içeri doğru taşkın doldurmayla ayıklandı; karnabaharın ve kavunların içi bu yüzden delinmedi.</p>
+    <p><b>Eşleme sırayla oturdu:</b> tablodaki 34 hücre tam olarak 7'den 40'a haftalara denk geldi. Kalan iki hücre fazlaydı (bir kabak dilimi ve ikinci bir balkabağı) ve kullanılmadı.</p>
+    <h2>Veri tamamlandı</h2>
+    <p><b>34 haftanın hepsi NHS'in hafta sayfalarından birebir alındı.</b> Ölçü, benzetme ve kaynak cümlesi <code>docs/OLCULER.md</code>'de yazılı. Artık "kaynağından alınmadı" diyen tek bir hafta yok.</p>
+    <p><b>Ölçü tabanı hafta boyunca değişiyor</b> ve NHS bunu kendi cümlesinde söylüyor: erken haftalarda baş-popo, sonra baş-ayak ve baş-topuk. 13 ve 20. haftalarda taban hiç belirtilmemiş. Tabloya olduğu gibi yazıldı, tek tabana zorlanmadı.</p>
+    <p><b>20 benzetmenin emojisi var, 14'ünün yok</b> (ahududu, kayısı, incir, erik, nar, kabak, karnabahar, kestane kabağı, lahana, kereviz, bal kavunu, pırasa, ravent, balkabağı). O haftalarda ad yazıyla duruyor. Yanlış meyve koymadım: balkabağı için oyulmuş kabak emojisi, kabak için salatalık emojisi kullanılmadı.</p>
+    <h2>Yatay sunum</h2>
+    <p><b>Dikey kipler kaldırıldı.</b> Sorun seçeneklerde değil yöndeymiş: aynı çerçevede değişen bir şey değil, yandan gelen bir sunum istiyordun.</p>
+    <p><b>İkisi birden var.</b> Bölüm ekrana girince kendi kendine akmaya başlıyor. Parmağını değdirdiğin an duruyor, kontrol sende oluyor; beş saniye dokunmazsan kaldığı yerden devam ediyor.</p>
+    <p><b>Kaydırma gerçek.</b> Taklit sürükleme değil, tarayıcının kendi yatay kaydırması; telefonda parmağın altında doğal duruyor ve her kare ortaya oturuyor. Yanlardan önceki ve sonraki yaş görünüyor.</p>
+    <h2>Makinenin dışı</h2>
+    <p><b>"Neye benzer" bölümü bilerek taramaya benzemiyor.</b> Kural şuydu: yapay zekâ görselleri bilimsel serilerden görsel olarak ayırt edilebilir olmalı ve yanlarında dayanağı olmadığı yazmalı. Bu yüzden o bölümde koni yok, benek yok, sepya yok; düpedüz renkli fotoğraflar var ve altında uyarı duruyor.</p>
+    <p>Ama ayrım keyfi değil, <b>anlamlı</b>: tarama bir yüz göremez. Bölümün kendisi bunu söylüyor. Makine ne olduğunu gösteriyor, bu bölüm ne olabileceğini.</p>
+    <h2>Son ekran</h2>
+    <p><b>Tarama gerçekten duruyor.</b> Son bölüm göründüğünde ekrandaki benek sönüyor ve arkasından fotoğraf çıkıyor. Otuz üç haftalık yolculuğun bittiği yer burası: soğuk makineden sıcak çocuğa.</p>
+    <h2>Haftalık seri</h2>
+    <p><b>34 hafta, 34 görsel.</b> Hafta artık aya çevrilmiyor; her hafta kendi karesine bağlı. Sürgüyü yavaş kaydır, geçişin kademeli olduğunu göreceksin.</p>
+    <p><b>Eşik artık her görselin kendi zeminine göre.</b> Ölçtüm: zemin 7. haftada 0,96 iken 40. haftada 0,83'e iniyor, yani seri boyunca kayıyor. Sabit bir eşik son haftalarda arka planı sisli bırakıyordu. Şimdi her hafta kendi ölçülen değerini kullanıyor.</p>
+    <h2>Kilitlenenler</h2>
+    <p><b>Sıcaklık: varsayılan.</b> Denendi, seçildi, düğme kaldırıldı. Yön dosyasına tek kaynak olarak yazıldı, bundan sonra sapılmaz.</p>
+    <p><b>Yukarıdan vuran ışık kalktı.</b> O huzme sayfaya sonradan konmuş bir katmandı ve taramanın kendi ışığıyla yarışıyordu. Artık tek ışık kaynağı taramanın kendisi.</p>
+  </div>
+</div>
+
+<script>
+var AY=["gorseller/hafta-07.jpg","gorseller/hafta-08.jpg","gorseller/hafta-09.jpg","gorseller/hafta-10.jpg","gorseller/hafta-11.jpg","gorseller/hafta-12.jpg","gorseller/hafta-13.jpg","gorseller/hafta-14.jpg","gorseller/hafta-15.jpg","gorseller/hafta-16.jpg","gorseller/hafta-17.jpg","gorseller/hafta-18.jpg","gorseller/hafta-19.jpg","gorseller/hafta-20.jpg","gorseller/hafta-21.jpg","gorseller/hafta-22.jpg","gorseller/hafta-23.jpg","gorseller/hafta-24.jpg","gorseller/hafta-25.jpg","gorseller/hafta-26.jpg","gorseller/hafta-27.jpg","gorseller/hafta-28.jpg","gorseller/hafta-29.jpg","gorseller/hafta-30.jpg","gorseller/hafta-31.jpg","gorseller/hafta-32.jpg","gorseller/hafta-33.jpg","gorseller/hafta-34.jpg","gorseller/hafta-35.jpg","gorseller/hafta-36.jpg","gorseller/hafta-37.jpg","gorseller/hafta-38.jpg","gorseller/hafta-39.jpg","gorseller/hafta-40.jpg"], FINAL="gorseller/aramizda.jpg";
+var IKON=["gorseller/ikon/ikon-07.png","gorseller/ikon/ikon-08.png","gorseller/ikon/ikon-09.png","gorseller/ikon/ikon-10.png","gorseller/ikon/ikon-11.png","gorseller/ikon/ikon-12.png","gorseller/ikon/ikon-13.png","gorseller/ikon/ikon-14.png","gorseller/ikon/ikon-15.png","gorseller/ikon/ikon-16.png","gorseller/ikon/ikon-17.png","gorseller/ikon/ikon-18.png","gorseller/ikon/ikon-19.png","gorseller/ikon/ikon-20.png","gorseller/ikon/ikon-21.png","gorseller/ikon/ikon-22.png","gorseller/ikon/ikon-23.png","gorseller/ikon/ikon-24.png","gorseller/ikon/ikon-25.png","gorseller/ikon/ikon-26.png","gorseller/ikon/ikon-27.png","gorseller/ikon/ikon-28.png","gorseller/ikon/ikon-29.png","gorseller/ikon/ikon-30.png","gorseller/ikon/ikon-31.png","gorseller/ikon/ikon-32.png","gorseller/ikon/ikon-33.png","gorseller/ikon/ikon-34.png","gorseller/ikon/ikon-35.png","gorseller/ikon/ikon-36.png","gorseller/ikon/ikon-37.png","gorseller/ikon/ikon-38.png","gorseller/ikon/ikon-39.png","gorseller/ikon/ikon-40.png"];
+var BG=[0.961,0.945,0.945,0.945,0.953,0.949,0.933,0.933,0.929,0.922,0.922,0.922,0.918,0.91,0.902,0.902,0.898,0.89,0.898,0.89,0.878,0.871,0.863,0.847,0.871,0.871,0.859,0.855,0.847,0.831,0.847,0.839,0.831,0.827];
+var CAPA=new Date(2026,6,10);
+/* NHS hafta sayfalarından birebir alındı. Kaynak dökümü docs/OLCULER.md'de.
+   Biçim: [ölçü, benzetme, ikon]. İkon yoksa ad yazıyla gösterilir. */
+var MM={
+ 7:["10 mm","üzüm","\u1F347"],
+ 8:["16 mm","ahududu",""],
+ 9:["22 mm","çilek","\u1F353"],
+ 10:["30 mm","küçük kayısı",""],
+ 11:["41 mm","incir",""],
+ 12:["5,4 cm","erik",""],
+ 13:["7,4 cm","şeftali","\u1F351"],
+ 14:["8,5 cm","kivi","\u1F95D"],
+ 15:["10,1 cm","elma","\u1F34E"],
+ 16:["11,6 cm","avokado","\u1F951"],
+ 17:["12 cm","nar",""],
+ 18:["14,2 cm","dolmalık biber","\u1FAD1"],
+ 19:["15,3 cm","domates","\u1F345"],
+ 20:["25,6 cm","muz","\u1F34C"],
+ 21:["26,7 cm","havuç","\u1F955"],
+ 22:["27,8 cm","tatlı patates","\u1F360"],
+ 23:["28,9 cm","büyük mango","\u1F96D"],
+ 24:["30 cm","mısır koçanı","\u1F33D"],
+ 25:["34,6 cm","kabak",""],
+ 26:["35,6 cm","salatalık","\u1F952"],
+ 27:["36,6 cm","karnabahar",""],
+ 28:["37,6 cm","patlıcan","\u1F346"],
+ 29:["38,6 cm","kestane kabağı",""],
+ 30:["39,9 cm","lahana",""],
+ 31:["41,1 cm","hindistan cevizi","\u1F965"],
+ 32:["42,4 cm","demet kereviz",""],
+ 33:["43,7 cm","ananas","\u1F34D"],
+ 34:["45 cm","kavun","\u1F348"],
+ 35:["46,2 cm","bal kavunu",""],
+ 36:["47,4 cm","marul","\u1F96C"],
+ 37:["48,6 cm","pırasa",""],
+ 38:["49,8 cm","ravent sapı",""],
+ 39:["50,7 cm","karpuz","\u1F349"],
+ 40:["51,2 cm","balkabağı",""]};
+function $(i){return document.getElementById(i)}
+function ix(w){return Math.max(0,Math.min(33,w-7))}
+function ik(n){return n<10?"0"+n:""+n}
+var bugun=new Date();bugun.setHours(0,0,0,0);
+var gunG=Math.floor((bugun-CAPA)/86400000), hG=Math.floor(gunG/7);
+$("fi").src=FINAL;
+var BENZER=[["gorseller/benzer-yenidogan.jpg","yenidoğan"],["gorseller/benzer-06ay.jpg","6 aylık"],["gorseller/benzer-01yas.jpg","1 yaş"],["gorseller/benzer-02yas.jpg","2 yaş"],["gorseller/benzer-03yas.jpg","3 yaş"],["gorseller/benzer-04yas.jpg","4 yaş"],["gorseller/benzer-05yas.jpg","5 yaş"],["gorseller/benzer-06yas.jpg","6 yaş"],["gorseller/benzer-07yas.jpg","7 yaş"],["gorseller/benzer-08yas.jpg","8 yaş"]];
+(function(){
+  var dk=$("dk"),lab=$("yl"),dts=$("dt2"),n=BENZER.length;
+  var o="",q="";
+  for(var i=0;i<n;i++){o+='<div class="slide"><img src="'+BENZER[i][0]+'" alt=""></div>';q+='<i></i>';}
+  dk.innerHTML=o;dts.innerHTML=q;
+  var sl=dk.querySelectorAll(".slide"),dd=dts.querySelectorAll("i");
+  var cur=0,timer=null,uyku=null,sessiz=false;
+  function merkez(i){var e=sl[i];return e.offsetLeft+e.offsetWidth/2-dk.clientWidth/2;}
+  function boya(){for(var i=0;i<n;i++){sl[i].classList.toggle("uzak",i!==cur);dd[i].className=(i===cur?"on":"");}
+    lab.textContent=BENZER[cur][1];}
+  function git(i,yum){cur=(i+n)%n;sessiz=true;
+    dk.scrollTo({left:merkez(cur),behavior:yum?"smooth":"auto"});
+    setTimeout(function(){sessiz=false},yum?700:60);boya();}
+  function yakin(){var e=0,d=1e9;for(var i=0;i<n;i++){var k=Math.abs(merkez(i)-dk.scrollLeft);if(k<d){d=k;e=i;}}return e;}
+  function basla(){if(!timer)timer=setInterval(function(){git(cur+1,true)},2600);}
+  function durdur(){if(timer){clearInterval(timer);timer=null;}}
+  function elle(){durdur();clearTimeout(uyku);uyku=setTimeout(basla,5000);}
+  dk.addEventListener("scroll",function(){if(sessiz)return;var i=yakin();if(i!==cur){cur=i;boya();}},{passive:true});
+  dk.addEventListener("pointerdown",elle);
+  dk.addEventListener("touchstart",elle,{passive:true});
+  dk.addEventListener("wheel",elle,{passive:true});
+  var kuruldu=false;
+  function kur(){if(kuruldu)return;kuruldu=true;git(0,false);
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?basla():durdur()})},{threshold:.4}).observe(dk);
+    } else basla();}
+  var im0=sl[0].querySelector("img");
+  if(im0.complete)kur(); else im0.addEventListener("load",kur);
+  window.addEventListener("resize",function(){git(cur,false)});
+})();
+(function(){
+  var c=$("off");if(!c)return;var x=c.getContext("2d");
+  var d=x.createImageData(c.width,c.height),a=d.data;
+  for(var i=0;i<a.length;i+=4){var v=Math.random();v=v*v*230;
+    a[i]=v*1.0;a[i+1]=v*.62;a[i+2]=v*.34;a[i+3]=255;}
+  x.putImageData(d,0,0);
+  var f=$("fin");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(e){
+      e.forEach(function(en){if(en.isIntersecting){f.classList.add("on");io.disconnect();}});
+    },{threshold:.45});
+    io.observe(f);
+  } else { f.classList.add("on"); }
+})();
+$("hd").textContent=ik(bugun.getDate())+"."+ik(bugun.getMonth()+1)+"."+bugun.getFullYear();
+
+/* ---------------- WebGL tarama ---------------- */
+var VS="attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
+var FS=[
+"precision highp float;",
+"uniform vec2 res;uniform float t;uniform float net;uniform float temp;uniform vec2 look;uniform float bg;uniform sampler2D tex;",
+/* stegu/ashima webgl-noise (MIT) sadeleştirilmiş 3B simplex */
+"vec3 mod289(vec3 x){return x-floor(x*(1./289.))*289.;}",
+"vec4 mod289(vec4 x){return x-floor(x*(1./289.))*289.;}",
+"vec4 permute(vec4 x){return mod289(((x*34.)+1.)*x);}",
+"vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}",
+"float snoise(vec3 v){const vec2 C=vec2(1./6.,1./3.);const vec4 D=vec4(0.,.5,1.,2.);",
+" vec3 i=floor(v+dot(v,C.yyy));vec3 x0=v-i+dot(i,C.xxx);",
+" vec3 g=step(x0.yzx,x0.xyz);vec3 l=1.-g;vec3 i1=min(g.xyz,l.zxy);vec3 i2=max(g.xyz,l.zxy);",
+" vec3 x1=x0-i1+C.xxx;vec3 x2=x0-i2+C.yyy;vec3 x3=x0-D.yyy;",
+" i=mod289(i);vec4 p=permute(permute(permute(i.z+vec4(0.,i1.z,i2.z,1.))+i.y+vec4(0.,i1.y,i2.y,1.))+i.x+vec4(0.,i1.x,i2.x,1.));",
+" float n_=0.142857142857;vec3 ns=n_*D.wyz-D.xzx;",
+" vec4 j=p-49.*floor(p*ns.z*ns.z);vec4 x_=floor(j*ns.z);vec4 y_=floor(j-7.*x_);",
+" vec4 x=x_*ns.x+ns.yyyy;vec4 y=y_*ns.x+ns.yyyy;vec4 h=1.-abs(x)-abs(y);",
+" vec4 b0=vec4(x.xy,y.xy);vec4 b1=vec4(x.zw,y.zw);",
+" vec4 s0=floor(b0)*2.+1.;vec4 s1=floor(b1)*2.+1.;vec4 sh=-step(h,vec4(0.));",
+" vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;",
+" vec3 p0=vec3(a0.xy,h.x);vec3 p1=vec3(a0.zw,h.y);vec3 p2=vec3(a1.xy,h.z);vec3 p3=vec3(a1.zw,h.w);",
+" vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));",
+" p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;",
+" vec4 m=max(.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.);m=m*m;",
+" return 42.*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));}",
+"float fbm(vec3 q){float f=0.,a=.5;for(int i=0;i<3;i++){f+=a*snoise(q);q*=2.07;a*=.5;}return f;}",
+"float hash(vec3 q){return fract(sin(dot(q,vec3(12.9898,78.233,37.719)))*43758.5453);}",
+"float vnoise(vec3 q){vec3 i=floor(q),f=fract(q);f=f*f*(3.-2.*f);",
+" float n=mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),",
+"   mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);",
+" return n*2.-1.;}",
+"void main(){",
+" vec2 uv=gl_FragCoord.xy/res;uv.y=1.-uv.y;",
+" float ar=res.x/res.y;",
+" vec2 q=vec2((uv.x-.5)*ar,uv.y-.02);",
+" float r=length(q);float ang=atan(q.x,max(q.y,1e-4));",
+/* yumuşak sektör: kesik kenar yok */
+" float sec=smoothstep(.70,.34,abs(ang))*smoothstep(1.24,1.02,r)*smoothstep(.015,.16,r);",
+" vec2 su=vec2(ang/0.68*.5+.5, r/1.1);",
+/* hacimsel ışın yürütme: kabartma ve hafif kayma */
+" float acc=0.;float wsum=0.;",
+" float cl=smoothstep(0.,1.,net);",
+" for(int i=0;i<12;i++){",
+"  float s=float(i)/11.;",
+"  float dep=s-.5;",
+"  vec2 off=vec2(sin(t*.18+s*2.4)*.006*(1.-.72*cl),dep*mix(.075,.016,cl));",
+"  off+=look*dep*0.30;",
+"  vec3 sm=texture2D(tex,clamp(su+off,0.,1.)).rgb;",
+"  float lum=dot(sm,vec3(.34,.5,.16));",
+"  float subj=smoothstep(bg-.02,bg-mix(.34,.44,cl),lum);",
+"  float dens=subj;",
+"  float w=exp(-mix(2.1,3.4,cl)*abs(s-.5))*(1.-.55*s);",
+"  acc+=dens*w;wsum+=w;}",
+" float img=acc/max(wsum,1e-4);",
+/* benek: çarpımsal, kıpırdayan */
+" float sp=fbm(vec3(su*vec2(46.,30.),t*.75));",
+" float sp2=vnoise(vec3(su*vec2(150.,104.),t*1.7));",
+" float speck=mix(.46+.86*sp+.42*sp2, .90+.16*sp+.07*sp2, cl);",
+" float sig=img*speck;",
+/* derinlik zayıflaması ve kazanç */
+" sig*=exp(-mix(1.15,.62,cl)*r)*mix(1.30,1.70,cl);",
+" sig=sig/(1.+sig*.62);",
+" sig=mix(sig*.62,sig*1.05,cl);",
+/* dönen tarama yayı */
+" float sweep=fract(t*.14);float sa=(sweep*2.-1.)*.62;",
+" sig+=smoothstep(.055,0.,abs(ang-sa))*sec*mix(.16,.07,cl);",
+" sig*=sec;",
+/* sepya eşlemesi */
+" float v=clamp(sig,0.,1.);",
+" float wq=clamp(temp,0.,1.), cq=clamp(-temp,0.,1.);",
+" vec3 k0=mix(mix(vec3(.039,.024,.012),vec3(.062,.028,.014),wq),vec3(.030,.029,.029),cq);",
+" vec3 k1=mix(mix(vec3(.545,.290,.125),vec3(.655,.300,.110),wq),vec3(.360,.330,.300),cq);",
+" vec3 k2=mix(mix(vec3(.851,.545,.271),vec3(.945,.596,.255),wq),vec3(.690,.665,.615),cq);",
+" vec3 k3=mix(mix(vec3(.969,.827,.651),vec3(1.000,.886,.722),wq),vec3(.940,.930,.905),cq);",
+" vec3 c=mix(k0,k1,smoothstep(0.,.42,v));",
+" c=mix(c,k2,smoothstep(.34,.72,v));",
+" c=mix(c,k3,smoothstep(.68,1.,v));",
+" gl_FragColor=vec4(c,1.);}"].join("\n");
+
+var gl,prog,uRes,uT,uNet,uWarm,uLook,uBg,tex,raf,net=0.6,warm=0,bgv=0.95,glOK=false;
+var lx=0,ly=0,tx=0,ty=0;
+function sh(g,ty,src){var s=g.createShader(ty);g.shaderSource(s,src);g.compileShader(s);
+  if(!g.getShaderParameter(s,g.COMPILE_STATUS)){console.warn(g.getShaderInfoLog(s));return null}return s}
+function initGL(){
+  var c=$("gl");gl=c.getContext("webgl")||c.getContext("experimental-webgl");
+  if(!gl)return false;
+  var v=sh(gl,gl.VERTEX_SHADER,VS),f=sh(gl,gl.FRAGMENT_SHADER,FS);
+  if(!v||!f)return false;
+  prog=gl.createProgram();gl.attachShader(prog,v);gl.attachShader(prog,f);gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return false;
+  gl.useProgram(prog);
+  var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  var lp=gl.getAttribLocation(prog,"p");gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+  uRes=gl.getUniformLocation(prog,"res");uT=gl.getUniformLocation(prog,"t");uNet=gl.getUniformLocation(prog,"net");uWarm=gl.getUniformLocation(prog,"temp");uLook=gl.getUniformLocation(prog,"look");uBg=gl.getUniformLocation(prog,"bg");
+  tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tex);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+  gl.uniform1i(gl.getUniformLocation(prog,"tex"),0);
+  return true}
+function boyut(){var c=$("gl"),d=Math.min(window.devicePixelRatio||1,1.6);
+  var w=c.clientWidth||352,h=c.clientHeight||718;
+  c.width=Math.round(w*d);c.height=Math.round(h*d);
+  if(gl){gl.viewport(0,0,c.width,c.height);gl.uniform2f(uRes,c.width,c.height)}}
+function yukle(src){var im=new Image();im.onload=function(){
+  gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,im)};im.src=src}
+var t0=performance.now();
+function dongu(){var t=(performance.now()-t0)/1000;
+  lx+=(tx-lx)*.075;ly+=(ty-ly)*.075;
+  var idx=Math.sin(t*.21)*.10, idy=Math.cos(t*.17)*.07;
+  gl.uniform1f(uT,t);gl.uniform1f(uNet,net);gl.uniform1f(uWarm,warm);
+  gl.uniform2f(uLook,lx+idx,ly+idy);gl.uniform1f(uBg,bgv);gl.drawArrays(gl.TRIANGLES,0,3);raf=requestAnimationFrame(dongu)}
+
+/* ---------------- veri ---------------- */
+function ciz(w,gg){
+  var gun=gg!=null?gg:w*7, p=Math.max(0,Math.min(1,gun/280));
+  net=0.30+0.70*Math.pow(p,.55);
+  var src=AY[ix(w)]; bgv=BG[ix(w)];
+  if(glOK)yukle(src); else $("fb").style.backgroundImage="url("+src+")";
+  var m=MM[w];
+  $("w").textContent=w;$("g").textContent=gun%7;$("hw").textContent=w+"h "+(gun%7)+"g";
+  $("hm").textContent=m?m[0]:"--";$("mm").textContent=m?m[0]:"kaynak bekliyor";
+  $("gt").textContent=m?m[0]:"--";
+  var ik=$("ik");
+  if(m){ $("sy").innerHTML='Yaklaşık <b>'+m[1]+'</b> kadar.';
+    ik.src=IKON[ix(w)]; ik.alt=m[1]; ik.style.display=""; }
+  else { $("sy").textContent="Bu haftanın benzetmesi henüz kaynağından alınmadı.";
+    ik.removeAttribute("src"); ik.style.display="none"; }
+  var gx=m?(2+parseFloat(m[0])*3.4):2;gx=Math.min(gx,96);
+  $("gf").style.width=(gx-2)+"%";$("gk").style.left=gx+"%";$("gt").style.left=gx+"%";
+  $("sn").textContent=w+". hafta";$("wlb").textContent=w+". hafta";
+  var k=Math.max(0,280-gun);var ks=Math.floor(k/7)+" hafta "+(k%7)+" gün";$("kl").textContent=ks;
+  $("kalan").textContent=ks.toLocaleUpperCase("tr")+" KALDI";
+  $("cn").textContent=w;
+  var o="";for(var i=1;i<=40;i++)o+='<i class="'+(i<w?"p":(i===w?"n":""))+'"></i>';
+  $("wk2").innerHTML=o;
+}
+function ac(){var s=$("s1");s.classList.remove("lit");void s.offsetWidth;
+  setTimeout(function(){s.classList.add("lit")},520)}
+
+glOK=initGL();
+if(!glOK){$("s1").classList.add("nogl")}else{boyut();window.addEventListener("resize",boyut)}
+$("wk").value=hG;ciz(hG,gunG);
+if(glOK)dongu();
+$("wk").addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gunG:null)});
+(function(){
+  var el=$("s1");
+  function ayarla(cx,cy){var r=el.getBoundingClientRect();
+    tx=((cx-r.left)/r.width-.5)*2;ty=((cy-r.top)/r.height-.5)*2;
+    tx=Math.max(-1,Math.min(1,tx));ty=Math.max(-1,Math.min(1,ty));}
+  el.addEventListener("pointermove",function(e){ayarla(e.clientX,e.clientY)});
+  el.addEventListener("pointerleave",function(){tx=0;ty=0});
+  el.addEventListener("touchmove",function(e){var p=e.touches[0];if(p)ayarla(p.clientX,p.clientY)},{passive:true});
+  el.addEventListener("touchend",function(){tx=0;ty=0});
+})();
+$("rp").addEventListener("click",ac);
+ac();
+</script>

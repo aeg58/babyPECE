@@ -778,6 +778,22 @@ duruyor. Kalıcı çözüm için **34 ikonluk brifing yazıldı** (`docs/IKON-BR
 **PARÇA 2'NİN KAPISI KAPANDI:** *40 haftanın her haftası için bir karşılığı var, boş hafta yok.*
 **PARÇA 6'NIN KAPISI KAPANDI:** *benzetmenin yanında benzetilen şeyin kendisi görünüyor.*
 
+**Tur 14 · İKONLAR DEVREDE — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/55e3e5a1-f1d4-4c04-bcaf-9bad396cef4c
+**Depo sürümü:** `docs/prototip-tur14.html` · ikonlar `docs/gorseller/ikon/`
+
+**Emoji tamamen kaldırıldı.** 34 haftanın hepsinde kendi ikonu var; emojisi olmadığı için adı
+yazıyla duran on dört hafta doldu.
+
+**Teslim JPEG geldi, yani şeffaflık yoktu.** Ajan bunu **ölçtü** (alfa kanalı yok, köşe pikselleri
+gri 212) ve damalı desenin boyanmış olduğunu doğruladı. Desen düzenli olduğu için kenardan içeri
+taşkın doldurmayla ayıklandı; karnabahar ve kavunların içi delinmedi. Döküm `docs/OLCULER.md`.
+
+**İki sapma kabul edildi ve gerekçesi yazıldı:** renkler brifingdeki dar paletin dışında
+(karşılaştırma gösterildi, aslı seçildi) · avokado kesitli (brifing yasaklıyordu ama 58
+pikselde bütün hâlinden daha okunaklı, kural burada haksızdı).
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.

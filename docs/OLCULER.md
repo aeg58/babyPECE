@@ -64,7 +64,27 @@ tabana zorlanmadı.**
 **Yok.** 7'den 40'a kadar 34 haftanın hepsi alındı. *(2026-08-29'da tamamlandı; öncesinde
 yalnız 8 hafta vardı ve site kalanlarda "kaynağından alınmadı" diyordu.)*
 
-## İkon durumu
+## İkon durumu — TAMAMLANDI (2026-08-29)
+
+**34 ikonun hepsi üretildi ve devrede.** `docs/gorseller/ikon/ikon-07.png` … `ikon-40.png`.
+**Emoji tamamen kaldırıldı.**
+
+Erdem ikonları tek bir **JPEG tablo** olarak teslim etti (6×6, 36 hücre). JPEG'in alfa kanalı
+yoktur; damalı şeffaflık deseni **boyanmıştı**. Ölçüldü ve doğrulandı, sonra desen makineyle
+ayıklandı: kenardan içeri **taşkın doldurma** kullanıldı, böylece karnabahar ve kavun gibi
+açık renkli nesnelerin **içi delinmedi**.
+
+**Eşleme sırayla oturdu:** tablodaki ilk 34 hücre 7'den 40'a haftalara birebir denk geldi.
+Kalan iki hücre (bir kabak dilimi ve ikinci bir balkabağı) **kullanılmadı**.
+
+**Brifingden iki sapma, ikisi de kabul edildi:**
+1. **Renkler brifingdeki dar sıcak paletin dışında** (parlak yeşil, kırmızı, mor). Sıcak
+   süzgeçten geçmiş bir sürüm hazırlanıp Erdem'e gösterildi; **aslı seçildi**, çünkü sayfadaki
+   tek renkli ve oyunbaz an burası ve *"espri"* denen şey tam olarak bu.
+2. **Avokado kesitli.** Brifing kesit yasaklıyordu ama 58 pikselde yarım avokado çekirdeğiyle
+   bütün hâlinden **belirgin biçimde daha okunaklı**; kural burada haksızdı, kesitli hâli kaldı.
+
+## Eski ikon durumu (geçmiş kayıt)
 
 **20 benzetmenin emojisi var, 14'ünün yok:** ahududu, kayısı, incir, erik, nar, kabak,
 karnabahar, kestane kabağı, lahana, kereviz, bal kavunu, pırasa, ravent, balkabağı.
