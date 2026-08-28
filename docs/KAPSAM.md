@@ -142,7 +142,7 @@ Her biri ya parça olur ya **gerekçesiyle** dışlanır.
 | 1 | *"çocuğun o günkü boyutunu"* [G1] | Sayfa açıldığında **bulunulan haftanın** boyu ve ağırlığı görünüyor; her değerin yanında hangi kaynaktan geldiği yazılı. *(2026-08-28'de daraltıldı: ölçüler haftalık, ara gün değeri üretilmez.)* | ✔ | **bilgi** — bloke |
 | 2 | *"hangi objeye, meyveye, yiyeceğe, sebzeye benzediğini"* [G1] | Bulunulan haftanın benzetmesi görünüyor; **40 haftanın her haftası** için bir karşılığı var, boş hafta yok. *(2026-08-28'de daraltıldı: haftalık — kaynaklar haftalık yayınlıyor.)* | ✔ | **bilgi** — bloke |
 | 3 | *"gün gün büyüyüşünü"* + *"kaydırdıkça bütün haftalar gezilsin ama ana focus içinde bulunulan zamanın şekli sayısı alanında olsun, focus o tarihte"* [G1, G7] | Sayfa **bugüne odaklanmış** açılıyor; aşağı kaydırınca geçmiş ve gelecek haftalar geziliyor, bugünün merkez olduğu her an belli. **Gün sayısı günlük işler** ("7 hafta 3 gün", geri sayım); **ölçüler haftalık** | ✔ | **bilgi** — bloke |
-| 4 | *"verilerin bilimsel şeylerle desteklendiği"* [G1] | Her sayının yanında nereden geldiği görülebiliyor | ✔ | **bilgi** — bloke |
+| 4 | *"verilerin bilimsel şeylerle desteklendiği"* [G1] | **Her sayının kaynağı depoda yazılı ve doğrulanabilir.** Ekranda kaynak satırı **gösterilmez**. *(2026-08-29'da daraltıldı — Erdem: "kaynak verme, bunlara gerek yok, bunları temizle." Gerekçe: kaynak bloğu bir hediyede yabancı duruyordu.)* | ✔ | **bilgi** |
 | 5 | *"kaynakların doğrulukları araştırılarak, kesin onaylandıktan sonra"* [G1] | Kullanılan her kaynağın adı, tarihi ve **neden güvenilir sayıldığı** depoda yazılı; onaylanmamış kaynaktan tek sayı bile girmemiş | ✘ | **bilgi** — bloke |
 | 6 | *"esprili bir şekilde" / "esprili bir site"* [G1, G3] | Her haftanın benzetmesinin yanında bir espri cümlesi var, **hiçbiri boş değil** | ✔ | üretilecek metin — Erdem onaylar |
 | 7 | *"zengin, üç boyutlu UI UX kütüphaneleri"* [G1] | Sayfada üç boyutlu, hareket eden bir görsel var ve ablasının telefonunda takılmadan çalışıyor | ✔ | **görünüş** — bloke |
@@ -685,6 +685,27 @@ o bölüm ne olabileceğini.
 **Parça 16 · son ekran:** bölüm görüş alanına girdiğinde **tarama gerçekten duruyor** —
 benek sönüyor, arkasından fotoğraf çıkıyor, slogan yazılıyor. Element 24'te karara bağlanan
 *"aramızda"* anı ile Faz 4'ün *soğuk makineden sıcak çocuğa* yayı burada kapanıyor.
+
+**Tur 10 · SIRALAMA, SAYAÇ VE SUNUM — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/5b8d5ffb-7acd-4dd4-a4be-1394b5b4f474
+**Depo sürümü:** `docs/prototip-tur10.html`
+
+Erdem'in istekleri: slogan ölçünün hemen altına · sayaç 1'den 40'a ve **yazılsın** ·
+kaynak blokları kalksın · *"kime benzeyecek"* **en alta** ve **sunum slaytı gibi geçişli** ·
+o bölüm için **birden fazla tasarım seçeneği** sunulsun.
+
+**KAPSAM DARALTMASI — parça 4.** Erdem: *"kaynak verme, bunlara gerek yok, bunları temizle."*
+Bu, Faz 2'de yazılan kabul cümlesiyle ve *"kaynağı olmayan sayı görünmesi"*nin kabul edilemez
+kırılma olmasıyla **çelişiyordu**; ajan bunu sessizce yapmadı, **ayrımı sundu**:
+
+| | Durum |
+|---|---|
+| **Kaynak KAYDI** (depoda, doğrulanabilir) | **Aynen yürürlükte.** Parça 5 hiç değişmedi; doğrulanmamış sayı hâlâ giremez |
+| **Kaynak GÖSTERİMİ** (ekranda) | **Kaldırıldı.** Parça 4'ün kabul cümlesi buna göre yeniden yazıldı |
+
+**Üç sunum seçeneği sunuldu:** A eriyerek · B deste · C şerit. Seçim Erdem'de; seçilen kip
+`docs/GORUNUS.md`'ye tek kaynak olarak yazılacak, diğer ikisi koddan çıkacak.
 
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
