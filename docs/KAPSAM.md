@@ -139,9 +139,9 @@ Her biri ya parça olur ya **gerekçesiyle** dışlanır.
 
 | # | Parça (sahibinin kelimeleriyle) | Kabul cümlesi | Göst. | Kaynak |
 |---|---|---|---|---|
-| 1 | *"çocuğun o günkü boyutunu"* [G1] | Sayfa açıldığında bugünün boyutu sayıyla görünüyor (boy + ağırlık), elle hesap yapmadan doğrulanabiliyor | ✔ | **bilgi** — bloke |
-| 2 | *"hangi objeye, meyveye, yiyeceğe, sebzeye benzediğini"* [G1] | Bugünün benzetmesi görünüyor; 40 haftanın **her** günü için bir karşılığı var, boş gün yok | ✔ | **bilgi** — bloke |
-| 3 | *"gün gün büyüyüşünü"* + *"kaydırdıkça bütün haftalar gezilsin ama ana focus içinde bulunulan zamanın şekli sayısı alanında olsun, focus o tarihte"* [G1, G7] | Sayfa **bugüne odaklanmış** açılıyor; aşağı kaydırınca geçmiş ve gelecek haftalar geziliyor ve bugünün merkez olduğu her an belli | ✔ | **bilgi** — bloke |
+| 1 | *"çocuğun o günkü boyutunu"* [G1] | Sayfa açıldığında **bulunulan haftanın** boyu ve ağırlığı görünüyor; her değerin yanında hangi kaynaktan geldiği yazılı. *(2026-08-28'de daraltıldı: ölçüler haftalık, ara gün değeri üretilmez.)* | ✔ | **bilgi** — bloke |
+| 2 | *"hangi objeye, meyveye, yiyeceğe, sebzeye benzediğini"* [G1] | Bulunulan haftanın benzetmesi görünüyor; **40 haftanın her haftası** için bir karşılığı var, boş hafta yok. *(2026-08-28'de daraltıldı: haftalık — kaynaklar haftalık yayınlıyor.)* | ✔ | **bilgi** — bloke |
+| 3 | *"gün gün büyüyüşünü"* + *"kaydırdıkça bütün haftalar gezilsin ama ana focus içinde bulunulan zamanın şekli sayısı alanında olsun, focus o tarihte"* [G1, G7] | Sayfa **bugüne odaklanmış** açılıyor; aşağı kaydırınca geçmiş ve gelecek haftalar geziliyor, bugünün merkez olduğu her an belli. **Gün sayısı günlük işler** ("7 hafta 3 gün", geri sayım); **ölçüler haftalık** | ✔ | **bilgi** — bloke |
 | 4 | *"verilerin bilimsel şeylerle desteklendiği"* [G1] | Her sayının yanında nereden geldiği görülebiliyor | ✔ | **bilgi** — bloke |
 | 5 | *"kaynakların doğrulukları araştırılarak, kesin onaylandıktan sonra"* [G1] | Kullanılan her kaynağın adı, tarihi ve **neden güvenilir sayıldığı** depoda yazılı; onaylanmamış kaynaktan tek sayı bile girmemiş | ✘ | **bilgi** — bloke |
 | 6 | *"esprili bir şekilde" / "esprili bir site"* [G1, G3] | Her haftanın benzetmesinin yanında bir espri cümlesi var, **hiçbiri boş değil** | ✔ | üretilecek metin — Erdem onaylar |
@@ -342,11 +342,44 @@ Tek cümle.)*
 
 ### Doldurulacak tablo
 
-| # | Element | Durum | Kim verir | Karar | Gerekçe | Reddedilenler | Pencere |
-|---|---|---|---|---|---|---|---|
-| | | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | |
+*Doldurulmaya 2026-08-28'de başlandı. Sıra kilitlemeye göre: A kolu, sonra B kolu.*
 
-`Durumsuz element: ⬜` · `Tetiksiz KONU DIŞI: ⬜` · `Yasağı yazılmamış ERTELENDİ: ⬜`
+#### A · Karar düzeni
+
+| # | Element | Durum | Kim verir | Karar | Gerekçe | Reddedilenler ve neden | Pencere |
+|---|---|---|---|---|---|---|---|
+| 1 | Karar ve onay düzeni | **KARAR** | kullanıcı | Onayı **yalnız Erdem** verir; birebir metin `ONAYLIYORUM`. Erdem ulaşılamazsa **iş durur ve bekler** | Tek kişilik iş; doğuma 33 hafta var, beklemenin bedeli düşük. Maliyet: **sonsuz** — bu element ertelenemez | **(a) "Geri alınabilir işler devam etsin"** — reddedildi: *"geri alınabilir"*in sınırını ajanın kendisi yorumlar, bu da onayın kapsamını sessizce genişletir. **(b) "İkinci bir onaylayan"** — reddedildi: dış paydaş modülünü açar, tek kişilik hediye işine ağırlık ekler | — |
+
+#### B · Kimlik ve okuyucu
+
+| # | Element | Durum | Kim verir | Karar | Gerekçe | Reddedilenler ve neden | Pencere |
+|---|---|---|---|---|---|---|---|
+| 2 | Ad, adres ve kimlik numaraları | **KARAR** (çekirdek) + **ERTELENDİ** (detay) | kullanıcı | **Ad her yerde `babyPECE`** — klasör, depo, site başlığı, slogan. Adres: **önce ücretsiz barındırma adresi**. Kayıt numarası: konu dışı (görev kayıtları modülü kapalı) | Ad ucuz verilir ama **geri alınmaz**; tek yazımda sabitlendi. Ücretsiz adres bugün kurulur, para gerektirmez, ablan zaten adrese değil linke tıklıyor | **Özel alan adı şimdi alınması** — reddedildi: yıllık ücret gerektirir ve satın almayı Erdem'in kendisi yapmalı; site bitmeden şıklık kararı vermek erken. **Ertelenen yarı:** özel alan adı · **yeniden açan olay:** site bitip Erdem beğendiğinde · **yasakladığı iş:** alan adına bağlı hiçbir iş (DNS, sertifika, adres taşıma) başlatılmaz. **Bilinen bedel:** taşınırsa link değişir, ablana ikinci kez gönderilir | — |
+| 3 | Dil, bölge ve zaman | **KARAR** | kullanıcı | Site dili **Türkçe**. *"Bugün"* **ablanın cihaz saatine** göre hesaplanır | Tek okuyucu var ve Türkçe konuşuyor. Cihaz saati, ablanın telefonunda gördüğü tarih ile sitenin gösterdiği günün **aynı** olmasını sağlar | **(a) Sabit Türkiye saati** — reddedildi: ablan yurt dışına çıkarsa telefonundaki tarihle site farklı gün gösterir. **(b) İki dilli** — reddedildi: *"sadece ablam için"* kapsam kararıyla çelişir, iş ekler. **Kabul edilen bedel:** cihaz saati yanlışsa site yanlış gün gösterir; bu görünür bir risktir ve kabul edilmiştir | — |
+| 4 | Devralınan sistem ve göç | **KONU DIŞI** | kullanıcı | Yerine geçilecek bir sistem **yok** | [G2]: *"Şu an bir uygulama kullanmıyor bildiğim kadarıyla."* Takip kafadan sayarak yapılıyor; kapanınca kaybolacak bir veri kaynağı yok. Çapa tarihi zaten yazılı hâlde alındı | — | **Tetik (bizi yanılmış çıkaracak gözlem):** ablan bir hamilelik uygulaması kullanmaya başlar ve oradaki veri/not siteye taşınmak istenirse **bu madde açılır**. İkinci tetik: doktorun ultrason raporuna erişim gerekirse |
+
+#### C · Dışarısı
+
+| # | Element | Durum | Kim verir | Karar | Gerekçe | Reddedilenler ve neden | Pencere |
+|---|---|---|---|---|---|---|---|
+| 5 | Dış servisler ve hesap sahipliği | **KARAR** | dışarıdan → kullanıcı onayı | Barındırma **GitHub Pages**, Erdem'in mevcut `aeg58` hesabından, `babyPECE` deposu **açık** olarak. Yeni hesap açılmaz, yeni servise bağımlılık kurulmaz | Hesap zaten var ve Erdem'in adına. **Doğrulandı:** GitHub Free planında Pages yalnız açık depolarda çalışır; gizliye çevrilirse site kendiliğinden yayından kalkar. Erdem depoyu açığa çevirmeyi **birebir `ONAYLIYORUM` ile** kabul etti (2026-08-28) | **(a) Ayrı açık depo** (ajanın önerisiydi: çalışma gizli, yalnız site açık) — Erdem tek depo basitliğini seçti. **(b) Vercel/Netlify** — gizli depodan yayın yapabiliyorlar ama yeni hesap açılmasını gerektirir; hesap açmak ajanın yasakları arasında. **(c) GitHub Pro** — aylık ücret; tek hediye sitesi için gereksiz görüldü | — |
+
+> **GERİ DÖNÜŞ YOLU — işlemden ÖNCE yazıldı (olay ve geri alma modülü gereği):**
+> **Yok.** Depo sonradan gizliye çevrilebilir, ama o arada kopyalanmış, çatallanmış ya da
+> önbelleğe alınmış içerik **geri alınamaz** ve gizliye çevirmek siteyi de yayından kaldırır.
+> Bu **tek yönlü bir kapıdır**, bilerek ve birebir onayla geçilmiştir.
+> **Açılan içerik:** ham görüşme kaydı (*"ablam hamile"*, doktor ziyareti, tarihler) · çapa
+> tarihi 2026-07-10 · tahmini doğum 2027-04-16 · Erdem'in adı · üç kaydın tamamı.
+> **Ajanın bildirdiği ve Erdem'in üstlendiği husus:** bilgi yalnız Erdem'in değil; ablasının
+> 7 haftalık hamileliği kamuya açılıyor ve bu karar onun adına verilmiştir.
+
+| # | Element | Durum | Kim verir | Karar | Gerekçe | Reddedilenler ve neden | Pencere |
+|---|---|---|---|---|---|---|---|
+| 6 | Yasal izin ve mevzuat | **KONU DIŞI** | dışarıdan | Yayına almak için kimsenin izni gerekmiyor; kişisel veri **toplanmıyor** | Site giriş, kayıt, form, yorum, ziyaretçi ölçümü içermiyor — [G4]: *"ablam bir şey yapmayacak"*. İşlenen veri yok, yalnız gösterilen sabit içerik var | — | **Tetik:** ziyaretçi ölçümü (analytics), yorum, form ya da **herhangi bir veri girişi** eklenirse bu madde açılır. İkinci tetik: site ablası dışında birine dağıtılırsa |
+| 7 | İçerik, varlık ve haklar | **KARAR** (çekirdek) + **ERTELENDİ** (görseller) | kullanıcı + dışarıdan | **Sayısal veri:** erken haftalar CRL referansları, 14. haftadan sonra WHO / INTERGROWTH-21st. **Meyve eşleşmesi:** NHS İskoçya + Avustralya Sağlık Bakanlığı. **Her hücrenin kaynağı depoda yazılı.** **Telifli görsel kullanılmaz** — meyveler ve üç boyutlu biçimler kendimiz üretilir. **Kütüphaneler:** `react-three-fiber` + `drei`, ikisi de MIT | Kurumsal ve hakemli kaynaklar Erdem tarafından onaylandı. Kendi ürettiğimiz biçimler hak sorunu doğurmaz. MIT lisansı ticari ve kişisel kullanımda kısıt getirmez | **(a) Hazır hamilelik uygulamalarının verisini kopyalamak** — reddedildi: kaynağı yazılmamış ve telifli. **(b) Stok meyve fotoğrafları** — reddedildi: lisans takibi gerektirir, ücretli olabilir. **(c) `Hubref/40Weeks` gibi GitHub depoları** — reddedildi: verinin kaynağı yazılı değil, doğrulanamaz. **Ertelenen yarı:** görsellerin kendisi · **yeniden açan olay:** Faz 4'te görünüş kararı verildiğinde · **yasakladığı iş:** hiçbir görsel varlık üretilmez ya da eklenmez | — |
+
+`Durumsuz element: 0 / 7 işlenen` · `Tetiksiz KONU DIŞI: 0` · `Yasağı yazılmamış ERTELENDİ: 0`
+*(Kalan 20 element henüz işlenmedi — Faz 3 açık.)*
 
 ## Faz 4 · Tasarım
 

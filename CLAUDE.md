@@ -90,7 +90,7 @@ listesinde değildir, izin beklemez. Refleks satırı **ayrı bir karardır** ve
 
 | Varlık | Kaynak |
 |---|---|
-| **Bilgi** (veri, metin, sayı) | *ertelendi — **vade Faz 2 → Faz 3'e taşındı** (2026-08-28)*. Karar: ajan bilimsel kaynakları araştırıp gerekçesiyle sunar, **tek kaynağı Erdem seçer**. Seçilene kadar 1., 2., 4. parçaların yapımı **bloke** |
+| **Bilgi** (veri, metin, sayı) | **CEVAPLI** *(2026-08-28, Faz 3)*: boy/ağırlık → erken haftalar **CRL referansları**, 14. haftadan sonra **WHO / INTERGROWTH-21st**; meyve benzetmesi → **NHS İskoçya + Avustralya Sağlık Bakanlığı**. **Her hücrenin kaynağı depoda yazılı olur**; kaynaksız tek sayı girmez. Ayrıntı: `docs/KAPSAM.md` › Faz 3 › element 7 |
 | **Görünüş** (tasarım dili) | *ertelendi — **vade Faz 2 → Faz 4'e taşındı** (2026-08-28)*. Karar: ajan birkaç görünüş örneği hazırlar, **Erdem seçer**; seçilen tek kaynak olur ve sonrasında sapılmaz |
 | **Kimlik** (marka, logo, ad) | *ertelendi — **vade Faz 2 → Faz 4'e taşındı** (2026-08-28)*. Karar: ad **babyPECE**; ayrıca basit bir işaret/yazı düzeni üretilecek ve **Erdem onaylayacak** |
 
