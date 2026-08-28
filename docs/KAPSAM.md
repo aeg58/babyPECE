@@ -707,6 +707,28 @@ kırılma olmasıyla **çelişiyordu**; ajan bunu sessizce yapmadı, **ayrımı 
 **Üç sunum seçeneği sunuldu:** A eriyerek · B deste · C şerit. Seçim Erdem'de; seçilen kip
 `docs/GORUNUS.md`'ye tek kaynak olarak yazılacak, diğer ikisi koddan çıkacak.
 
+**Tur 11 · YATAY SUNUM + İKİ TURLUK BİÇİMLENDİRME HATASI — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/6a360233-9d09-433d-bc5b-d52d3eecc175
+**Depo sürümü:** `docs/prototip-tur11.html`
+
+**Erdem:** *"bunları yatayda bir sunum kaydırıyormuş edasıyla istiyorum, yukarıdan aşağı değil
+soldan sağa... ya da ben kaydırmadan kendi kendine oynayan bir"*. Dikey kipler kaldırıldı;
+bölüm artık **tarayıcının kendi yatay kaydırması** ile çalışıyor, kareler ortaya oturuyor,
+ekrana girince **kendi kendine akıyor**, parmak değince duruyor, beş saniye sonra devam ediyor.
+
+**AJANIN HATASI — iki tur boyunca teslim edildi.** Tur 9 ve tur 10'da yeni bölümlerin
+**bütün CSS'i sayfaya hiç girmedi**; iki `replace` çağrısının çapası tutmamıştı ve sessizce
+hiçbir şey olmamıştı. Ardından yapılan doğrulama HTML ve JS parçalarını aradı, **CSS'i hiç
+sormadı** ve *"hepsi yerinde"* dedi. Sayım yapılınca **on iki sınıfın** karşılığı olmadığı
+çıktı: `out warn tag pad show sl3 yas dots modes mb slog2 say40`. Erdem o bölümü iki tur
+boyunca biçimlendirilmemiş hâliyle gördü. Ders: `docs/KURUCU-DERSLER.md` › A25, refleks 14.
+
+**Bu turda kontrol değişti:** her düzenleme çapası **sayılıyor**, tutmazsa duruyor; ve
+doğrulama elle liste yerine **sayfada kullanılan her sınıfı tarayıp CSS'iyle karşılaştırıyor**.
+Aynı tarama **sekiz ölü CSS kuralı** da buldu (kaldırılmış sıcaklık düğmeleri, kaynak bloğu,
+üstteki ışık katmanı); temizlendi.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.

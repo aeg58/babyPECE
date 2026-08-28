@@ -53,6 +53,11 @@ içinde ne olduğu ölçülür ve sayı kayda yazılır. *(Boş yedek de hatası
 **11. Bir ölçüm yaparken hangi zemini ölçtüğünü yaz.** Zemin değişiyorsa önce sabitle —
 değişmekte olan bir hedef üzerinde alınan sayı tekrarlanabilir değildir. → A4
 
+**14. Metin eşleştirmeyle düzenleme yapıyorsan her çapanın bulunduğunu say; bulunamazsa dur.**
+Doğrulamayı elle liste yazarak değil, **kullanılanı tarayıp tanımlıyla karşılaştırarak** yap.
+*Ölçülebilir ihlal: hiçbir şeyi değiştirmemiş bir düzenleme çağrısı, ya da çıktıda karşılığı
+olmayan bir sınıf/kimlik.* → A25
+
 **13. Ekrana bir sayı, ölçü ya da eşleşme yazmadan önce kaynağın kendi sayfasını aç ve oradan
 oku.** Arama özetinden alınan değere kaynak etiketi iliştirilmez.
 *Ölçülebilir ihlal: çıktıdaki bir değerin, altında yazan kaynağın sayfasında bulunamaması.* → A22

@@ -312,6 +312,27 @@ denetim yine *"temiz"* demişti.
 kurulur, sonra proje yeni dosya türleri kazanır ve liste sessizce eskir. Aracın kendisi bunu
 haber veremez, çünkü göremediği şeyi sayamaz. Sınav maddesi eklenmezse eskime **hiç görünmez**.
 
+### A25 · Metin eşleştirmeyle yapılan düzenleme, tutmadığında da SESSİZDİR ⚙︎
+Bir dosyayı "şu metni bul, şununla değiştir" diye düzenliyorsan, **çapa metni tutmadığında
+hiçbir şey olmaz ve hata da verilmez.** Değişiklik yapılmamıştır ama akış devam eder, kayıt
+atılır, iş teslim edilir. Bu yüzden her eşleştirmeli düzenleme **çapanın bulunduğunu ölçmek**
+zorundadır; bulunamazsa **durmalıdır**.
+
+İkinci yarısı daha sinsi: **doğrulaman, aramayı akıl ettiğin şeyle sınırlıdır.** Bir liste
+yazıp "bunlar var mı" diye bakarsan, listeye yazmadığın şeyin yokluğu **sessiz** kalır.
+
+**Maliyet:** Bir sitenin iki ayrı turunda, yeni bölümlerin **bütün CSS'i sayfaya hiç girmedi**.
+İki `replace` çağrısının çapası tutmamıştı. Ardından yapılan doğrulama HTML ve JavaScript
+parçalarını aradı, **CSS'i hiç sormadı** ve *"hepsi yerinde"* dedi. Sahibi iki tur boyunca
+biçimlendirilmemiş bir bölüme baktı; sunum seçenekleri arasında karar veremeyişinin bir sebebi
+de buydu. Sayım yapılınca **on iki sınıfın** karşılığı olmadığı çıktı.
+
+**Neden yapısal:** Eşleştirmeli düzenleme, başarısızlığı **başarıdan ayırt edilemez** biçimde
+sonuçlanır: dosya yine yazılır, boyut yine değişir, hata çıkmaz. Ve doğrulama listesi,
+düzenlemeyi yazan kişinin **aklında olanı** yansıtır; unuttuğu şey doğrulamada da yoktur.
+Çözüm iki parçalıdır: **her çapa sayılır**, ve doğrulama **kullanılanı** tarayıp
+**tanımlıyla** karşılaştırır, elle yazılmış listeyle değil.
+
 ---
 
 ## Yeni ders eklerken
