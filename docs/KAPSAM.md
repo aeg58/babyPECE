@@ -183,7 +183,7 @@ ay... Bana güzel bir prompt hazırlarsan böyle bir şey yapabiliriz."*
 
 | # | Parça | Kabul cümlesi | Göst. | Kaynak |
 |---|---|---|---|---|
-| 14 | Aylık **bilimsel** gelişim görselleri | 10 ayın her biri için bir görsel var, hepsi aynı üslupta, eksik ay yok; her görselin **o ayki gerçek görünüme** dayandığı yazılı | ✔ | üretilecek görsel — Erdem onaylar |
+| 14 | **Haftalık** bilimsel gelişim görselleri | **34 haftanın her biri** için bir görsel var (7 → 40), hepsi aynı üslupta, eksik hafta yok; her görselin o haftaki gerçek gelişim evresine dayandığı yazılı. *(2026-08-29'da aylıktan haftalığa çıkarıldı.)* | ✔ | üretilecek görsel — Erdem onaylar |
 | 15 | Aylık **"neye benzer"** görselleri | 10 ayın her biri için bir görsel var; hepsi bilimsel görsellerden **görsel olarak apayrı** sunuluyor ve yanında **"bu bir tahmindir, bilimsel dayanağı yoktur"** ibaresi duruyor | ✔ | YZ üretimi (Erdem'in hesabı) |
 | 16 | *"Aramızda"* final ekranı ve kimlik işareti | Tahmini doğum tarihi geçince beliren ekranda anne babadan üretilmiş bebek görseli var; aynı görselin küçük hâli sitenin **kimlik işareti** olarak kullanılıyor | ✔ | YZ üretimi (Erdem'in hesabı) |
 
@@ -605,6 +605,25 @@ netlik alt sınırı 0,30 (her hafta okunabilir).
 eklendi. **Derinlik parallaksı eklendi:** görsellerin parlaklığı derinlik haritası gibi
 kullanılıyor, ışın dilimleri farklı hızda kayıyor; parmak ya da imleç takip ediliyor,
 boştayken yavaş salınım var.
+
+**Tur 7 · KİLİTLEMELER VE HAFTALIK SERİ — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/82800f5d-4169-4998-ab5e-42010e521e2a
+**Depo sürümü:** `docs/prototip-tur7.html`
+
+**Kilitlenenler (Erdem):** sıcaklık **varsayılan**, karşılaştırma düğmesi kaldırıldı ·
+**yukarıdan vuran ışık huzmesi kaldırıldı**, tek ışık kaynağı taramanın kendisi.
+
+**Kapsam değişikliği:** aylık 10 görsel yerine **haftalık 34 görsel** (7 → 40. hafta).
+Brifing `docs/GORSEL-BRIEF-HAFTALIK.md` — ChatGPT'ye olduğu gibi verilmek üzere kendi
+kendine yeten biçimde yazıldı; süreç anlatımı, teknik zorunluluklar, sabit üslup bloğu,
+34 haftalık özne bloğu ve teslim kuralları içeriyor.
+
+**Parça 14'ün kabul cümlesi güncellendi:** *10 ayın her biri* yerine **34 haftanın her biri**.
+Aylık görseller haftalık seri gelene kadar sitede kalmaya devam eder.
+
+**Kod değişikliği bekliyor:** site şu an haftayı aya çevirip görsel seçiyor. Haftalık seri
+gelince bu eşleme kalkar, hafta doğrudan dosyaya bağlanır.
 
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut

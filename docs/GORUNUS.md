@@ -130,6 +130,15 @@ ultrason bulanık bir leke, yüzünü kimse bilmiyor. Her hafta perde biraz daha
 üretemeyeceği bir şey · *"önce kart, sonra yoldaş"* yapısının kendisi · geri sayımı görsel
 hâle getiriyor, sayıyı tekrar etmiyor.
 
+## Sıcaklık — KİLİTLENDİ
+
+**Varsayılan sepya.** *(Erdem, 2026-08-29: "sıcak soğuk değil default en iyisi.")*
+Üç durak denendi, varsayılan seçildi, karşılaştırma düğmesi kaldırıldı. **Bundan sonra
+sapılmaz.**
+
+**Yukarıdan vuran ışık huzmesi kaldırıldı** *(aynı tarih, Erdem)*. O katman sayfaya sonradan
+konmuştu ve taramanın kendi ışığıyla yarışıyordu. **Tek ışık kaynağı taramanın kendisidir.**
+
 ## Kadranlar
 
 *(Erdem'in kararı: "önce kart, sonra yoldaş".)*

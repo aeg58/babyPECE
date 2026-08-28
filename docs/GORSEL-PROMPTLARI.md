@@ -93,6 +93,15 @@ Photorealistic, shallow depth of field. No text.
 
 ---
 
+## HAFTALIK SERİYE GEÇİLDİ — 2026-08-29
+
+Erdem: *"daha çok sahne olsun 7. haftadan 40. haftaya."* Aylık 10 görsel yerine **haftalık
+34 görsel** üretilecek. Brifing ve promptlar `docs/GORSEL-BRIEF-HAFTALIK.md`'de; o belge
+ChatGPT'ye olduğu gibi verilmek üzere kendi kendine yeten biçimde yazıldı.
+
+**Aşağıdaki aylık prompt seti geçmiş kayıttır.** Aylık görseller (`docs/gorseller/ay-*.jpg`)
+haftalık seri gelene kadar sitede kalmaya devam eder.
+
 ## ÜRETİLDİ — 2026-08-28
 
 Erdem 21 görseli üretti ve seçti. Bilimsel seri depoda: `docs/gorseller/`, açıklaması `docs/gorseller/00-OKU.md`'de. Benzerlik taşıyan iki seri **rıza teyidi bekliyor**, depoya alınmadı.
