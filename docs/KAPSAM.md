@@ -496,7 +496,14 @@ görünüş kaynağı belli olmaz.
 | 14 haftalık seri · 15 neye benzer · 16 aramızda | ✔ |
 | **6 espri** | ✔ *(2026-08-29: benzetme ikonu geldi, tanım düzeltildi)* |
 
-`Gösterilebilir olup örneği onaylanmamış parça: 0` → **on üçünün de örneği var.**
+`Gösterilebilir olup örneği onaylanmamış parça: 0` → **FAZ 4 KAPISI GEÇİLDİ · 2026-08-29**
+
+Erdem kalan on parçayı toplu olarak onayladı (*"tamam onaylıyorum"*). Daha önce ayrıca
+onaylananlar: ultrason dili, sıcaklık, yatay sunum.
+
+**Parça 12'nin ölçümü Erdem'in kararıyla ertelendi:** *"ablamın telefonunda en son deployda
+açılır."* Bu, kabul edilemez kırılma listesinin 2. maddesidir ve **hâlâ ölçülmemiştir**;
+kapıyı tutmuyor ama Faz 7'de ölçülmeden teslim sayılamaz.
 
 **Ama kapı hâlâ kapanmadı, tek sebeple:** ölçüt *"örneği ONAYLANMAMIŞ parça = 0"*. Erdem
 üç şeyi açıkça onayladı (ultrason dili, sıcaklık, yatay sunum); kalan on parçanın örneği

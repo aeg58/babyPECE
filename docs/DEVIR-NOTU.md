@@ -4,86 +4,81 @@
 > Dosya adı sabittir, üzerine yazılır; **sürüm adında değil, burada** durur.
 >
 > **TESLİM ÖLÇÜTÜ: yeni oturum bunu okuyup hiçbir şey sormadan devam edebilmeli.**
-> Soru sormak zorunda kalıyorsa not eksiktir ve eksiklik, **notu yazan oturuma** aittir.
 
-**Sürüm:** v1 · **Yazıldığı an:** 2026-08-28 22:30 +03 *(ölçülerek yazıldı)*
+**Sürüm:** v1 · **Yazıldığı an:** 2026-08-29 02:16 +03 *(ölçülerek yazıldı)*
 
 ---
 
 ## 1 · Nerede kaldık — tek cümle
 
-**Faz 0, 1, 2 ve 3 bitti:** sistem kuruldu, fikir sabitlendi, 13 parça kabul cümleleriyle
-çıkarıldı, 27 teknik elementin hepsi karara bağlandı. **Tek satır kod yazılmadı.**
+**Faz 0, 1, 2, 3 ve 4 bitti.** Tasarım onaylandı ve kilitlendi; **Faz 5 (Karar) Erdem'in
+kararıyla bilinçli olarak başlatılmadı.** Site hâlâ prototip; yayına alınmadı.
 
 ## 2 · İLK YAPILACAK İŞ — tek iş
 
-**Faz 4 · Tasarım.** Kapı ölçütü: *gösterilebilir olup örneği onaylanmamış parça = 0.*
-13 parçanın **10'u gösterilebilir** — yani Faz 4'ün yükü büyük.
+**Faz 5 · Karar.** Ölçütü: *kararı yazılmamış parça = 0.* On altı parçanın her biri için
+**yap / yapma / ertele** kararı yazılacak. Talimat `docs/KAPSAM.md`'de.
 
-Faz 4'te aynı anda kapanacak üç ertelenmiş satır var: **görünüş kaynağı**, **kimlik işareti**,
-ve iki yazılı gerilim (2 saniye ↔ zengin 3B · 3B hareket ↔ bulantı riski).
-
-**Başlatma kararı Erdem'indir.** Ajan önerir, kendiliğinden başlatmaz.
+**Başlatma kararı Erdem'indir.** Bu oturumda *"şu anlık geçme"* dedi; **ajan hatırlatmaz.**
 
 ## 3 · Devredilen açık uçlar
 
 | Uç | Sahibi | Durum |
 |---|---|---|
-| Görünüş kaynağı — ajan örnek hazırlar, Erdem seçer | Erdem | ertelendi — vade: **Faz 4** · **yasak:** hiçbir görsel varlık üretilmez |
-| Kimlik işareti (babyPECE simgesi) | Erdem | ertelendi — vade: **Faz 4** |
-| Gerilim: telefonda 2 sn ↔ "zengin üç boyutlu" | ajan → Erdem | Faz 4'te **ölçülecek**; çözülmezse Erdem'e geri gelinir |
-| Risk: 3B hareket ↔ hamilelikte bulantı | ajan → Erdem | Faz 4'te sakin varsayılan **gösterilecek** |
-| Özel alan adı | Erdem | ertelendi — site bitip beğenilince · **yasak:** alan adına bağlı hiçbir iş |
-| Test araçları ve kapsam oranı | ajan | ertelendi — ilk kırılmadan sonra |
-| "Başarı" tanımı (izleme) | ajan | ertelendi — site ilk yayına çıkınca · **yasak:** ölçüm kodu eklenmez |
-| Doktorun **kendi** tahmini doğum tarihi | Erdem | iyileştirme — bekleyiş değil, iş onsuz durmaz |
-
-**Vade kapıyı tutmaz, işlemi tutar.** Yukarıdaki *yasak* sütunları hangi işin durduğunu söyler.
+| **Parça 12 · gerçek telefon ölçümü** | Erdem | *"Ablamın telefonunda en son deployda açılır"* (2026-08-29 kararı). **Kabul edilemez kırılma listesinin 2. maddesi ve hâlâ ölçülmedi** |
+| **2 saniye hedefi** | ajan | **Doğrulanmadı.** Gerçek ölçüm Faz 7'de, ablanın telefonunda |
+| Faz 5 · Karar | Erdem | Başlatılmadı, bilinçli |
+| `docs/GORUNUS.md` › *Henüz boş* | Erdem | Parça 6 için **artık gerekmiyor**; espri tonu için açık |
+| Özel alan adı | Erdem | ertelendi · tetik: site bitip beğenilince · **yasak:** alan adına bağlı hiçbir iş |
+| İkonların sıcak süzgeçli sürümü | Erdem | Hazır, seçilmedi. İstenirse tek satır |
+| 35. hücre · alternatif balkabağı | Erdem | Kullanılmadı, takas seçeneği duruyor |
+| Element 16 · `react-three-fiber` gerçekten gerekli mi | ajan | Prototip kütüphanesiz çalışıyor. Faz 7'de yeniden ölçülecek |
+| İzleme · "başarı" tanımı | ajan | ertelendi · tetik: ilk yayın · **yasak:** ölçüm kodu eklenmez |
+| Yedek tek kopya (GitHub) | Erdem | Kabul edilmiş risk. Hesap kaybedilirse başka kopya yok |
+| Anı defteri fikri | Erdem | Kapsam dışı · tetik: doğum sonrası |
 
 ## 4 · Bekleyen onaylar
 
 | Kimden | Ne |
 |---|---|
-| — | yok — kurulumun bütün kararları bu oturumda alındı |
+| — | yok |
 
 ## 5 · Ortam ve sayılar
 
 | | |
 |---|---|
-| Ölçüm komutları | `./scripts/olcum sinav` · `./scripts/olcum kurulum` · `./scripts/olcum saglik` · `./scripts/olcum ortam` |
-| Korunan dal | `main` · iş dalı öneki `is/` |
-| Kanca | `.git/hooks/pre-commit` → `scripts/kancalar/pre-commit` (bağlı, **davranışla doğrulandı**) |
-| Kod dışı sayılan yollar | `docs/` · `*.md` · LICENSE · `.gitignore` · `ayarlar.conf` — **geri kalan her şey kod** |
+| Ölçüm | `./scripts/olcum sinav` · `kurulum` · `saglik` · `kapanis` · `ortam` |
+| Korunan dal | `main` · iş dalı öneki `is/` · kanca bağlı ve doğrulandı |
+| Kod dışı yollar | `docs/` · `*.md` · LICENSE · `.gitignore` · `ayarlar.conf` — **gerisi kod** |
+| Son prototip | `docs/prototip-tur14.html` |
+| Görseller | `docs/gorseller/` · 34 haftalık + 10 benzerlik + 1 final + 34 ikon |
+| Veri | `docs/OLCULER.md` — 34 haftanın hepsi NHS kaynaklı, eksik yok |
 
-*Tavanların doluluğu buraya yazılmaz — `olcum saglik` üretiyor. Makinenin ürettiği liste
-devir notunda durmaz.*
+*Tavan doluluğu buraya yazılmaz, `olcum saglik` üretiyor.*
 
 ## 6 · Kayda geçmemiş ama bilinmesi gereken
 
 **Bunlar kusur değil, bilinçli kararlardır — "düzeltmeye" kalkma:**
 
-1. **DEPO AÇIK (public) ve bu tek yönlü bir kapıydı.** Erdem 2026-08-28'de birebir
-   `ONAYLIYORUM` yazarak onayladı. Gerekçe: GitHub Free planında **gizli depodan Pages yayını
-   yapılamıyor** (doğrulandı). Açılan içerik: ham görüşme kaydı, çapa tarihi, ablasının
-   hamileliği, Erdem'in adı, bütün kayıt geçmişi. **Geri dönüş yolu yok** — gizliye çevirmek
-   ne kopyalanmış içeriği geri getirir ne siteyi ayakta tutar. Ajan uyardı, Erdem üstlendi.
-   Ayrıntı ve alternatifler: `docs/KAPSAM.md` › Faz 3 › element 5.
-2. **docs/FIKIR.md BİLEREK açılmadı** *(bağlantı biçiminde yazılmıyor — olmayan dosyaya atıf
-   üretir)*. `KURULUM.md` defteri iş tanımını oraya yazdırıyor, `docs/KAPSAM.md` ise kendi
-   tablosuna. İkisine birden yazmak *"bir bilgi tek dosyada durur"* kuralını çiğnerdi.
-   **Tek kaynak `docs/KAPSAM.md`.** Şablonun v2'sine taşınacak ders adayı.
-3. **"Gün gün" ölçü değil SAYIM.** Yayınlanmış bilimsel veri haftalık; ara gün değeri
-   üretilmeyecek. Gün sayısı ve geri sayım günlük işler, boy/ağırlık/meyve haftalık kalır.
-4. **Şablondan gelen iki artık, ikisi de bilerek öyle:** `ayarlar.conf`'taki `KAYIT_ONEKI`
-   yorum satırına alındı; `SURUM.md`'deki iki boş işaret üst kaynağın kendi yayın tarihi.
-5. **Ölçüm araçları modülü KAPALI ama `scripts/olcum` çalışıyor ve kullanılıyor.**
-6. **Uzak depo `aeg58/babyPECE`**; şablon deposu `sablon` adıyla duruyor.
-7. **Çapa tarihinin belirsizlikleri `docs/KAPSAM.md` › Faz 1'de yazılı** — tahmini doğum
-   tarihi hesaplandı, ölçülmedi.
-
+1. **DEPO AÇIK ve bu tek yönlü bir kapıydı.** Erdem birebir `ONAYLIYORUM` ile onayladı;
+   GitHub Free planında gizli depodan Pages yayını yapılamıyor. Ablasının hamileliği kamuya
+   görünür. Ajan uyardı, Erdem üstlendi.
+2. **Ekranda kaynak gösterilmiyor** *(Erdem'in kararı)*. Kaynak **kaydı** `docs/OLCULER.md`'de
+   ve parça 5 aynen yürürlükte: doğrulanmamış sayı siteye giremez.
+3. **Perde motifi iptal edildi**; taramanın kendi paraziti örtü işini görüyor. `docs/GORUNUS.md`'de
+   eski metin geçmiş kayıt olarak duruyor, yürürlükte değil.
+4. **Ekran adı babyPEÇE, teknik ad `babyPECE`.** İkisi bilerek ayrı.
+5. **İkonların rengi brifingdeki dar paletin dışında ve avokado kesitli.** İkisi de
+   karşılaştırılıp kabul edildi, gerekçeleri `docs/OLCULER.md`'de.
+6. **Tur 2–6 prototipleri ve aylık görseller silindi** (Erdem'in kararı).
+   Geri dönüş: `git checkout f7a4ff8 -- <yol>`.
+7. **docs/FIKIR.md bilerek açılmadı** *(bağlantı biçiminde yazılmıyor, olmayan dosya)*; şablonun kendi çelişkisi, tek kaynak
+   `docs/KAPSAM.md`. v2 için ders adayı.
+8. **Ham görüşme kaydı Faz 2'de donduruldu** ama kapsamı değiştiren konuşma sürdü; yeni
+   ifadeler `docs/KAPSAM.md`'ye alındı. Bu da v2 için ders adayı.
 
 ---
 
 **Taşımaz:** kural metni · geçmiş anlatısı · çözüm ayrıntısı · makinenin üretebildiği liste.
 
-**Tazelik:** bu not kurulum bittikten **sonra** yazıldı, bayat değil.
+**Tazelik:** bu not oturum kapanışında, bütün teslimlerden sonra yazıldı. Bayat değil.
