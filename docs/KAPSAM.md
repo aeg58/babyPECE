@@ -522,6 +522,28 @@ göre saydamlaşır, doğumda açılır. Kelime sitede yazılmaz, yalnız görse
 
 **Yön dosyası: `docs/GORUNUS.md`** — görünüş kaynağının tek adresi, sahibi Erdem.
 
+**Tur 2 · ÖRNEK SUNULDU — 2026-08-28.**
+
+**Yayın:** https://claude.ai/code/artifact/8c78db19-145e-49de-85da-3c8a36e104c9
+**Depo sürümü:** `docs/prototip-tur2.html` (görselleri `docs/gorseller/`'den okur, gömülü veri yok)
+
+Tur 1'den yapısal fark: sunulan şey bir **inceleme sayfası değil, sitenin kendisi**. Tur 1'de
+asıl kokan şey üç seçeneği yan yana dizen çerçeve sayfasıydı; bu turda çerçeve en aza indirildi.
+
+**Uygulanan:** `docs/GORUNUS.md` › yasak listesi (6 madde) · perde motifi · kadranlar ·
+site metninde uzun tire yok · mono etiket yok · kart ızgarası yok.
+
+**İki katman:** bir kez kalkıp giden **örtü** (ilk açılış jesti) ve arkasında kalan
+**haftalık perde** (yoldaş hâli). Perde aynı zamanda geri sayımdır; ayrı ilerleme çubuğu yok.
+
+**Ajanın kendi denetiminde bulduğu ve düzelttiği üç hata:** ① perde kalkıp geri iniyordu,
+jest kendini iptal ediyordu ② hareket azaltma açıkken sayfa kalıcı olarak kapalı kalıyordu
+③ tekrar oynatmada örtü önce düşüp sonra kalkıyordu.
+
+**Açık kalan tutarsızlık:** ekranda `babyPEÇE` yazıyor ama element 2 *"ad her yerde
+`babyPECE`"* diyor. Ekran adı ile teknik ad ayrılabilir, ama bu **karar gerektirir** ve
+Erdem'e soruldu.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.

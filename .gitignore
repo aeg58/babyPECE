@@ -3,3 +3,6 @@ node_modules/
 *.log
 .env
 .env.*
+
+# yerel önizleme sunucusu, depoya girmez
+.claude/launch.json

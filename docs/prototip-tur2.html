@@ -1,0 +1,235 @@
+<title>babyPECE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@300;400;500&display=swap">
+<style>
+:root{
+  --linen:#F2EBE0; --linen-2:#E6DACA; --ink:#241E19; --ink-2:#6E6156; --ink-3:#9C8E80;
+  --pine:#22403F; --veil-rgb:246,241,233; --edge:#D9CCBA;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --linen:#17130F; --linen-2:#221C16; --ink:#F0E7DA; --ink-2:#A5978A; --ink-3:#7A6E62;
+  --pine:#7FB0A6; --veil-rgb:20,16,13; --edge:#33291F;
+}}
+:root[data-theme="dark"]{
+  --linen:#17130F; --linen-2:#221C16; --ink:#F0E7DA; --ink-2:#A5978A; --ink-3:#7A6E62;
+  --pine:#7FB0A6; --veil-rgb:20,16,13; --edge:#33291F;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--linen);color:var(--ink);
+  font-family:Karla,"Helvetica Neue",Arial,sans-serif;font-weight:300;line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased}
+.page{max-width:760px;margin:0 auto;padding:44px 20px 80px}
+.top{margin-bottom:30px}
+.top .t{font-family:Petrona,Georgia,serif;font-weight:400;font-size:27px;margin:0 0 6px;letter-spacing:-.01em}
+.top p{margin:0;color:var(--ink-2);font-size:15px;max-width:60ch}
+
+/* ---------- telefon ---------- */
+.device{width:352px;max-width:100%;margin:0 auto;
+  border-radius:30px;overflow:hidden;position:relative;background:#000;
+  box-shadow:0 24px 60px -34px rgba(36,24,12,.65)}
+.site{height:718px;overflow-y:auto;overflow-x:hidden;background:var(--linen);position:relative}
+.site::-webkit-scrollbar{width:0}
+.scr{min-height:718px;position:relative;display:flex;flex-direction:column}
+
+/* --- perde --- */
+.stage{position:absolute;inset:0;overflow:hidden}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.06);transition:filter .9s ease}
+.veil{position:absolute;inset:-2px;background:rgba(var(--veil-rgb),1);
+  transition:opacity 1.6s cubic-bezier(.19,1,.22,1)}
+.cloth{position:absolute;inset:-2px;background:var(--linen);z-index:3;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 1.7s cubic-bezier(.19,1,.22,1)}
+.cloth span{font-family:Petrona,Georgia,serif;font-weight:300;font-size:34px;
+  letter-spacing:-.01em;color:var(--ink);opacity:.55}
+.lift .cloth{transform:translateY(-101%)}
+
+.hero{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:34px 26px 30px}
+.mark{font-family:Petrona,Georgia,serif;font-weight:300;font-size:40px;line-height:1;
+  letter-spacing:-.015em;margin:0 0 auto}
+.mark b{font-weight:500}
+.when{font-family:Petrona,Georgia,serif;font-weight:300;font-size:57px;line-height:.94;
+  letter-spacing:-.03em;margin:0}
+.when i{font-style:normal;font-size:23px;color:var(--ink-2);letter-spacing:0}
+.date{margin:12px 0 0;font-size:13.5px;color:var(--ink-2)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity 1s ease .55s,transform 1s ease .55s}
+.shown .reveal{opacity:1;transform:none}
+
+/* --- ikinci ekran --- */
+.pane{padding:52px 26px 44px;border-top:1px solid var(--edge)}
+.lead{font-family:Petrona,Georgia,serif;font-weight:300;font-size:33px;line-height:1.16;margin:0 0 4px;letter-spacing:-.015em}
+.lead u{text-decoration:none;color:var(--pine)}
+.say{margin:14px 0 0;font-size:15.5px;color:var(--ink-2);max-width:30ch}
+.src{margin:26px 0 0;font-size:12px;color:var(--ink-3);line-height:1.62;
+  padding-top:12px;border-top:1px solid var(--edge)}
+.src a{color:var(--ink-3)}
+
+/* --- hafta cetveli --- */
+.ruler{display:flex;align-items:flex-end;gap:3px;height:64px;margin:22px 0 10px}
+.tick{flex:1;background:var(--edge);border-radius:1px;height:26%}
+.tick.past{background:var(--ink-3)}
+.tick.now{background:var(--pine);height:100%}
+.rlab{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3)}
+
+/* --- final --- */
+.fin{position:relative;min-height:718px;display:flex;flex-direction:column;justify-content:flex-end}
+.fin .stage img{filter:blur(15px) saturate(.85)}
+.fintext{position:relative;z-index:2;padding:0 26px 42px}
+.slog{font-family:Petrona,Georgia,serif;font-weight:300;font-size:36px;line-height:1.1;
+  margin:0;letter-spacing:-.02em}
+.slog b{font-weight:500;color:var(--pine)}
+.locked{margin:16px 0 0;font-size:13px;color:var(--ink-2)}
+
+/* ---------- kumanda ---------- */
+.ctrl{max-width:352px;margin:20px auto 0;display:flex;flex-direction:column;gap:14px}
+.btn{appearance:none;border:1px solid var(--pine);background:transparent;color:var(--pine);
+  font-family:Karla,sans-serif;font-size:14px;padding:9px 14px;border-radius:2px;cursor:pointer}
+.btn:hover{background:var(--pine);color:var(--linen)}
+.btn:focus-visible{outline:2px solid var(--pine);outline-offset:3px}
+.slide{display:flex;flex-direction:column;gap:5px}
+.slide label{font-size:13px;color:var(--ink-2)}
+input[type=range]{width:100%;accent-color:var(--pine)}
+input[type=range]:focus-visible{outline:2px solid var(--pine);outline-offset:3px}
+.note{margin:34px auto 0;max-width:60ch}
+.note p{margin:0 0 13px;color:var(--ink-2);font-size:15px}
+.note p b{color:var(--ink);font-weight:500}
+.note .h{font-family:Petrona,Georgia,serif;font-weight:400;font-size:21px;color:var(--ink);margin:26px 0 9px}
+@media (prefers-reduced-motion:reduce){
+  .veil,.reveal,.stage img{transition:none!important}
+}
+</style>
+
+<div class="page">
+  <div class="top">
+    <p class="t">babyPECE, tur 2</p>
+    <p>Bu bir inceleme sayfası değil, sitenin kendisi. Kaydır, ilk açılışı tekrar oynat, haftayı ileri al ve perdenin incelmesini gör.</p>
+  </div>
+
+  <div class="device">
+    <div class="site" id="site">
+
+      <section class="scr" id="s1">
+        <div class="stage"><img id="heroimg" alt=""><div class="veil" id="veil"></div>
+            <div class="cloth" id="cloth"><span>babyPEÇE</span></div></div>
+        <div class="hero">
+          <p class="mark">baby<b>PEÇE</b></p>
+          <div class="reveal">
+            <p class="when"><span id="w">7</span> <i>hafta</i> <span id="d">0</span> <i>gün</i></p>
+            <p class="date" id="dt">28 Ağustos 2026</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pane">
+        <p class="lead">Bu hafta <u id="mm">10 mm</u> boyunda.</p>
+        <p class="say" id="say">NHS'in deyişiyle bir üzüm kadar.</p>
+        <p class="src" id="src">Kaynak: NHS, 7. hafta. &ldquo;around 10mm long from head to bottom, about the size of a grape&rdquo;. Ölçüler haftalık yayınlanır, ara gün değeri üretilmez.</p>
+      </section>
+
+      <section class="pane">
+        <p class="lead">Perde her hafta biraz daha inceliyor.</p>
+        <div class="ruler" id="ruler"></div>
+        <div class="rlab"><span>5. hafta</span><span id="rnow">7. hafta</span><span>40. hafta</span></div>
+      </section>
+
+      <section class="fin">
+        <div class="stage"><img id="finimg" alt=""><div class="veil" id="finveil"></div></div>
+        <div class="fintext">
+          <p class="slog">babyPECE<br><b id="kal">33 hafta 0 gün</b><br>sonra aramızda.</p>
+          <p class="locked">Perde o gün tamamen kalkacak.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="ctrl">
+    <button class="btn" id="replay" type="button">İlk açılışı tekrar oynat</button>
+    <div class="slide">
+      <label for="wk">Haftayı ileri al, perdenin incelmesini gör <span id="wklab">7. hafta</span></label>
+      <input type="range" id="wk" min="5" max="40" value="7">
+    </div>
+  </div>
+
+  <div class="note">
+    <p class="h">Bu turda ne değişti</p>
+    <p><b>Motif perde.</b> babyPECE, Peçe ailesinin bebeği. Türkçede peçe yüzü örten örtüdür ve şu an gerçekten olan şey bu: bebek görünmüyor. İlk açılışta perde kalkar, bir kez. Sonraki her gelişte bulunulan haftaya göre saydamdır. Kelime sitede hiç yazmıyor, yalnız jest olarak yaşıyor.</p>
+    <p><b>Perde aynı zamanda geri sayım.</b> Ayrı bir ilerleme çubuğu yok, çünkü perdenin kendisi o. Sayıyı iki kere söylemiyoruz.</p>
+    <p><b>Geçen turun altı kalıbı yok.</b> Harf aralığı açılmış küçük büyük harf etiket yok, kartın kenarında renkli şerit yok, eşit boy kart ızgarası yok, her bölüm aynı kompozisyonda değil, tek vurgu rengi yalnız iki yerde, ve kaynağı doğrulanmamış tek sayı yok.</p>
+    <p class="h">Sana sorularım</p>
+    <p>Perdenin kalkışı yeterince büyük bir jest mi, yoksa daha fazla mı olmalı? Yedinci haftada perde bu kadar kapalı olmalı mı? Ve en önemlisi: ablan bunu açsa gülümser mi?</p>
+    <p>Kumandadaki iki denetim yalnız sana, gerçek sitede olmayacak.</p>
+  </div>
+</div>
+
+<script>
+var AY = ["gorseller/ay-01.jpg","gorseller/ay-02.jpg","gorseller/ay-03.jpg","gorseller/ay-04.jpg","gorseller/ay-05.jpg","gorseller/ay-06.jpg","gorseller/ay-07.jpg","gorseller/ay-08.jpg","gorseller/ay-09.jpg","gorseller/ay-10.jpg"];
+var FINAL = "gorseller/aramizda.jpg";
+var CAPA = new Date(2026,6,10), EDD = new Date(2027,3,16);
+var AYLAR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+var MM = {5:["3 mm","Bir susam tanesi kadar."],6:["6 mm","Bir mercimek kadar."],
+          7:["10 mm","NHS'in deyişiyle bir üzüm kadar."]};
+
+function ayOf(w){var b=[4,8,13,17,22,27,31,35,39];for(var i=0;i<b.length;i++){if(w<=b[i])return i+1;}return 10;}
+function $(id){return document.getElementById(id);}
+
+var bugun=new Date();bugun.setHours(0,0,0,0);
+var gunGercek=Math.floor((bugun-CAPA)/86400000);
+var haftaGercek=Math.floor(gunGercek/7);
+
+$("finimg").src=FINAL;
+
+function ciz(w,gercekGun){
+  var gun = gercekGun!=null ? gercekGun : w*7;
+  var ilerleme = Math.max(0,Math.min(1,gun/280));
+  var ort = 0.82 - 0.82*Math.pow(ilerleme,0.85);
+  var bul = 17 - 16*ilerleme;
+
+  $("heroimg").src = AY[ayOf(w)-1];
+  $("heroimg").style.filter = "blur("+bul.toFixed(1)+"px)";
+  $("veil").style.opacity = ort.toFixed(3);
+  $("finveil").style.opacity = Math.max(0.34,ort*0.82).toFixed(3);
+
+  $("w").textContent=w; $("d").textContent=gun%7;
+  var m=MM[w]; 
+  $("mm").textContent = m?m[0]:"kaynak bekliyor";
+  $("say").textContent = m?m[1]:"Bu haftanın ölçüsü henüz kaynağından alınmadı.";
+  $("src").style.display = m?"":"none";
+  $("rnow").textContent = w+". hafta";
+  $("wklab").textContent = w+". hafta";
+
+  var kalan=Math.max(0,280-gun);
+  $("kal").textContent = Math.floor(kalan/7)+" hafta "+(kalan%7)+" gün";
+
+  var r=$("ruler"),out="";
+  for(var i=5;i<=40;i++){out+='<div class="tick'+(i<w?" past":(i===w?" now":""))+'"></div>';}
+  r.innerHTML=out;
+}
+
+function tarihYaz(){
+  $("dt").textContent = bugun.getDate()+" "+AYLAR[bugun.getMonth()]+" "+bugun.getFullYear();
+}
+
+function ac(){
+  var s1=$("s1"), c=$("cloth"), r=s1.querySelector(".reveal");
+  c.style.transition="none"; r.style.transition="none";
+  s1.classList.remove("lift","shown");
+  void s1.offsetWidth;
+  c.style.transition=""; r.style.transition="";
+  setTimeout(function(){ s1.classList.add("lift","shown"); },380);
+}
+function acmadan(){ $("s1").classList.add("lift","shown"); }
+
+tarihYaz();
+$("wk").value=haftaGercek;
+ciz(haftaGercek,gunGercek);
+$("wk").addEventListener("input",function(){
+  var w=parseInt(this.value,10);
+  ciz(w, w===haftaGercek?gunGercek:null);
+});
+$("replay").addEventListener("click",ac);
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ acmadan(); }
+else { setTimeout(ac,260); }
+</script>
