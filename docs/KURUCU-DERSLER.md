@@ -296,6 +296,22 @@ zorundadır.
 **Kaynak:** `miqdadbadjuber/anti-slop` (551 ★) — *"a sterile result means the direction was
 missing, not that the filter failed"*.
 
+### A24 · Aracın KAPSAMI, kapsamadığı şey hakkında sessizdir ⚙︎
+Bir denetim aracı *"temiz"* dediğinde, sorulacak soru **"ne buldu"** değil, **"neye
+bakabiliyor"**dur. Kapsam listesi (uzantı, yol, desen) aracın **görebildiği evreni** tanımlar;
+dışarısı hatasız biçimde görünmez kalır. Bu yüzden kapsam listesi olan her araca, **listenin
+dışından bilerek bozuk bir örnek** verilip onu **bulamadığı** da ölçülmelidir.
+
+**Maliyet:** Bir depodaki atıf denetimi `md`, `conf`, `json`, `sh` ve `txt` uzantılarına
+bakıyordu. `.html` listede yoktu. Olmayan bir HTML dosyasına yapılan atıf **iki kayıt boyunca**
+*"kırık atıf: 0"* raporuyla geçti. Araç düzeltilir düzeltilmez aynı depoda **beş kırık atıf
+daha** çıktı — hepsi o an silinmiş dosyalara aitti ve silme işleminden hemen sonra alınan
+denetim yine *"temiz"* demişti.
+
+**Neden yapısal:** Kapsam listesi genellikle aracın **yazıldığı gündeki** ihtiyaca göre
+kurulur, sonra proje yeni dosya türleri kazanır ve liste sessizce eskir. Aracın kendisi bunu
+haber veremez, çünkü göremediği şeyi sayamaz. Sınav maddesi eklenmezse eskime **hiç görünmez**.
+
 ---
 
 ## Yeni ders eklerken

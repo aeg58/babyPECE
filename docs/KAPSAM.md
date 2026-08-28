@@ -525,7 +525,7 @@ göre saydamlaşır, doğumda açılır. Kelime sitede yazılmaz, yalnız görse
 **Tur 2 · ÖRNEK SUNULDU — 2026-08-28.**
 
 **Yayın:** https://claude.ai/code/artifact/8c78db19-145e-49de-85da-3c8a36e104c9
-**Depo sürümü:** `docs/prototip-tur2.html` (görselleri `docs/gorseller/`'den okur, gömülü veri yok)
+**Depo sürümü:** *2026-08-29'da silindi* (bkz. tur 8 kaydı). Geri dönüş: `git checkout f7a4ff8 -- docs/prototip-tur2.html` (görselleri `docs/gorseller/`'den okur, gömülü veri yok)
 
 Tur 1'den yapısal fark: sunulan şey bir **inceleme sayfası değil, sitenin kendisi**. Tur 1'de
 asıl kokan şey üç seçeneği yan yana dizen çerçeve sayfasıydı; bu turda çerçeve en aza indirildi.
@@ -554,7 +554,7 @@ listesi vardı ve yine oraya düşüldü, çünkü liste yapıyı koruyordu, yü
 Yasak listesine 7. madde eklendi: krem + serif + bol boşluk üçlüsü.
 
 **Yayın:** https://claude.ai/code/artifact/43ec4131-f938-4b79-aa72-5d6f37bfa353
-**Depo sürümü:** `docs/prototip-tur3.html`
+**Depo sürümü:** *2026-08-29'da silindi* (bkz. tur 8 kaydı). Geri dönüş: `git checkout f7a4ff8 -- docs/prototip-tur3.html`
 
 **Ad kararı (Erdem):** ekranda **babyPEÇE**, teknik adlarda `babyPECE`. İkisi ayrı,
 `docs/GORUNUS.md` › *Ad*'da yazılı. Element 2'nin kuralı teknik ad için geçerli.
@@ -570,7 +570,7 @@ Araştırma yüzeyi düzeltti: **obstetrik 3B ultrason zaten sepya kullanır.** 
 ultrason dili çelişmiyor. Ayrıntı ve karşılaştırma tablosu `docs/GORUNUS.md` › *Yüzey*.
 
 **Yayın:** https://claude.ai/code/artifact/bd04505c-1cd0-496a-9ae5-a5229ce4ee90
-**Depo sürümü:** `docs/prototip-tur4.html`
+**Depo sürümü:** *2026-08-29'da silindi* (bkz. tur 8 kaydı). Geri dönüş: `git checkout f7a4ff8 -- docs/prototip-tur4.html`
 
 **Element 16'ya not:** Faz 3'te çatı olarak `react-three-fiber` seçilmişti. Bu prototip aynı
 işi **tek bir WebGL gölgelendiricisiyle**, kütüphanesiz yapıyor. Kütüphane gerçekten gerekli
@@ -582,14 +582,14 @@ olmuyor"*, *"iki saniyede biraz esneme yapabilirim"*, *"daha sıcak olsa nasıl 
 gösterme şansın var mı"*.
 
 **Yayın:** https://claude.ai/code/artifact/20436ddb-1205-4b55-8e42-9e52bd9ad008
-**Depo sürümü:** `docs/prototip-tur5.html`
+**Depo sürümü:** *2026-08-29'da silindi* (bkz. tur 8 kaydı). Geri dönüş: `git checkout f7a4ff8 -- docs/prototip-tur5.html`
 
 Ayrıntı `docs/GORUNUS.md` › *Yüzey*. Sıcaklık seçimi Erdem'de, karşılaştırma düğmesi sayfada.
 
 **Tur 6 · SİNYAL HATASI VE PERDE İPTALİ — 2026-08-28.**
 
 **Yayın:** https://claude.ai/code/artifact/3590491c-7126-488d-bed0-dfcdd25c9b0d
-**Depo sürümü:** `docs/prototip-tur6.html`
+**Depo sürümü:** *2026-08-29'da silindi* (bkz. tur 8 kaydı). Geri dönüş: `git checkout f7a4ff8 -- docs/prototip-tur6.html`
 
 **Bulunan hata bir ayar değil, mantık hatasıydı.** Kaynak görsellerde **özne koyu, arka plan
 açık** (bebek şeftali, zemin krem). Ultrasonda tersi olmalı: zemin karanlık, doku parlak.

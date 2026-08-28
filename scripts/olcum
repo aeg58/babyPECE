@@ -46,7 +46,7 @@ ozet() {
 atiflari_tara() {  # $1 = metin dosyası, $2 = kök
   awk -v kok="$2" '
     { s=$0
-      while (match(s, /`[A-Za-z0-9_.\/-]+\.(md|conf|json|sh|txt)`/)) {
+      while (match(s, /`[A-Za-z0-9_.\/-]+\.(md|conf|json|sh|txt|html|css|js)`/)) {
         y=substr(s, RSTART+1, RLENGTH-2)
         cmd="test -e \"" kok "/" y "\""
         if (system(cmd) != 0) print FILENAME ":" NR ": " y
@@ -199,6 +199,13 @@ k_sinav() {
   printf 'yalnız `docs/var.md`\n' > "$t/temiz.md"
   b=$(atiflari_tara "$t/temiz.md" "$t" | wc -l | tr -d ' ')
   sina "sağlam atıfta yanlış alarm yok" "$b" "0"
+
+  # KALİBRASYON: uzantı listesi eksikse tarayıcı sessizce 0 döner.
+  # 2026-08-29'da tam olarak bu oldu: .html listede yoktu, olmayan bir dosyaya
+  # yapılan atıf iki kayıt boyunca "temiz" sayıldı. (docs/KURUCU-DERSLER.md > A24)
+  printf 'sayfa `docs/yok.html` ve `docs/yok.css` ve `docs/yok.js`\n' > "$t/web.md"
+  b=$(atiflari_tara "$t/web.md" "$t" | wc -l | tr -d ' ')
+  sina "atıf tarayıcısı web uzantılarını da tarıyor" "$b" "3"
 
   # 3-4 · kod yolu beyaz listesi — Node dışı yığınlar da korunmalı
   kd="docs/ *.md LICENSE"
