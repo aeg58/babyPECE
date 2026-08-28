@@ -1,0 +1,284 @@
+#!/bin/sh
+# olcum — tek ölçüm aracı.
+#
+# ÜÇ DÜRÜSTLÜK ŞARTI:
+#  1. Hiçbir sabit bu dosyada yazılı değildir; hepsi ayarlar.conf'tan okunur.
+#  2. Ölçülemeyen madde SESSİZCE ATLANMAZ ve ASLA "temiz" sayılmaz — "✋ ELLE" basılır.
+#     Aracın yokluğu, komutun hatası ve yapılandırılmamış ayar: üçü de ELLE'dir.
+#  3. `olcum sinav` geçmeden diğer çıktılar KANIT DEĞİLDİR.
+#
+# SINAV yalnız SAF MANTIĞI sahte veriyle sınar; ortama BAKMAZ.
+# (Bir önceki sürümde sınav diskteki bir klasöre bakıyordu ve kurulum günü yapısal olarak
+#  düşüyordu — kurulum kapısı hiç açılmıyordu.)
+
+set -u
+KOK=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$KOK" || exit 1
+
+AYAR="$KOK/ayarlar.conf"
+[ -f "$AYAR" ] || { echo "ayarlar.conf yok — kurulum yapılmamış."; exit 1; }
+# shellcheck disable=SC1090
+. "$AYAR"
+[ -f "$KOK/scripts/ortak.sh" ] || { echo "scripts/ortak.sh yok."; exit 1; }
+# shellcheck disable=SC1091
+. "$KOK/scripts/ortak.sh"
+
+TEMIZ=0; DIKKAT=0; ELLE=0
+ok()   { TEMIZ=$((TEMIZ+1)); printf '  \342\234\224  %s\n' "$1"; [ $# -gt 1 ] && printf '      %s\n' "$2"; return 0; }
+uyar() { DIKKAT=$((DIKKAT+1)); printf '  \342\232\240  %s\n' "$1"; [ $# -gt 1 ] && printf '      %s\n' "$2"; return 0; }
+elle() { ELLE=$((ELLE+1));  printf '  \342\234\213  %s\n' "$1"; [ $# -gt 1 ] && printf '      ELLE: %s\n' "$2"; return 0; }
+
+# kabuk: komutu çalıştır. Başarısızsa çıktıyı DEĞİL, HATA işaretini döndür.
+# (Bir önceki sürümde git hatası "temiz" sayılıyordu ve gönderilmemiş bir dal görünmez oluyordu.)
+kabuk() { out=$( "$@" 2>&1 ); rc=$?; if [ $rc -ne 0 ]; then printf 'HATA:%s' "$out"; else printf '%s' "$out"; fi; }
+var_mi() { command -v "$1" >/dev/null 2>&1; }
+hata_mi() { case "$1" in HATA:*) return 0;; *) return 1;; esac; }
+
+ozet() {
+  printf '\n\303\226ZET: %s temiz \302\267 %s dikkat \302\267 %s ELLE\n' "$TEMIZ" "$DIKKAT" "$ELLE"
+  [ "$DIKKAT" -gt 0 ] && return 1
+  return 0
+}
+
+# ── saf mantık: sınavda sahte veriyle ölçülebilsin diye ayrıldı ────────────────
+
+# Kırık dosya atfı: metindeki `yol/gibi` kalıplarından var olmayanları döker.
+atiflari_tara() {  # $1 = metin dosyası, $2 = kök
+  awk -v kok="$2" '
+    { s=$0
+      while (match(s, /`[A-Za-z0-9_.\/-]+\.(md|conf|json|sh|txt)`/)) {
+        y=substr(s, RSTART+1, RLENGTH-2)
+        cmd="test -e \"" kok "/" y "\""
+        if (system(cmd) != 0) print FILENAME ":" NR ": " y
+        s=substr(s, RSTART+RLENGTH)
+      }
+    }' "$1"
+}
+
+# Kapalı modüle atıf: metinde adı geçen ama ayarlarda 0 olan modüller.
+kapali_modul_atfi() {  # $1 = metin dosyası
+  for ad in SURUM_KONTROLU:"sürüm kontrolü" UZAK_DEPO:"uzak depo" ORTAM_GECISLERI:"ortam geçiş" \
+            GORSEL_YUZEY:"görsel yüzey" GOREV_KAYITLARI:"görev kayıtları" \
+            PARALEL_OTURUM:"paralel oturum" DIS_PAYDAS:"dış paydaş" \
+            OLCUM_ARACLARI:"ölçüm araçları" OLAY_GERI_ALMA:"olay ve geri alma"; do
+    anahtar="M_${ad%%:*}"; metin=${ad#*:}
+    eval "deger=\${$anahtar:-0}"
+    [ "$deger" = "1" ] && continue
+    grep -qi -- "$metin" "$1" 2>/dev/null && printf '%s: %s\n' "$1" "$metin"
+  done
+  return 0
+}
+
+# Doldurulmamış alan sayacı — işaret dosyada LİTERAL olarak aranır.
+# (Kabuk tek tırnak içindeki \ooo dizilerini yorumlamaz; sekizli kaçış kullanan bir sayaç
+#  her koşulda 0 döner ve kapı "dolu" görünür.)
+doldurulmamis_say() { c=$(grep -c '⬜' "$1" 2>/dev/null); printf '%s' "${c:-0}"; }
+
+# Boş ayar sayacı — satır sonunda yorum olabilir, $ ile bağlanmaz.
+bos_ayar_say() { c=$(grep -cE '^[A-Z_]+=""([[:space:]]|#|$)' "$1" 2>/dev/null); printf '%s' "${c:-0}"; }
+
+# Kayıt numarası kalıbı — YIL GÖMÜLÜ DEĞİL.
+# (Bir önceki sürümde yıl kalıba gömülüydü; yıl dönünce açılan kayıt "numarasız" sayılıp
+#  betiği düşürüyordu ve index satırı da görünmez oluyordu — çift kayıp.)
+numara_kalibi() { printf '%s-[0-9][0-9][0-9][0-9]-[0-9]\\{%s\\}' "${KAYIT_ONEKI:-KAYIT}" "${KAYIT_BASAMAK:-3}"; }
+
+# ── komutlar ──────────────────────────────────────────────────────────────────
+
+k_ortam() {
+  printf 'ORTAM ENVANTER\304\260\n\n'
+  if var_mi git && [ -d .git ]; then ok "sürüm kontrolü" "git"; else elle "sürüm kontrolü" "git yok ya da depo değil"; fi
+  if var_mi git && [ -d .git ]; then
+    u=$(kabuk git remote); if hata_mi "$u" || [ -z "$u" ]; then elle "uzak depo" "tanımlı değil"; else ok "uzak depo" "$u"; fi
+  else elle "uzak depo" "ölçülemedi"; fi
+  ok "kabuk" "$( [ -n "${SHELL:-}" ] && echo "$SHELL" || echo sh )"
+  ok "işletim sistemi" "$(uname -s)"
+  d=$(find . -path ./.git -prune -o -type f -name '*.*' -print 2>/dev/null | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -5 | tr '\n' ' ')
+  ok "dosya türleri" "$d"
+  ozet
+}
+
+k_saglik() {
+  printf 'D\303\226K\303\234MAN SA\304\236LI\304\236I\n\n'
+  top=0
+  for f in $OKUMA_LISTESI; do
+    if [ -f "$f" ]; then b=$(wc -c < "$f" | tr -d ' '); top=$((top+b)); printf '  %10s  %s\n' "$b" "$f"
+    else printf '  %10s  %s  (YOK)\n' "-" "$f"; DIKKAT=$((DIKKAT+1)); fi
+  done
+  printf '  %10s  ---\n  %10s  TOPLAM' '' "$top"
+  if [ -n "${OKUMA_YUKU_HEDEFI:-}" ]; then printf '   (hedef %s)\n\n' "$OKUMA_YUKU_HEDEFI"
+    [ "$top" -gt "$OKUMA_YUKU_HEDEFI" ] && uyar "okuma yükü hedefin üstünde" "$top > $OKUMA_YUKU_HEDEFI"
+  else printf '\n\n'; elle "okuma yükü hedefi" "ayarlanmadı — ölçülüyor, sınanmıyor"; fi
+
+  for p in "KURAL_TAVANI:$KURAL_DOSYASI" "DEVIR_TAVANI:$DEVIR_DOSYASI" "REFLEKS_SATIR_TAVANI:$REFLEKS_DOSYASI"; do
+    a=${p%%:*}; f=${p#*:}; eval "t=\${$a:-}"
+    [ -f "$f" ] || { elle "$f" "dosya yok"; continue; }
+    s=$(wc -l < "$f" | tr -d ' ')
+    if [ -z "$t" ]; then elle "$f tavanı" "ayarlanmadı ($s satır)"
+    elif [ "$s" -gt "$t" ]; then uyar "$f tavanı aşıldı" "$s > $t"
+    else ok "$f" "$s / $t satır"; fi
+  done
+  ozet
+}
+
+k_atif() {
+  printf 'ATIF DENET\304\260M\304\260\n\n'
+  kirik=$(for f in $KURAL_DOSYASI docs/*.md; do [ -f "$f" ] && atiflari_tara "$f" "$KOK"; done)
+  if [ -n "$kirik" ]; then uyar "kırık dosya atfı" "$(echo "$kirik" | wc -l | tr -d ' ') adet"; echo "$kirik" | sed 's/^/      /'
+  else ok "kırık dosya atfı" "0"; fi
+  kap=$(for f in $KURAL_DOSYASI; do [ -f "$f" ] && kapali_modul_atfi "$f"; done)
+  if [ -n "$kap" ]; then uyar "kapalı modüle atıf" "$(echo "$kap" | wc -l | tr -d ' ') adet"; echo "$kap" | sed 's/^/      /'
+  else ok "kapalı modüle atıf" "0"; fi
+  ozet
+}
+
+k_kurulum() {
+  printf 'KURULUM KAPISI\n\n'
+  n=$(doldurulmamis_say "$KURAL_DOSYASI")
+  if [ "$n" -gt 0 ]; then uyar "doldurulmamış alan" "$n adet ($KURAL_DOSYASI)"; else ok "doldurulmamış alan" "0"; fi
+  bos=$(bos_ayar_say "$AYAR")
+  if [ "$bos" -gt 0 ]; then uyar "boş ayar" "$bos adet (ayarlar.conf)"; else ok "boş ayar" "0"; fi
+  k_atif
+}
+
+k_kapanis() {
+  printf 'OTURUM SONU DENET\304\260M\304\260\n\n'
+  if ! var_mi git || [ ! -d .git ]; then elle "kaydedilmemiş değişiklik" "sürüm kontrolü yok"
+  else
+    s=$(kabuk git status --porcelain)
+    if hata_mi "$s"; then elle "kaydedilmemiş değişiklik" "${s#HATA:}"
+    elif [ -n "$s" ]; then uyar "kaydedilmemiş değişiklik" "$(echo "$s" | wc -l | tr -d ' ') dosya"
+    else ok "kaydedilmemiş değişiklik" "yok"; fi
+
+    dal=$(kabuk git branch --show-current)
+    if hata_mi "$dal" || [ -z "$dal" ]; then elle "gönderilmemiş kayıt" "dal okunamadı"
+    else
+      u=$(kabuk git rev-list --count "origin/$dal..HEAD")
+      if hata_mi "$u"; then elle "gönderilmemiş kayıt" "uzakta '$dal' yok ya da ölçülemedi"
+      elif [ "$u" -gt 0 ]; then uyar "gönderilmemiş kayıt" "$u adet"
+      else ok "gönderilmemiş kayıt" "yok"; fi
+    fi
+  fi
+  if var_mi lsof; then
+    p=$(lsof -a -d cwd -c . 2>/dev/null | grep -c "$KOK" || true)
+    ok "bu klasörde çalışan süreç" "${p:-0} (kendisi dahil)"
+  else elle "çalışan süreç" "lsof yok"; fi
+  elle "oturumun kendi yarım işleri" "süreç bırakmayan madde yalnız elle görülür"
+  ozet
+}
+
+k_kayit() {
+  printf 'KAYIT DENET\304\260M\304\260\n\n'
+  [ "${M_GOREV_KAYITLARI:-0}" = "1" ] || { elle "görev kayıtları" "modül kapalı"; ozet; return; }
+  [ -d "$KAYIT_KLASORU" ] || { elle "kayıt klasörü" "$KAYIT_KLASORU yok"; ozet; return; }
+  kal=$(numara_kalibi)
+  klas=$(grep -rlE "$(printf '%s' "$kal" | sed 's/\\{/{/;s/\\}/}/')" "$KAYIT_KLASORU" 2>/dev/null | wc -l | tr -d ' ')
+  ok "numaralı kayıt" "$klas adet (önek ${KAYIT_ONEKI:-tanımsız})"
+  ozet
+}
+
+k_bayat() {
+  printf 'BAYAT KURAL TARAMASI\n\n'
+  elle "bayat madde" "taranacak madde tanımlanmadı — ayarlar.conf'a eklenir"
+  ozet
+}
+
+# ── SINAV — saf mantık, sahte veri, ortama BAKMAZ ─────────────────────────────
+k_sinav() {
+  printf '\303\226L\303\207\303\234M ARACI SINAVI\n\n'
+  g=0; kaldi=0
+  sina() { if [ "$2" = "$3" ]; then g=$((g+1)); printf '  \342\234\224  %s\n' "$1"
+           else kaldi=$((kaldi+1)); printf '  \342\234\230  %s  (beklenen: %s \302\267 \303\247\304\261kan: %s)\n' "$1" "$3" "$2"; fi; }
+
+  t=$(mktemp -d); mkdir -p "$t/docs"
+  : > "$t/docs/var.md"
+
+  # 1-2 · atıf tarayıcısı: KALİBRASYON — bilerek kırık bir atıf yerleştirilir ve BULUNMALIDIR
+  printf 'gövde `docs/var.md` ve `docs/yok.md`\n' > "$t/deneme.md"
+  b=$(atiflari_tara "$t/deneme.md" "$t" | wc -l | tr -d ' ')
+  sina "atıf tarayıcısı bilerek kırık atfı buluyor" "$b" "1"
+  printf 'yalnız `docs/var.md`\n' > "$t/temiz.md"
+  b=$(atiflari_tara "$t/temiz.md" "$t" | wc -l | tr -d ' ')
+  sina "sağlam atıfta yanlış alarm yok" "$b" "0"
+
+  # 3-4 · kod yolu beyaz listesi — Node dışı yığınlar da korunmalı
+  kd="docs/ *.md LICENSE"
+  kod_yolu_mu "main.py" "$kd";      sina "main.py kod sayılıyor" "$?" "0"
+  kod_yolu_mu "docs/plan.md" "$kd"; sina "docs/plan.md kod sayılmıyor" "$?" "1"
+
+  # 5-6 · aynı liste Go/Rust ve düz HTML'i de yakalamalı
+  kod_yolu_mu "cmd/main.go" "$kd";  sina "cmd/main.go kod sayılıyor" "$?" "0"
+  kod_yolu_mu "index.html" "$kd";   sina "index.html kod sayılıyor" "$?" "0"
+
+  # 7 · numara kalıbı yıla bağlı DEĞİL
+  kal=$(KAYIT_ONEKI=PRJ KAYIT_BASAMAK=3; numara_kalibi)
+  e=$(echo "PRJ-2031-007" | grep -c "$kal")
+  sina "numara kalıbı gelecek yılı tanıyor" "$e" "1"
+
+  # 8 · kabuk() hatayı çıktı sanmıyor
+  r=$(kabuk sh -c 'echo bir; exit 3'); case "$r" in HATA:*) v=1;; *) v=0;; esac
+  sina "başarısız komut HATA olarak dönüyor" "$v" "1"
+
+  # 9 · KALİBRASYON: kapalı modül atfı bulunuyor
+  printf 'metinde paralel oturum geçiyor\n' > "$t/mod.md"
+  b=$(M_PARALEL_OTURUM=0; kapali_modul_atfi "$t/mod.md" | wc -l | tr -d ' ')
+  sina "kapalı modüle atıf bulunuyor" "$b" "1"
+
+  # 10 · modül açıkken yanlış alarm yok
+  b=$(M_PARALEL_OTURUM=1; kapali_modul_atfi "$t/mod.md" | wc -l | tr -d ' ')
+  sina "açık modülde yanlış alarm yok" "$b" "0"
+
+  # 11-12 · korunan dal listesi ASLA boş dönmez ve kaynağını söyler
+  # Ortamdan YALITILIR: git'siz bir dizinde çalıştırılır, yoksa bu deponun kendi
+  # origin/HEAD'i sonucu belirler ve sınav ortama bakmış olur.
+  l=$(cd "$t" && korunan_dallar "" ""); d=$(printf '%s' "$l" | sed -n 1p)
+  bos=0; [ -z "$d" ] && bos=1
+  sina "yapılandırma yokken korunan dal listesi boş dönmüyor" "$bos" "0"
+  m=$(printf '%s' "$d" | grep -c master)
+  sina "yapılandırma yokken 'master' de korunuyor" "$m" "1"
+
+  # 13 · ayar verildiğinde ayar kazanır
+  l=$(korunan_dallar "yayin" "baska"); d=$(printf '%s' "$l" | sed -n 1p)
+  sina "ayarlardaki liste önceliklidir" "$d" "yayin"
+
+  # 14-15 · KALİBRASYON: doldurulmamış alan sayacı yerleştirilen işareti buluyor
+  printf 'metin ⬜ metin\nikinci ⬜\n' > "$t/isaret.md"
+  sina "doldurulmamış alan sayacı işareti buluyor" "$(doldurulmamis_say "$t/isaret.md")" "2"
+  printf 'hiç işaret yok\n' > "$t/temizisaret.md"
+  sina "işaretsiz dosyada yanlış alarm yok" "$(doldurulmamis_say "$t/temizisaret.md")" "0"
+
+  # 16-17 · KALİBRASYON: boş ayar sayacı satır sonu yorumuna takılmıyor
+  printf 'A=""\nB=""   # yorumlu\nC="dolu"\n# D=""\n' > "$t/ayar.conf"
+  sina "boş ayar sayacı yorumlu satırı da buluyor" "$(bos_ayar_say "$t/ayar.conf")" "2"
+  printf 'A="dolu"\nB="dolu"\n' > "$t/dolu.conf"
+  sina "dolu ayarda yanlış alarm yok" "$(bos_ayar_say "$t/dolu.conf")" "0"
+
+  rm -rf "$t"
+  printf '\n'
+  if [ "$kaldi" -gt 0 ]; then printf 'SINAV KALDI (%s/%s) \342\200\224 di\304\237er \303\247\304\261kt\304\261lar KANIT DE\304\236\304\260LD\304\260R.\n' "$g" "$((g+kaldi))"; return 1; fi
+  printf 'SINAV GE\303\207\304\260LD\304\260 (%s/%s) \342\200\224 arac\304\261n \303\247\304\261kt\304\261s\304\261 kan\304\261t say\304\261labilir.\n' "$g" "$g"
+  return 0
+}
+
+case "${1:-}" in
+  sinav)    k_sinav ;;
+  ortam)    k_ortam ;;
+  saglik)   k_saglik ;;
+  atif)     k_atif ;;
+  kayit)    k_kayit ;;
+  kapanis)  k_kapanis ;;
+  bayat)    k_bayat ;;
+  kurulum)  k_kurulum ;;
+  *) cat <<'YARDIM'
+olcum <komut>
+
+  sinav      ÖNCE BU. Saf mantığı sahte veriyle sınar; kalırsa diğer çıktılar kanıt değildir.
+  ortam      Envanter: sürüm kontrolü · uzak depo · kabuk · dosya türleri
+  saglik     Okuma yükü ve tavanlar
+  atif       Kırık dosya atfı · kapalı modüle atıf
+  kayit      Görev kayıtları ile index tutuyor mu
+  kapanis    Oturum sonu kontrolleri
+  bayat      Bayat kural taraması
+  kurulum    Kurulum kapısı: doldurulmamış alan · boş ayar · atıflar
+YARDIM
+  exit 2 ;;
+esac

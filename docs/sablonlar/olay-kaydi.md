@@ -1,23 +1,22 @@
-# OLAY-YYYY-NNN — [tek cümlelik başlık]
+# OLAY ⬜ — ⬜ başlık
 
-- **Ne zaman fark edildi:**
-- **Nasıl fark edildi:** [kim, hangi ölçümle]
-- **Etki:** [ne bozuldu, kaç kullanıcı/kayıt, ne kadar süre]
+- **Ne zaman ölçüldü:** ⬜ *(o an ölçülür, taşınmaz)*
+- **Fark edilme yolu:** ⬜ *(kim/ne gördü — makine mi, insan mı)*
 
-## Kök neden — ÖLÇÜLMÜŞ
+## Ne oldu
+⬜
 
-[Tahmin değil. Nasıl ölçüldüğü yazılır.]
+## Ne kaybedildi / ne bozuldu
+⬜ *Ölçülerek. "Bir şey olmadı" da bir ölçümdür.*
+
+## Kök neden
+⬜ *"Dikkatsizlik" kök neden değildir.*
 
 ## Ne yapıldı
+⬜
 
-## Geri alma
+## Geri dönüş
+⬜ *Yapıldıysa nasıl; yapılamadıysa neden.*
 
-[Uygulanan geri alma yolu ve sonucu.]
-
-## Önlem
-
-- **Kural yazıldı mı:** [nereye]
-- **Refleks karşılığı:** [varsa]
-- **Makineye devredilebilir mi:** [evet → hangi betik / hayır → neden]
-
-> **Olay kaydı yazılmadan olay kapanmış sayılmaz** (`AGENTS.md` §13).
+## Bunu bir daha hangi refleks ya da makine yakalayacak
+⬜ **Bu alan boşsa olay KAPANMAMIŞTIR.**

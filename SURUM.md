@@ -1,66 +1,54 @@
-# Sürüm — ajan-cekirdegi
+# Sürüm
 
-## v0 — 2026-08-15
+## v1 — ⬜ tarih
 
-**Damıtıldığı yer:** Tek bir web projesi, **25 gün** kesintisiz kullanım.
-O projede bu sistem sıfırdan doğdu, şişti, ölçüldü ve toparlandı; bu paket **toparlanmış
-hâlinden** çıkarıldı.
+**Damıtıldığı yer:** tek bir web projesi, **~7 hafta** kesintisiz kullanım. Sistem orada
+sıfırdan doğdu, şişti, ölçüldü; v0 bu deneyimden çıkarıldı ve v1, **v0'ın ölçülerek
+denetlenmiş** hâlidir.
 
-> ⚠️ **BU SÜRÜM ÖLÇÜLMEDİ.**
-> Kaynak projede toparlamanın ardından **iki haftalık kullanım ölçümü** planlanmıştı; bu paket
-> o ölçüm **tamamlanmadan** çıkarıldı (proje sahibinin açık talebiyle). Yani şablon, işe
-> yaradığı **kanıtlanmış** değil, işe yaradığı **gözlemlenmiş** bir yapıyı taşıyor.
->
-> **Pratik sonucu:** İkinci projede bir şey tutmazsa bu beklenen bir durumdur — kural değil,
-> **hipotez** olarak uygula. Tutmayanı `SURUM.md`'ye yaz; v1 ondan doğacak.
+> ⚠️ **BU SÜRÜM İKİNCİ BİR İŞTE DENENMEDİ.** Kural değil, **hipotez** olarak uygula.
+> Tutmayanı `docs/KURUCU-DERSLER.md`'ye yaz; v2 ondan doğacak.
 
-### İçinde ne var
+### v0 → v1: neden yeniden yazıldı
 
-| Katman | Ne | Durum |
+v0 hiç kullanılmadan denetlendi ve **kendi teşhisine yakalandığı ölçüldü**:
+
+| Ölçüm | v0 | v1 |
 |---|---|---|
-| Kapı dosyası | `CLAUDE.md` — otomatik yüklenen, yalnız işaretçi | dolu |
-| Süreç kuralları | `AGENTS.md` — §1–§16 | **dolu** (alan bilgisi boş başlık) |
-| Günlük kontrol | `docs/REFLEKSLER.md` | 5 evrensel madde + büyüme freni |
-| Kayıt iskeleti | devir notu · karar defteri · dersler · olaylar · bekleyenler · sıra · yol haritası | boş şablon |
-| Rapor şablonları | görev kaydı · gün başı · gün sonu · **faz kapısı** · olay kaydı | dolu |
-| Denetim | 4 betik, hepsinin **`sinav`** komutu var | dolu, parametreli |
-| Mekanik ağ | commit öncesi dal kancası · oturum açılış ekranı | dolu |
-| İnsan sayfası | `NEREDE-KALDIK.md` | boş şablon |
+| Bölüm atfı, olmayan hedefe giden | **29 / 101 (%28)** | numarayla atıf **kaldırıldı** |
+| Kurulum sınavı | **3/4** — kapı ilk gün açılmıyordu | **13/13**, sahte veriyle |
+| Korunan dala kod kaydı | `master` · Python · Go · Rust · HTML **geçiyordu** | hepsi **durduruluyor** |
+| Oturum açılış satırı | gün başı raporunu **hiç bulamıyordu** | ölçüldü, doğru |
+| Git hatası | **"temiz"** sayılıyordu (üç yerde) | **`✋ ELLE`**, asla `✔` |
+| Aynı tavan için değer | **3 farklı** (biri kaynak projenin satır sayısı) | tek kaynak: `ayarlar.conf` |
+| Kayıt numarası kalıbı | yıl gömülü — sonraki yılda **çift kayıp** | yıldan bağımsız |
+| Kural dosyası | 2 dosya · 42.109 B | 1 dosya · ~13.300 B |
 
-### Kaynak projeden ÖLÇÜLMÜŞ sayılar
+### v1'de yeni olanlar
 
-Bunlar şablonun **gerekçesidir**, vaadi değil:
+- **Yedi fazlı kuruluş akışı** (`docs/KAPSAM.md`): fikir → iş kapsamı → **teknik kapsam** →
+  tasarım → karar → sıra → yapım. v0 projeyi zaten var sayıyordu.
+- **Teknik kapsamın 27 elementi**, altı kolda; sıra **kilitlemeye** göre, maliyet ayırıcı.
+- **Vadeli defter**: `Belirlenecek` kaldırıldı; `cevaplı` · `ertelendi + vade` · `konu dışı +
+  gerekçe` — üçü de karar. Cevapsız satır kapıyı tutmaz, **kendisine ihtiyaç duyan işlemi** tutar.
+- **Modül sistemi**: 9 modül, açılma şartları ölçülebilir. v0 *"kullanmayacağını sil"* diyordu
+  ama neyi sileceğini soran yoktu.
+- **Kalibrasyon**: sayaçlara bilerek bozuk örnek verilip **buldukları** ölçülüyor.
+- **`docs/ELLE-DENETIM.md`**: kabuksuz ve kodsuz projeler için eşdeğer mod.
 
-- Kural dosyası 23 günde **479 → 1437** satır (3 kat); dersler 14 günde **144 → 1193** (8 kat).
-- Gün başı zorunlu okuma yükü **298 KB**'a ulaştı (~93 bin kelime birimi).
-- Ekleme/silme oranı: kural dosyası **+1498 / −77**; dersler **+1193 / −5**.
-- 69 dersin **23'ü** aynı ilkenin tekrarıydı.
-- Bir ders başlığı birebir *"…üçüncü kez düşüldü"* diyordu — **kuralı yazmak tekrarını
-  önlemiyordu.**
-- Toparlamadan sonra okuma yükü **%32–36** düştü.
+### v1'de BİLEREK olmayanlar
 
-### Neden bu şablon "çıkar" fiiliyle geliyor
-
-Kaynak projede **en pahalı yapısal hata** buydu: sisteme her şey **eklendi**, hiçbir şey
-**çıkarılmadı**. Bu yüzden şablon **ilk günden**: büyüme freni · tavan · emeklilik kuralı ·
-"okuma listesinden çıkarmadan önce ölç" kuralı ile geliyor. Bunlar sonradan eklenirse geç kalır.
-
-### Geri akış — şablon nasıl güncel kalır
-
-**Her faz kapısında ve her 10. gün sonunda tek soru sorulur:**
-*"Bu turda çıkan derslerden hangisi projeden bağımsız?"*
-Cevap varsa şablona işlenir ve **sürüm artar**.
-
-> **Takvime bağlı gözden geçirme BİLEREK kullanılmadı.** Kaynak projenin kural dosyasının son
-> satırında *"Gözden geçirme sıklığı: ayda bir"* yazıyordu ve **23 gün boyunca uygulanmadı**.
-> O projede başarısız olan tam olarak **takvime bağlı** işlerdi; **tetiğe bağlı** olanlar
-> (gün sonu, faz kapısı) çalıştı.
+- **Oturum kapanma ölçütü ve bağlam tetiği yok.** Oturumun ne zaman kapanacağına ve bağlam
+  takibine **çalışmanın sahibi** karar verir; ajan ölçüt üretmez, hatırlatmaz, önermez.
+- **Takvime bağlı gözden geçirme yok.** Damıtıldığı çalışmada başarısız olan tam olarak
+  takvime bağlı işlerdi; **tetiğe bağlı** olanlar çalıştı.
 
 ### Sürüm geçmişi
 
-| Sürüm | Tarih | Ne değişti | Hangi projeden |
-|---|---|---|---|
-| v0 | 2026-08-15 | İlk damıtma | [kaynak proje] |
+| Sürüm | Tarih | Ne değişti |
+|---|---|---|
+| v0 | 2026-08-15 | İlk damıtma. `v0` etiketiyle dondurulmuş, silinmedi |
+| v1 | ⬜ | Denetim, yeniden yazım, kuruluş fazı, modül sistemi |
 
 ### Hangi projede hangi sürüm var
 

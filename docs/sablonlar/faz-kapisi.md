@@ -1,25 +1,21 @@
-# Faz Kapısı Kontrol Formu — Faz [N]: [ad]
+# Faz ⬜ kapısı — ⬜ tarih
 
-**Tarih:** · **Ölçen:**
+**Faz:** ⬜ → ⬜
 
-## Kapı ölçütü
+## Sayılar
+*Ölçüt tartışmaya açık olamaz. Her satır bir SAYIDIR.*
 
-> [Faz kapısının ölçütü — `AGENTS.md` §5.0.1]. Ölçüt **bir sayının sıfır olmasıdır.**
-
-| Ölçülen | Sayı | Sıfır mı |
-|---|---:|---|
-| | | |
-
-## Sıfır değilse — kalan maddeler
-
-| # | Madde | Neden hâlâ açık | Sahibi |
+| Ölçüt | Beklenen | Ölçülen | Geçti mi |
 |---|---|---|---|
+| ⬜ | 0 | ⬜ | ⬜ |
+| Vadesi geçmiş defter satırı | 0 | ⬜ | ⬜ |
+
+## Kalibrasyon
+Sayacı bilerek bozuk bir örnekle sınadım ve **buldu**: ⬜
+*(Bulmuyorsa sayım geçersizdir — kırık alet de beklenen cevabı verir.)*
+
+## Ölçüm zemini
+Hangi hâl ölçüldü: ⬜ *(değişmekte olan hedef üzerinde alınan sayı tekrarlanabilir değildir)*
 
 ## Karar
-
-- [ ] **Kapı GEÇİLDİ** — sayı sıfır, sonraki faza geçilebilir
-- [ ] **Kapı GEÇİLMEDİ** — yukarıdaki maddeler kapanmadan sonraki faza geçilmez
-- [ ] **İSTİSNA uygulandı** — hangi istisna (§5.0.1) ve **kim onayladı**:
-
-> İstisnalar: canlıdaki hata düzeltmesi · sahibinin açık talebi · saf ölçüm/doküman işi.
-> Başka gerekçeyle kapı atlanmaz.
+⬜ geçildi / geçilmedi — **kararı veren:** ⬜

@@ -1,99 +1,207 @@
-# Kurulum — buradan başla
+# Kurulum — ajan bunu okur, kullanıcı cevaplar
 
-> **Bu dosya İNSANA yazılmıştır.** Diğer her şey yapay zekâ ajanına yazılmıştır.
-> Şablonun geri kalanına dokunmadan önce buradaki anketi doldur.
-
-Bu paket, bir yapay zekâ ajanıyla **kayıtlı, denetlenebilir ve devredilebilir** biçimde
-çalışmak için gereken çalışma sistemidir. Konu fark etmez: web sitesi, mobil uygulama,
-içerik projesi, veri işi. İçindeki kurallar **süreç** kurallarıdır, alan bilgisi değil.
-
----
-
-## A. Anket — BU BİR KAPIDIR
-
-**Aşağıda `Belirlenecek` yazan tek bir satır kaldığı sürece hiçbir işe başlanmaz.**
-Bu, şablonun **Faz 0 kapısıdır** (`AGENTS.md` §5.0.1): geçiş ölçütü *"«Belirlenecek» yazan
-satır sayısı = 0"*.
-
-> **Neden kapı:** Damıtıldığı projede bu tablo vardı ama **doldurulmadı** — 12 satırın 11'i
-> 23 gün boyunca `Belirlenecek` kaldı. Daha kötüsü, tablo yürürlükteki kuralı **yalanlıyordu**:
-> *"Standart onay ifadesi: Belirlenecek"* yazıyordu, oysa üç onay metni ilk günden beri
-> bağlayıcıydı. Kuralları baştan okuyan bir ajan o tabloya bakıp *"onay metni tanımlanmamış"*
-> sonucuna varabilirdi. Doldurulmayan anket, yanlış bilgi kaynağıdır.
-
-| # | Alan | Değer | Bunu hangi bölüm kullanıyor |
-|---|---|---|---|
-| 1 | Proje adı | `Belirlenecek` | her yer |
-| 2 | Projenin tek cümlelik tanımı | `Belirlenecek` | `CLAUDE.md` · `AGENTS.md` §1 |
-| 3 | **Nihai karar sahibi** (kim onaylar) | `Belirlenecek` | §11 · §11.1 |
-| 4 | **Günlük operasyon sorumlusu** (ajanın muhatabı) | `Belirlenecek` | §12.1 · tüm protokoller |
-| 5 | Operasyon sorumlusu **geliştirici mi?** (evet/hayır) | `Belirlenecek` | §12.1/B — **anlatım dili buna göre kurulur** |
-| 6 | **Ajanın YAPAMAYACAKLARI** (erişemediği yerler, yasak işlemler) | `Belirlenecek` | §11 · devir notu |
-| 7 | Yerel ortam (nasıl çalıştırılır) | `Belirlenecek` | §10.5 |
-| 8 | **Test ortamı** adresi ve nasıl deploy edildiği | `Belirlenecek` | §10.5 · §10.6 |
-| 9 | **Canlı ortam** adresi ve nasıl deploy edildiği | `Belirlenecek` | §10.5 · §11.1 |
-| 10 | Korunan dal adları | `develop` · `main` | §10.1 · commit kancası |
-| 11 | Görev dalı önekleri | `feat/` · `fix/` · `chore/` · `content/` | §10.2 |
-| 12 | **Görev kaydı numara öneki** (ör. `PRJ-2026-NNN`) | `Belirlenecek` | §5 · `scripts/check-task-index.ts` |
-| 13 | **Onay metinleri** (birebir eşleşecek) | `LOKAL OK` · `TEST OK` · `CANLI OK` | §11.1 |
-| 14 | Kaç oturumla çalışılacak (tek / yürütücü+görev) | `Belirlenecek` | §10.10 · `OKU-BENI.md` |
-| 15 | Teknoloji yığını | `Belirlenecek` | §10 boş başlıkları |
-| 16 | **VERİ**nin tek doğru kaynağı | `Belirlenecek` | §4 "Varlık kaynakları" |
-| 17 | **TASARIM DİLİ**nin tek doğru kaynağı | `Belirlenecek` | §4 "Varlık kaynakları" |
-| 18 | **MARKA/LOGO**nun tek doğru kaynağı | `Belirlenecek` | §4 "Varlık kaynakları" |
-| 19 | Yedek nerede, kim alıyor, nasıl doğrulanıyor | `Belirlenecek` | §15.1 |
-| 20 | Dış bekleyişler (kimden ne bekleniyor) | `Belirlenecek` | `docs/BEKLEYENLER-LISTESI.md` |
-| 21 | İletişim dili (ajan hangi dilde konuşacak) | `Belirlenecek` | §12.1/B |
-| 22 | Şablon sürümü | `v0` | `SURUM.md` |
-
-> **Kural (§18.5'in kardeşi):** Bir bölüm yeni bir alanı bağlayıcı hâle getirirse, anket
-> **aynı commit'te** güncellenir. Anketin bir bölümü yalanlaması, yukarıdaki tam olarak
-> kaçınılmaya çalışılan hatadır.
-
-### 16–18 neden ayrı ayrı soruluyor
-
-Damıtıldığı projede **en pahalı ders** buydu: logo canlı siteden çekilip entegre edildi,
-yanlış kaynaktı ve **tamamen geri alındı**. Üç kaynak birbirine karıştırılmaz —
-veri bir yerden, tasarım dili başka yerden, marka varlıkları üçüncü bir yerden gelir.
-Tabloyu `AGENTS.md` §4 "Varlık kaynakları" taşır.
+> **Bu dosya AJANA yazılmıştır.** Kurulumu ajan yürütür; kullanıcı yalnız sorulara cevap verir.
+> Kullanıcı bu dosyayı okumak zorunda değildir.
+>
+> **Tetik:** kullanıcı *"kurulumu yap"* dediğinde bu dosya baştan sona okunur ve adımlar
+> **sırayla** uygulanır. Adım atlanmaz.
 
 ---
 
-## B. Kurulum listesi
+## 0. Kurulumdan ÖNCE — üç bağlayıcı kural
 
-1. Bu klasörü projenin köküne kopyala (`.git` klasörünü **kopyalama**).
-2. **Anketi doldur.** `Belirlenecek` kalmayana kadar devam etme.
-3. `CLAUDE.md` içindeki köşeli parantezli yerleri anketten doldur.
-4. `AGENTS.md` §1 · §4 "Varlık kaynakları" · §10 boş başlıkları · §11.1 · §15.1 doldur.
-5. Kullanmayacağın modülleri **sil** — boş başlık bırakmak, doldurulmamış anketle aynı hatadır.
-6. `npm install` sonrası **komutları `package.json`'a ekle** (aşağıdaki tablo).
-7. **`npm run kanca:kur`** — commit kancasını bağla. *(Bağlanmazsa koruma yoktur.)*
-8. `npm run denetim:sinav` — dört betiğin sınavı **4/4** geçmeli. Geçmiyorsa çıktıları kanıt değildir.
-9. `docs/DEVIR-NOTU.md`'yi ilk hâliyle doldur (nerede kaldık = "proje yeni kuruldu").
-10. İlk `gün başı`nı yap: `AGENTS.md` §7'yi uygula, raporu `docs/gun-basi/` altına yaz.
+**1. Klasörün içeriğinden çıkarım yapılmaz.** Depoda ne olduğu, bu projenin ne olduğuna dair
+kanıt değildir. Kurulan şablonun kendi dosyaları, kullanıcının işine dair hiçbir şey söylemez.
+Boş bir klasörde de, dolu bir klasörde de sorular **aynıdır** ve sorulur.
 
-### `package.json` komutları
+**2. Sorular teker teker sorulur.** Tablo, form ya da toplu liste hâlinde sorulmaz. Kullanıcı
+cevap verir, ajan bir sonrakine geçer. *(Gerekçe: toplu sorulan sorulara toplu, yüzeysel cevap
+verilir; kurulumun tamamı bir kez daha yapılamaz.)*
 
-```json
-"docs:check-index": "tsx scripts/check-task-index.ts",
-"gun:denetim":      "tsx scripts/gun-sonu-denetim.ts",
-"docs:saglik":      "tsx scripts/docs-saglik.ts",
-"kural:bayat":      "tsx scripts/kural-bayat.ts",
-"dogrula":          "npm run lint && npx tsc --noEmit && npm run build",
-"denetim:sinav":    "tsx scripts/check-task-index.ts sinav && tsx scripts/gun-sonu-denetim.ts sinav && tsx scripts/docs-saglik.ts sinav && tsx scripts/kural-bayat.ts sinav",
-"kanca:kur":        "git config core.hooksPath scripts/kancalar && echo 'Kanca baglandi'"
+**3. Cevabı ajan tamamlamaz.** Kullanıcı *"bilmiyorum"* derse, ajan makul bir değer **uydurmaz**.
+Satır `ertelendi` olarak yazılır ve bir **vade** alır. Vadesi olmayan erteleme yoktur.
+
+---
+
+## 1. Adım — ORTAM ENVANTERİ (makine)
+
+İlk iş, konuşmadan önce ortamı **ölçmektir**:
+
+```
+olcum ortam
 ```
 
-*Projede `tsx` yoksa: `npm i -D tsx`. TypeScript kullanmıyorsan betikleri kendi diline
-çevir — **ama `sinav` komutlarını koru**, onlar olmadan çıktılar kanıt değildir.*
+Ölçtükleri: sürüm kontrolü var mı · uzak depo var mı · hangi kabuk · hangi işletim sistemi ·
+klasörde hangi dosya türleri var. Araç yoksa `olcum ortam` yerine `docs/ELLE-DENETIM.md`
+Bölüm 1 elle yürütülür ve sonuçlar aynı biçimde yazılır.
+
+**Neden makine:** ajanın *"sanırım sürüm kontrolü var"* demesi kanıt değildir. Modül şartlarının
+yarısı doğrudan bu envanterden okunur; ölçülmemiş envanter, yanlış modül seçimi demektir.
 
 ---
 
-## C. Bu şablon neyi VAAT ETMİYOR
+## 2. Adım — TUR 0: yetki ve sınır (konuşma)
 
-- **Ölçülmedi.** `v0`, tek bir projede 25 gün kullanılan sistemden damıtıldı;
-  **ikinci bir projede denenmedi.** Bkz. `SURUM.md`.
-- **Alan bilgisi taşımaz.** Deploy, kimlik doğrulama, form yazımı, tasarım sistemi gibi
-  başlıklar `AGENTS.md` §10'da **boş** gelir. Onları kendi projen dolduracak.
-- **Disiplin yerine geçmez.** Kurallar ihlal edilebilir; şablonun yaptığı, ihlali
-  **görünür** kılmaktır.
+Fikirden **önce**, fikirle **ilgisiz**. Üç soru, teker teker:
+
+1. **Bu işi sonunda kim onaylayacak — sen mi, başkası mı?**
+2. **Ben neye dokunamam?** Nereye erişimim yok, neyi asla senin adına yapmamalıyım?
+3. **Sana anlatırken ayrıntı seviyesi ne olsun** — bu işin yapım tekniğini biliyor musun?
+
+İkinci soru bir **güvenlik** sorusudur ve proje küçüldükçe ucuzlar; hiçbir ölçekte atlanmaz.
+Cevabı doğrudan `CLAUDE.md`'nin "Ajanın yapamayacakları" bölümüne yazılır.
+
+Üçüncü sorunun cevabı **anlatım dilini kurar**: kullanıcı yapım tekniğini bilmiyorsa hiçbir
+açıklama teknik terimle başlamaz, ayrıntı **eksiltilmez** ama sade dille kurulur.
+
+---
+
+## 3. Adım — VADELİ DEFTER (konuşma)
+
+v0'ın anketi bir **kapıydı** ve `Belirlenecek` diye bir değeri vardı. İkisi de kaldırıldı.
+
+> **Neden kaldırıldı:** *"henüz bilinmiyor"* ile *"kimse bakmadı"* aynı işaretle yazıldığı
+> sürece hiçbir sayı dürüst olamaz. Damıtıldığı projede 12 satırın 11'i 23 gün boyunca
+> `Belirlenecek` kaldı ve tablo, yürürlükteki kuralı **yalanlıyordu**.
+
+Artık her satırın **üç durumu** var ve **üçü de karardır**:
+
+| Durum | Yazılışı | Anlamı |
+|---|---|---|
+| **Cevaplı** | değer + tarih | bilinen |
+| **Ertelendi** | `ertelendi — vade: Faz N` | bilinçli erteleme, vadesi var |
+| **Konu dışı** | `konu dışı — gerekçe` | bu proje bu şekle sahip değil |
+
+### İki farklı ölçü — karıştırılmaz
+
+- **VADE KAPIYI TUTMAZ.** Faz N kapısı yalnız *vadesi N ya da öncesi* olan satırları sayar.
+  Vadesi ileride olan satır kapıyı bloke etmez.
+- **VADE İŞLEMİ TUTAR.** Ertelenmiş bir satırın cevabına ihtiyaç duyan **tek tek işlem** durur.
+  En kritik uygulaması: **kaynağı yazılmamış bir varlık üretilmez.** Satır boşken de çalışır —
+  cevap *"o varlığı henüz üretemezsin"*dir.
+- **Üçüncü sayaç: vadesi geçmiş satır = 0.** Her faz geçişinde ölçülür. Erteleme ancak süresi
+  dolduğunda acıtırsa dürüsttür.
+
+### Defter
+
+| # | Alan | Vade | Nereye yazılır |
+|---|---|---|---|
+| 1 | Çalışmanın adı | Faz 0 | `CLAUDE.md` başlığı |
+| 2 | Nihai karar sahibi (kim onaylar) | Faz 0 | `CLAUDE.md` › Roller |
+| 3 | Günlük muhatap (ajanın konuştuğu kişi) | Faz 0 | `CLAUDE.md` › Roller |
+| 4 | Muhatap yapım tekniğini biliyor mu | Faz 0 | `CLAUDE.md` › Anlatım dili |
+| 5 | **Ajanın yapamayacakları** | Faz 0 | `CLAUDE.md` › Yasaklar |
+| 6 | İletişim dili | Faz 0 | `CLAUDE.md` › Anlatım dili |
+| 7 | Onay birebir metinle mi alınacak (+ metinler) | Faz 0 | `CLAUDE.md` › Onay |
+| 8 | Sistem sürümü | Faz 0 | `SURUM.md` |
+| 9 | Tek cümlelik iş tanımı | Faz 1 | `docs/FIKIR.md` (işaretçi) |
+| 10 | **Bitiş tanımı** — neyi görünce "oldu" denecek | Faz 1 | `docs/FIKIR.md` |
+| 11 | İlk dış bekleyişler (kimden ne bekleniyor) | Faz 1 | `docs/BEKLEYENLER.md` |
+| 12 | **Bilginin** tek doğru kaynağı | Faz 2 | `CLAUDE.md` › Varlık kaynakları |
+| 13 | **Görünüşün** tek doğru kaynağı | Faz 2 | aynı |
+| 14 | **Kimlik/marka varlıklarının** tek doğru kaynağı | Faz 2 | aynı |
+| 15 | Yedek: nerede, kim alır, **içi nasıl doğrulanır** | Faz 3 | `CLAUDE.md` › Yedek |
+| 16 | Kayıt numara öneki | Faz 6 | `ayarlar.conf` |
+| 17 | Kaç oturumla çalışılacak | Faz 6 | `ayarlar.conf` |
+| 18 | Korunan dal adları | Faz 7 / koşullu | `ayarlar.conf` |
+| 19 | İş dalı önekleri | Faz 7 / koşullu | `ayarlar.conf` |
+
+> **12–14 neden ayrı ayrı soruluyor:** damıtıldığı projede **en pahalı ilk gün hatası** buydu —
+> bir kimlik varlığı doğrulanmamış kaynaktan üretildi ve **tamamen geri alındı**. Üç kaynak
+> birbirine karışmaz: bilgi bir yerden, görünüş başka yerden, kimlik üçüncü bir yerden gelir.
+
+> **Bir bölüm yeni bir alanı bağlayıcı yaparsa, defter AYNI düzenlemede güncellenir.**
+> Defterin bir bölümü yalanlaması, kaçınılmaya çalışılan asıl hatadır.
+
+---
+
+## 4. Adım — MODÜL SEÇİMİ (konuşma, envantere dayanarak)
+
+> **v0'da eksik olan adım budur.** v0 *"kullanmayacağını sil"* diyordu ama **neyi sileceğini
+> soran kimse yoktu** — bu yüzden örtük varsayımlar (müşteri var, üç ortam var, deploy var,
+> görsel arayüz var, iki oturum var) sessizce açık kalıyordu.
+
+Ajan **önce profil sorar**, sonra modülleri tek tek teyit eder:
+
+| Profil | Açılan modüller |
+|---|---|
+| **a · Tek kişilik küçük iş** | yalnız çekirdek + Olay/geri alma |
+| **b · Yazılım projesi + yayın** | çekirdek + Sürüm kontrolü · Ortam geçişleri · Görsel yüzey · Görev kayıtları · Ölçüm araçları · Olay |
+| **c · Çok oturumlu büyük proje** | hepsi |
+
+### Modüller ve açılma şartları
+
+| Modül | Açılma şartı | Kapalıyken |
+|---|---|---|
+| **Sürüm kontrolü** | *makine:* depo bir VCS altında mı | Kayıtlar tarihli dosya; kanca yok |
+| **Uzak depo ve inceleme** | Sürüm kontrolü açık **ve** uzak depo var **ve** ≥2 kişi | Yerel kayıt yeter |
+| **Ortam geçişleri** | *soru:* çıktının yayınlandığı ayrı bir ortam var mı | Onay ilkesi kalır, birebir metin kapısı yok |
+| **Görsel yüzey** | *soru:* insanın doğrudan gördüğü bir yüzey var mı | Faz 4 tasarım kapısı düşer |
+| **Görev kayıtları** | *soru:* eşzamanlı izlenecek iş sayısı > 5 | İşler devir notunda satır |
+| **Paralel oturum** | *soru:* aynı depoda eşzamanlı iki oturum | Roller tek role iner |
+| **Dış paydaş** | *soru:* karar veren ayrı bir kişi/kurum var mı | Onay = kullanıcının kendi sözü |
+| **Ölçüm araçları** | *soru:* beklenen oturum > 10 **ve** *makine:* kabuk var | `docs/ELLE-DENETIM.md` |
+| **Olay ve geri alma** | *soru:* geri dönüşü zor işlem olacak mı | Genel onay ilkesi yeter |
+
+**Envanter modülü kapatıyorsa soru SORULMAZ.** Sürüm kontrolü yoksa ilk iki modül hiç
+sorulmaz, otomatik `kapalı` işaretlenir ve gerekçesi yazılır.
+
+**Açılan modülün metni `CLAUDE.md`'ye EKLENİR.** `docs/moduller/` altındaki dosyalar kurulum
+**kaynağıdır, kural değildir** — eklendikten sonra tek doğru kaynak `CLAUDE.md`'dir.
+*(Gerekçe: kural metni iki yerde dururken biri sessizce çürür.)*
+
+---
+
+## 5. Adım — EŞİKLER (konuşma, varsayılan önerili)
+
+v0'ın en sinsi kalıntısı sayılardı: aynı tavan üç yerde üç farklı değerdeydi ve **hiç kimse
+karar vermemişti**. Artık bütün eşikler `ayarlar.conf`'ta durur ve **kurulumda sorulur**.
+
+Ajan önce **beklenen oturum sayısını** sorar, tavanı ondan **önerir**, kullanıcı onaylar:
+
+| Eşik | Ne sınırlar |
+|---|---|
+| `KURAL_TAVANI` | `CLAUDE.md` satır sayısı |
+| `REFLEKS_TAVANI` | günlük kontrol maddesi sayısı |
+| `DEVIR_TAVANI` | devir notu satır sayısı |
+| `OKUMA_YUKU_HEDEFI` | oturum başı okunan toplam bayt |
+| `PENCERE_GUN` | kronolojik defterlerde tutulan gün sayısı |
+
+**Hiçbir eşik betiğin içine yazılmaz.** Sabitin koda gömülmesi, v0'da bulunan sessiz
+kırılmaların ortak köküydü.
+
+---
+
+## 6. Adım — KURULUM KAPISI (makine)
+
+```
+olcum sinav        # önce bu — kalırsa aşağıdaki çıktılar KANIT DEĞİLDİR
+olcum kurulum
+```
+
+**Üç sayı sıfır olmalı:**
+
+| Sayaç | Neden var |
+|---|---|
+| Vadesi gelmiş, cevapsız defter satırı **= 0** | Doldurulmayan defter, yanlış bilgi kaynağıdır |
+| Kırık iç atıf **= 0** | v0'da 101 atfın 29'u olmayan bölüme gidiyordu — hiç kullanılmadan |
+| **Kapalı modüle yapılan atıf = 0** | Modül silinince ona atıf yapan kural sahipsiz kalır |
+
+Son iki sayaç v0'ın denetiminden doğdu. *"Atıflara dikkat et"* tutmaz; **ölçülen adım tutar.**
+
+---
+
+## 7. Adım — İLK DEVİR NOTU (konuşma)
+
+`docs/DEVIR-NOTU.md` ilk hâliyle yazılır. "Nerede kaldık" = *"sistem kuruldu, fikir konuşulmadı."*
+İlk yapılacak iş = **Faz 1 · Fikir turu.**
+
+---
+
+## Kurulum bitti — sırada ne var
+
+Kurulum yalnız **Faz 0**'dır. Sistem kuruldu, proje hakkında hiçbir şey bilinmiyor.
+
+Bundan sonrası `docs/KAPSAM.md`'de: **Fikir → İş kapsamı → Teknik kapsam → Tasarım → Karar →
+Sıra → Yapım.** Ajan kurulum biter bitmez Faz 1'i **önerir**, başlatmaz — başlatma kararı
+kullanıcınındır.

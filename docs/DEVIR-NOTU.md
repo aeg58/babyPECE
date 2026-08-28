@@ -1,55 +1,59 @@
-# Devir Notu — yeni oturuma
+# Devir notu
 
-**Sürüm:** v1 · **Hazırlanma:** [tarih, `date` ile ölçülür] · **Önceki oturum:** [tür]
+> **Yeni oturumun TEK giriş kapısı.** Oturum başında ilk okunan, oturum sonunda son yazılan.
+> Dosya adı sabittir, üzerine yazılır; **sürüm adında değil, burada** durur.
+>
+> **TESLİM ÖLÇÜTÜ: yeni oturum bunu okuyup hiçbir şey sormadan devam edebilmeli.**
+> Soru sormak zorunda kalıyorsa not eksiktir ve eksiklik, **notu yazan oturuma** aittir.
 
-> **Bu dosyanın adı SABİTTİR ve üzerine yazılır.** Sürüm numarası dosya adında değil, yukarıdadır.
-> Her `gün sonu`nun **son** adımı bu notu güncellemektir; her `gün başı`nın **ilk** adımı onu
-> okumaktır.
->
-> **Teslim ölçütü:** Yeni oturum bu notu okuyup **hiçbir şey sormadan** devam edebilmelidir.
-> Soru sormak zorunda kalıyorsa **not eksiktir ve eksiklik notu yazan oturuma aittir.**
->
-> ⚠️ **Notu birleştirmeden ÖNCE yazdıysan, birleştikten SONRA gerçeğe çek.** *"İlk iş: şu PR'ı
-> birleştir"* satırı, PR birleşince yeni oturumu **yapılmış bir işi yapmaya** yönlendirir.
+**Sürüm:** v1 · **Yazıldığı an:** ⬜ *(ölçülerek yazılır, taşınmaz)*
 
 ---
 
-## 1. Nerede kaldık — tek cümleyle
+## 1 · Nerede kaldık — tek cümle
 
-[Tek cümle. Uzatma.]
+⬜
 
-## 2. ⚠️ İLK YAPILACAK İŞ
+## 2 · İLK YAPILACAK İŞ — tek iş
 
-[Tek iş. Belirsizse "sıradaki işi [sahibi] seçecek" yazılır — boş bırakılmaz.]
+⬜
 
-## 3. Devredilen açık uçlar ve sahibi
+*Belirsizse boş bırakılmaz. "Sıradakini seçmek bir karardır, sahibine sorulur" yazılır ve
+seçenekler tabloya konur.*
 
-| Açık uç | Sahibi | Durum |
+## 3 · Devredilen açık uçlar
+
+| Uç | Sahibi | Durum |
 |---|---|---|
 | | | |
 
-> **Sahipsiz açık uç bırakılmaz.** Sahibi belirsizse sahibi *"karar bekliyor"* olarak yazılır.
+**Sahipsiz uç bırakılmaz.** Sahibi belirsizse sahibi *"karar bekliyor"*dur.
 
-## 4. Bekleyen onaylar
+## 4 · Bekleyen onaylar
 
 | Kimden | Ne |
 |---|---|
 | | |
 
-## 5. Sıcak liste — son 7 günde ihlal edilen ya da yeni yazılan kurallar
+## 5 · Ortam ve sayılar
 
-> **Tavan: [proje kararı] madde.** Yeni madde girerken en eski düşer. Bu bölüm **kural deposu
-> değildir** — kalıcı adresi olan kurallar burada tekrarlanmaz, yalnız *şu anda sıcak* olanlar
-> durur. Düşen maddenin kalıcı adresi yazılır.
+*Ölçüm maliyeti yüksek, her oturumda gereken canlı değerler: adresler, sayaçlar, son kayıt
+numarası, tavanların doluluğu, sık kullanılan komutlar.*
 
-1.
-
-## 6. Ortam ve sayılar
-
-| Ne | Değer |
+| | |
 |---|---|
 | | |
 
-## 7. Kayda geçmemiş ama bilinmesi gereken
+## 6 · Kayda geçmemiş ama bilinmesi gereken
 
-[Yanlış çıkan iddialar, bilinçli kararlar, "sonraki oturum bunu kusur sanmasın" notları.]
+*Özellikle **yanlış çıkmış iddialar** ve **bilinçli kararlar** — yeni oturum bunları kusur
+sanıp "düzeltmeye" kalkmasın.*
+
+⬜
+
+---
+
+**Taşımaz:** kural metni · geçmiş anlatısı · çözüm ayrıntısı · makinenin üretebildiği liste.
+
+**Tazelik:** bu not bir teslimden **önce** yazıldıysa, teslim bitince **bayatlar** ve yeni
+oturumu yapılmış bir işi yapmaya yönlendirir. Teslimden sonra gerçeğe çekilir.

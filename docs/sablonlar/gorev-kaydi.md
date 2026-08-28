@@ -1,43 +1,34 @@
-# Görev: [ÖNEK]-YYYY-NNN — Kısa görev adı
+# ⬜ NUMARA — ⬜ başlık
 
-- Talep sahibi:
-- Sorumlu:
-- Oluşturulma tarihi:
-- Öncelik: Kritik / Yüksek / Normal / Düşük
-- Durum: Bekliyor
-- Amaç:
-- Kapsam:
-- **Kapsam dışı:**
-- Teslim ölçütü:
-- Bağımlılıklar:
-- Riskler:
-- Onaylayan:
+- **Durum:** **Bekliyor**   ⬜ *(değer kalın yazılır — makine kalın öbeği okur)*
+- **Onaylayan:** ⬜
 
-> **Durum satırı biçimi bağlayıcıdır** (`AGENTS.md` §5): tam bir tane, kendi satırında.
-> Alt bölümlerdeki geçiş kayıtları `- Geçiş durumu:` / `- Faz N durumu:` etiketini kullanır.
+## Amaç
+⬜
 
----
+## Kapsam
+⬜
 
-## Araştırma / Analiz (§5.0 adım 1)
+## Kapsam DIŞI
+⬜ *"Yapılmayacak" mı, "şimdi yapılmayacak" mı — açıkça yaz. İkincisi bir listeye satır olarak çıkar.*
 
-## Plan (§5.0 adım 2)
+## Teslim ölçütü
+⬜ *Ne görülürse bu iş olmuş sayılır. Kapıyı tuttuğu anda ölçülebilir olmalı.*
 
-## Kararlar
+## Bağımlılıklar
+⬜
 
-| # | Karar | Gerekçe | Reddedilen seçenek ve nedeni |
-|---|---|---|---|
+## Analiz bulguları
+⬜
 
-## Onay (§5.0 adım 3)
+## Plan
+⬜
 
-- Onaylayan · tarih/saat · onaylanan işlem · bilinen risk
+## Karar ve gerekçe
+⬜
 
-## Yapılanlar
+## Reddedilen seçenekler ve neden
+⬜ *Yazılmazsa aynı tartışma haftalar sonra sıfırdan yapılır.*
 
-## Teslim ölçütleri — tek tek
-
-| # | Ölçüt | Sonuç |
-|---|---|---|
-
-## Geçiş kaydı
-
-- Geçiş durumu:
+## Devir — uygulayacak oturuma
+⬜ *Ölçüt: bu kaydı okuyan hiçbir şey sormadan başlayabilmeli.*

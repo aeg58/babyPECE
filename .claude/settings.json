@@ -1,12 +1,14 @@
 {
-  "_aciklama": "Oturum acilis ekrani. NEDEN VAR: kaynak projede ajan bir kez kendini yanlis rolde sanip uygulamaya hazirlandi (yanlis oturum turu), bir kez de depo temiz daldan kirli bir gorev dalina gecmisken ajan bunu ancak kendisi bakinca gordu. Bu satir, oturumun ilk saniyesinde gercek durumu gosterir.",
+  "_aciklama": "Oturum acilis satiri. NEDEN VAR: ajan bir kez kendini yanlis rolde sanip uygulamaya hazirlandi; bir kez de depo temiz daldan kirli bir is dalina gecmisken ajan bunu ancak kendisi bakinca gordu. Bu satir, oturumun ilk saniyesinde gercek durumu gosterir.",
+  "_aciklama_araca_ozgu": "BU DOSYA ARACA OZGUDUR. Yalnizca Claude Code okur. Baska bir ajan aracinda (Codex, Cursor, duz API) bu kanca HIC CALISMAZ ve acilis satiri olusmaz. Kanca baska bir araca kopyalanirsa, hedef aracta ATESLENDIGI OLCULMEDEN 'kurulu' yazilmaz — olculene kadar kayitta SINANMADI damgasi durur. Kurulu gorunen ama atesenmeyen koruma, hic olmayandan tehlikelidir.",
+  "_aciklama_kacis": "Komut dogrudan kabuga gider; printf disinda ikinci bir bicimlendirme katmani YOKTUR. Bu yuzden komut ikamesi icindeki % isaretleri TEK yazilir. Bir onceki surumde bunlar cift yazilmisti ve 'date +%%Y-%%m-%%d' duz metin uretiyordu: gun basi raporu dosya VARKEN bile her zaman YOK diyordu.",
   "hooks": {
     "SessionStart": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "printf 'dal: %s | kirli dosya: %s | bugunun gun basi raporu: %s\\n' \"$(git branch --show-current 2>/dev/null || echo '?')\" \"$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')\" \"$([ -f \"docs/gun-basi/$(date +%%Y-%%m-%%d).md\" ] && echo VAR || echo YOK)\""
+            "command": "printf 'dal: %s | kirli dosya: %s | devir notu: %s | bugunun acilis raporu: %s\\n' \"$(git branch --show-current 2>/dev/null || echo '?')\" \"$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')\" \"$(git log -1 --format=%ad --date=format:'%Y-%m-%d %H:%M' -- docs/DEVIR-NOTU.md 2>/dev/null || echo '?')\" \"$([ -f \"docs/oturum-basi/$(date +%Y-%m-%d).md\" ] && echo VAR || echo YOK)\""
           }
         ]
       }

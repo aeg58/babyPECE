@@ -1,69 +1,83 @@
-# ajan-cekirdegi
+# proje-cekirdegi
 
 Bir yapay zekâ ajanıyla **kayıtlı, denetlenebilir ve devredilebilir** biçimde çalışmak için
-proje başlangıç şablonu. Konu fark etmez — içindekiler **süreç** kurallarıdır, alan bilgisi değil.
+proje kurulum ve ilerleyiş sistemi.
 
-**Sürüm: v0** · Tek bir projeden 25 günlük kullanımdan damıtıldı · **ikinci bir projede
+Konu fark etmez — içindekiler **süreç** kurallarıdır, alan bilgisi değil. Yazılım projesi,
+içerik işi, veri çalışması, üç günlük küçük bir iş: hepsi kurar.
+
+**Sürüm: v1** · Tek bir çalışmadan ~7 haftalık kullanımdan damıtıldı · **ikinci bir işte
 denenmedi** (bkz. `SURUM.md`).
 
 ---
 
 ## Ne çözer
 
-Bir ajanla uzun süre çalışınca üç şey olur ve üçü de sessizce olur:
+Bir ajanla uzun süre çalışınca dört şey olur ve dördü de sessizce olur:
 
-1. **Oturum kapanınca bilgi kaybolur.** Sohbetin bağlamı dolar, yeni oturum sıfırdan başlar.
-2. **Notlar şişer.** "Ajan unutmasın" diye yazılan her şey birikir; birikince okunmaz olur ve
-   **tam da önlemek istediğin unutmayı kolaylaştırır.**
-3. **Kurallar sessizce çürür.** Bir özellik kalkar, onu anan kural kalır ve yanlış talimat
-   vermeye devam eder.
+1. **Oturum kapanınca bilgi kaybolur.** Yeni oturum sıfırdan başlar.
+2. **Notlar şişer.** *"Ajan unutmasın"* diye yazılan her şey birikir; birikince okunmaz olur
+   ve **tam da önlemek istediğin unutmayı kolaylaştırır.**
+3. **Kurallar sessizce çürür.** Bir şey kalkar, onu anan kural kalır ve yanlış talimat vermeye
+   devam eder.
+4. **İşe kapsam çıkarmadan başlanır.** *"Hangi dille, neyin üstünde, kimin hesabıyla, kimin
+   iznine bağlı"* soruları işin ortasında sorulur ve o noktada cevapları pahalıdır.
 
-Bu paket üçüne de mekanik cevap verir: **devir notu** · **büyüme freni ve tavanlar** ·
-**bayat kural taraması**.
+Mekanik cevaplar: **devir notu** · **büyüme freni ve tavanlar** · **atıf denetimi** ·
+**yedi fazlı kuruluş akışı**.
 
 ## Kurulum
 
-1. Bu klasörü projenin köküne kopyala (`.git`'i kopyalama).
-2. **`KURULUM.md`'yi aç ve anketi doldur.** `Belirlenecek` kalmayana kadar işe başlanmaz —
-   bu bir kapıdır, süs değil.
-3. `npm run kanca:kur` · `npm run denetim:sinav` (**4/4** geçmeli).
+```
+git clone <bu depo> <proje-klasörü>
+```
+
+Sonra ajana **"kurulumu yap"** de. Gerisini `KURULUM.md` yürütür: ortam ölçülür, sorular
+teker teker sorulur, modüller seçilir, eşikler belirlenir, kapı ölçülür.
+
+**Kurulum kod çalıştırmadan da yürür.** Kabuk yoksa `docs/ELLE-DENETIM.md` aynı kontrolleri
+insan sorusu olarak taşır.
 
 ## İçindekiler
 
-| Dosya | Kime yazılmış | Ne işe yarar |
+| Dosya | Kime | Ne işe yarar |
 |---|---|---|
-| `KURULUM.md` | **insana** | Anket (kapı) + kurulum listesi |
-| `NEREDE-KALDIK.md` | **insana** | Proje sahibinin tek sayfası — teknik terim yok |
-| `CLAUDE.md` | ajana | Otomatik yüklenen kapı dosyası — **yalnız işaretçi**, 60 satır tavanı |
-| `AGENTS.md` | ajana | Bağlayıcı süreç kuralları (§1–§16) |
-| `docs/REFLEKSLER.md` | ajana | Günlük kontrol listesi + büyüme freni |
+| `KURULUM.md` | **ajana** | Kurulum görüşmesini yürütür |
+| `CLAUDE.md` | ajana | **Bütün kurallar.** Her oturumda kendiliğinden yüklenir |
+| `ayarlar.conf` | makineye | Bütün eşikler ve sabitler — **tek kaynak** |
+| `docs/KAPSAM.md` | ajana | Fikirden ilk işe: yedi faz, her kapının sayısı |
 | `docs/DEVIR-NOTU.md` | ajana | Oturumlar arası **tek giriş kapısı** |
-| `docs/sablonlar/` | ajana | Görev kaydı · gün başı · gün sonu · **faz kapısı** · olay kaydı |
-| `scripts/` | makineye | 4 denetim betiği, hepsinin **`sinav`** komutu var |
-| `scripts/kancalar/pre-commit` | makineye | Korunan dala kod commit'ini **reddeder** |
+| `docs/KURUCU-DERSLER.md` | ajana | 21 evrensel ders — tavansız, okuma listesi dışı |
+| `docs/REFLEKSLER.md` | ajana | Günlük kontrol — tavanlı |
+| `docs/ELLE-DENETIM.md` | insana | Betiksiz eşdeğer mod |
+| `docs/moduller/` | kuruluma | Açılınca `CLAUDE.md`'ye eklenen parçalar |
+| `docs/sablonlar/` | ajana | Görev kaydı · oturum başı/sonu · faz kapısı · olay |
+| `scripts/olcum` | makineye | Tek ölçüm aracı, **`sinav`** alt komutlu |
+| `scripts/kancalar/pre-commit` | makineye | Korunan dala kod kaydını **reddeder** |
 
-## Üç fikir
+## Dört fikir
 
-**1. Faz kapıları — her kapının ölçütü bir sayının sıfır olması.**
-*"Tasarım yapıldı mı"* tartışılır; *"görseli onaylanmamış ekran sayısı sıfır mı"* tartışılmaz.
-Tasarım → plan → kararlar → **ancak o zaman** kod. (`AGENTS.md` §5.0.1)
+**1. Kapının ölçütü bir sayıdır.**
+*"Tasarım yapıldı mı"* tartışılır; *"örneği onaylanmamış parça sayısı sıfır mı"* tartışılmaz.
 
-**2. Kural yaşam döngüsü — sistemde "çıkar" fiili de var.**
-Kural nasıl doğar, nasıl emekli olur, tavanı ne. **Zaman geçmesi emeklilik sebebi değildir** —
-en pahalı kurallar doğaları gereği seyrek tetiklenir. (`AGENTS.md` §16)
+**2. Kapsam, işten önce çıkarılır — ve yalnız "biz ne yapacağız" değil.**
+Faz 3 dil, yığın, mimari ve altyapıyı sorar; ama **projenin dışını** (kimin hesabı, kimin
+izni), **öncesini** (neyin yerine geçiyor) ve **okuyucusunu** (hangi dil, hangi ülke, hangi
+engel) da sorar. Damıtıldığı çalışmada kırk günün sonunda kodlanacak iş kalmamıştı ve proje
+yine durmuştu — duran işlerin **hiçbiri teknik değildi**.
 
-**3. Ölçüm aracı kalibre edilmeden çıktısı kanıt değildir.**
-Boş sonuç *"yok"* demek değil, *"kalıbım eşleşmedi"* demektir. Bu yüzden **her betiğin
-`sinav` komutu vardır** ve bilinen hatalara karşı kendini sınar.
+**3. Sistemde "çıkar" fiili de var.**
+Kural nasıl doğar, nasıl emekli olur, tavanı ne. **Zaman geçmesi emeklilik sebebi değildir.**
+
+**4. Kalibre edilmemiş aletin çıktısı kanıt değildir.**
+Boş sonuç *"yok"* demek değil, *"kalıbım eşleşmedi"* demektir. Bu yüzden `olcum sinav` saf
+mantığı **sahte veriyle** sınar ve içinde **kalibrasyon** maddeleri vardır: sayaca bilerek
+bozuk bir örnek verilir ve onu **bulduğu** ölçülür.
 
 ## Ne vaat etmiyor
 
-- **Ölçülmedi.** v0 tek projeden çıktı, ikincisinde denenmedi.
-- **Alan bilgisi taşımaz.** Deploy, kimlik doğrulama, form yazımı `⬜ DOLDURULACAK` gelir.
+- **Ölçülmedi.** v1 tek çalışmadan çıktı; ikincisinde denenmedi.
+- **Alan bilgisi taşımaz.** Deploy, kimlik doğrulama, tasarım sistemi `⬜` gelir.
 - **Disiplin yerine geçmez.** Yaptığı, ihlali **görünür** kılmaktır.
-
-## Katkı
-
-Her faz kapısında ve her 10. gün sonunda tek soru: *"Bu turda çıkan derslerden hangisi
-projeden bağımsız?"* Cevap varsa şablona işlenir, sürüm artar. Takvime bağlı gözden geçirme
-**bilerek** yok — kaynak projede başarısız olan tam olarak takvime bağlı işlerdi.
+- **Ajan senin yerine karar vermez.** Ölçer, seçenekleri ve maliyetlerini sunar; kararı sen
+  verirsin. Oturumun ne zaman kapanacağına da sen karar verirsin.
