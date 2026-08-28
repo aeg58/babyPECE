@@ -10,8 +10,11 @@
 > **Atıflar başlık adıyla yapılır, numarayla değil.** *(Numarayla atıf yapan bir önceki sürümde
 > 101 atfın 29'u, dosya hiç kullanılmadan, olmayan bölümlere gidiyordu.)*
 
-*ertelendi — vade: Faz 1 · Fikir turu.* Tek cümlelik iş tanımı ve bitiş tanımı o turda yazılır.
-**Bu satır boşken hiçbir üretim işi başlatılmaz** — vade işlemi tutar.
+**Ablasına gönderilecek tek bir link:** hamileliğin o günkü gününü, bebeğin boyutunu ve neye
+benzediğini esprili ama bilimsel kaynaklı biçimde gösteren, kaydırdıkça akan tek parça bir site.
+
+**Bitiş tanımı:** *"Linki gönderdiğimde ablam açıp gülümsediğinde bitti sayarım."* — Erdem.
+Ayrıntı ve kapsam dışı bırakılanlar: `docs/KAPSAM.md` › *Fikir — dört slot*.
 
 ---
 

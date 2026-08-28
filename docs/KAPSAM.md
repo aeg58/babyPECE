@@ -71,14 +71,37 @@ düzeltir, tur tekrarlanır. **Düzeltmesiz bir tur geçene kadar faz kapanmaz.*
 
 ### Fikir — dört slot
 
+*Doldurulma tarihi: 2026-08-28 · sahibinin kelimeleriyle, yankı testinden geçirilerek.*
+
 | Slot | Cevap |
 |---|---|
-| Sonunda ortada ne duracak, kim alacak | ⬜ |
-| Bugün bu olmadığında ne oluyor | ⬜ |
-| **Bitiş tanımı** — neyi görünce "oldu" | ⬜ |
-| Bu işin ne OLMADIĞI | ⬜ |
+| Sonunda ortada ne duracak, kim alacak | Bir **link**; ablası açacak. Esprili bir site: bebeğin **o günkü** boyutu, hangi **meyve/sebze/obje/yiyeceğe** benzediği, **gün gün** büyüyüşü. Veriler **bilimsel kaynaklı**; kaynakların doğruluğu **araştırılıp onaylandıktan sonra** kullanılacak. **Zengin, üç boyutlu** arayüz kütüphaneleri. **Tek parça** sayfa — Apple sitelerindeki gibi **kaydırdıkça akan**. Slogan: *"babyPECE şu kadar hafta şu kadar gün sonra aramızda olacak"* |
+| Bugün bu olmadığında ne oluyor | **Hiçbir uygulama kullanmıyor.** Birkaç gün önce doktora gitti; doktor önce **teorik hesabı**, sonra *"ama bizim ultrason ölçümüz bu kadar"* diyerek **hafta ve gün** olarak kendi tahminini verdi. O gün **altı hafta birkaç gündü**; bugün (2026-08-28) **yedinci haftaya başlıyor**. Aradan geçen günleri **kafadan sayarak** takip ediyor |
+| **Bitiş tanımı** — neyi görünce "oldu" | *"Linki gönderdiğimde ablam açıp gülümsediğinde bitti sayarım."* — Erdem |
+| Bu işin ne OLMADIĞI | **Tıbbi tavsiye yok** (ne yemeli, neye dikkat etmeli, belirti yorumu — hiçbiri) · **sadece ablası için**, başkasının kendi tarihini girebileceği genel bir site değil · **ablası hiçbir şey doldurmayacak** *(şu anlık: veri girişi, not, fotoğraf, yorum yok)* · **doğumda bitiyor**, doğum sonrası yok · **anı defteri değil** *(ileride yeğeni için düşünülebilir, şu anki plana dahil değil)* · **teslim tarihi baskısı yok** |
 
-`Düzeltmesiz tur: ⬜`
+`Düzeltmesiz tur: 1` *(2026-08-28 · Erdem: "düzeltme yok")*
+
+### Faz 1 · ÇAPA TARİHİ — sitedeki her sayının tek kaynağı
+
+**Sitedeki bütün sayılar bu tek tarihten türer.** Yanlışsa site baştan sona ve *sessizce*
+yanlış olur; ekranda ikna edici bir sayı görünmeye devam eder.
+
+| | |
+|---|---|
+| Kaynak | Erdem, ablasına **2026-08-28** günü sordu: *"geçtiğimiz salı 6 hafta 4 günlüktü"* |
+| O gün | 2026-08-25 (Salı) · 46. gün |
+| **Gebeliğin 0. günü — ÇAPA** | **2026-07-10** *(hesaplanan; 2026-08-28'de ölçüldü)* |
+| Bugün (2026-08-28) | 7 hafta 0 gün · 49. gün |
+| Tahmini doğum (40h0g) | 2027-04-16, Cuma *(280 günden **hesaplandı**)* |
+
+**İki açık kayıt — kusur değil, bilinen belirsizlik:**
+
+1. **Tahmini doğum tarihini doktor söylediyse onunki geçerlidir**, buradaki hesap değil.
+   Doktorun tarihi öğrenilirse bu satır **onunla değiştirilir** ve çapa yeniden hesaplanır.
+2. **6h4g'nin teorik hesaptan mı ultrason ölçümünden mi geldiği kesin değil.** Erdem doktorun
+   *"bizim ultrason ölçümümüz bu kadar"* dediğini aktardığı için **ultrason kaynaklı** varsayıldı.
+   İkisi farklı çıkarsa günler kayar.
 
 ---
 

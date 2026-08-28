@@ -6,35 +6,40 @@
 > **TESLİM ÖLÇÜTÜ: yeni oturum bunu okuyup hiçbir şey sormadan devam edebilmeli.**
 > Soru sormak zorunda kalıyorsa not eksiktir ve eksiklik, **notu yazan oturuma** aittir.
 
-**Sürüm:** v1 · **Yazıldığı an:** 2026-08-28 20:50 +03 *(ölçülerek yazıldı)*
+**Sürüm:** v1 · **Yazıldığı an:** 2026-08-28 21:44 +03 *(ölçülerek yazıldı)*
 
 ---
 
 ## 1 · Nerede kaldık — tek cümle
 
-Sistem kuruldu (Faz 0 bitti); **proje hakkında henüz hiçbir şey konuşulmadı.**
+**Faz 0 ve Faz 1 bitti:** sistem kuruldu, fikir sahibinin kelimeleriyle sabitlendi, çapa tarihi
+ölçüldü. **Faz 2 (iş kapsamı) hiç konuşulmadı** — henüz tek bir parça çıkarılmadı.
 
 ## 2 · İLK YAPILACAK İŞ — tek iş
 
-**Faz 1 · Fikir turu.** Soruları `docs/KAPSAM.md` taşır. Çıktısı: tek cümlelik iş tanımı,
-bitiş tanımı ("neyi görünce oldu denecek") ve ilk dış bekleyişler.
+**Faz 2 · İş kapsamı.** Yürütme talimatı `docs/KAPSAM.md`'de. Fikir sayılabilir parçalara
+ayrılacak; her parçanın **kabul cümlesi** yazılacak.
 
-**Başlatma kararı Erdem'indir.** Ajan Faz 1'i önerir, kendiliğinden başlatmaz.
+**Faz 2'nin ilk ölçümü birleştirme eşiğidir:** *parça ≤ 3 VE gösterilebilir parça ≤ 1* ise
+Faz 2·3·5·6 tek tabloda yürür. Bu iş **görsel bir site** olduğu için gösterilebilir parça
+sayısının 1'i aşması bekleniyor — ama **tahmin değil, sayım** karar verir.
+
+**Başlatma kararı Erdem'indir.** Ajan önerir, kendiliğinden başlatmaz.
 
 ## 3 · Devredilen açık uçlar
 
 | Uç | Sahibi | Durum |
 |---|---|---|
-| Tek cümlelik iş tanımı + bitiş tanımı | Erdem | ertelendi — vade: **Faz 1** |
-| İlk dış bekleyişler (kimden ne bekleniyor) | Erdem | ertelendi — vade: **Faz 1** |
 | Varlık kaynakları: bilgi · görünüş · kimlik (üçü ayrı) | Erdem | ertelendi — vade: **Faz 2** |
 | Yedek: nerede, kim alır, **içi nasıl doğrulanır** | Erdem | ertelendi — vade: **Faz 3** |
+| Doktorun **kendi** tahmini doğum tarihi | Erdem | iyileştirme — bekleyiş değil, iş onsuz durmaz |
+| 6h4g teorik hesaptan mı ultrason ölçümünden mi | Erdem | ultrason varsayıldı; farklı çıkarsa günler kayar |
 | Kayıt numara öneki | — | **konu dışı** — görev kayıtları modülü kapalı |
 | Eşzamanlı oturum sayısı | — | **konu dışı** — paralel oturum modülü kapalı |
 
 **Vade kapıyı tutmaz, işlemi tutar:** vadesi ileride olan satır bir sonraki fazı bloke etmez;
-ama o satıra ihtiyaç duyan tek tek işlem durur. En sert uygulaması: **kaynağı yazılmamış bir
-varlık üretilmez** (Faz 2 satırları boşken görsel/kimlik varlığı üretilemez).
+ama o satıra ihtiyaç duyan tek tek işlem durur. **Kaynağı yazılmamış varlık üretilmez** —
+Faz 2 satırları boşken görsel ya da kimlik varlığı üretilemez.
 
 ## 4 · Bekleyen onaylar
 
@@ -58,18 +63,23 @@ devir notunda durmaz.*
 
 **Bunlar kusur değil, bilinçli kararlardır — "düzeltmeye" kalkma:**
 
-1. **Ölçüm araçları modülü KAPALI, ama `scripts/olcum` çalışıyor ve kurulumda kullanıldı.**
-   Modülün şartı "beklenen oturum > 10" idi, cevap 5–10 geldi. Kapalı olması, günlük kuralların
-   araca **bağlı olmaması** demek; aracın yokluğu demek değil.
-2. **`ayarlar.conf` içindeki `KAYIT_ONEKI` satırı yorum satırına alındı.** Boş bırakılsaydı
-   kurulum kapısındaki "boş ayar" sayacı takılırdı; uydurma bir önek yazmak ise kurulumun
-   "cevabı ajan tamamlamaz" kuralını çiğnerdi. Görev kayıtları modülü açılırsa bu satır geri
-   açılır ve önek **Erdem'e sorulur**.
-3. **`SURUM.md` içinde iki ⬜ var** — üst kaynağın kendi v1 yayın tarihi. Bizim defterimize
-   ait değil, kurulum kapısı da yalnız `CLAUDE.md`'yi sayıyor. Doldurulmayacak.
-4. **Depo bu oturumda GitHub'dan yeni çekildi; hiç commit atılmadı.** Çalışma alanındaki
-   değişiklikler (`CLAUDE.md`, `ayarlar.conf`, `SURUM.md`, `docs/REFLEKSLER.md`,
-   `docs/DEVIR-NOTU.md`) **kaydedilmemiş** durumda. Kayıt ve gönderme Erdem'in isteğine bağlı.
+1. **`docs/FIKIR.md` BİLEREK açılmadı.** Şablonun kendi içinde bir tutarsızlık var: `KURULUM.md`
+   defteri iş tanımını `docs/FIKIR.md`'ye yazdırıyor, `docs/KAPSAM.md` ise aynı bilgiyi kendi
+   dört slotluk tablosuna yazdırıyor. İkisine birden yazmak *"bir bilgi yalnız bir dosyada
+   durur"* kuralını çiğnerdi. **Tek kaynak `docs/KAPSAM.md` seçildi**; `CLAUDE.md` oraya
+   işaretçi veriyor. Bu, şablonun v2'sine taşınacak bir ders adayıdır.
+2. **Ölçüm araçları modülü KAPALI, ama `scripts/olcum` çalışıyor ve kullanılıyor.** Şartı
+   "beklenen oturum > 10" idi, cevap 5–10 geldi. Kapalı olması aracın yokluğu demek değil.
+3. **`ayarlar.conf` içindeki `KAYIT_ONEKI` satırı yorum satırına alındı** — görev kayıtları
+   modülü kapalı; uydurma değer yazmak yerine gerekçesiyle kapatıldı.
+4. **`SURUM.md` içindeki iki boş işaret üst kaynağın kendi v1 yayın tarihidir**, bizim
+   defterimize ait değil, doldurulmayacak.
+5. **Uzak depo değişti.** `origin` artık `aeg58/babyPECE` (**gizli**); şablon deposu `sablon`
+   adıyla duruyor. "Uzak depo ve inceleme" modülü yine de **kapalı** — şartı ≥2 kişi ve iş
+   tek kişilik.
+6. **Tahmini doğum tarihi (2027-04-16) hesaplanmıştır, ölçülmemiştir.** 280 günden türetildi.
+   Doktorun kendi tarihi öğrenilirse **o geçerlidir** ve çapa yeniden hesaplanır.
+
 
 ---
 
