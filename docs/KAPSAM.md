@@ -485,7 +485,38 @@ kaynak her ekranda görünür · gün sayılır ama ölçü haftalık.
 Gerekçe: element 7'nin ertelemesi **görsel varlık üretimini yasaklıyor**; yön seçilmeden
 görünüş kaynağı belli olmaz.
 
-`Gösterilebilir olup örneği onaylanmamış parça: 13` → **kapı henüz kapanmadı**
+`Gösterilebilir olup örneği onaylanmamış parça: 13` → **tur 1'de kapı kapanmadı**
+
+**Tur 1 · DENETİM SONUCU — REDDEDİLDİ (2026-08-28).** Erdem: *"tasarımların bariz bir şekilde
+Claude kokuyor, başka herhangi bir AI da değil."* Araştırma yapıldı, eleştiri doğrulandı,
+iki ayrı hata bulundu. Ayrıntı ve maliyet: `docs/KURUCU-DERSLER.md` › A22 ve A23.
+
+| Hata | Ne oldu |
+|---|---|
+| **Veri** | Ekranda *"7. hafta: yaban mersini"* ve altında *"kaynak: NHS"*. NHS **üzüm** diyor (10 mm). Eşleşme kaynaktan değil hatırlanandan geldi; haftalık listenin tamamı kaynaksızdı. **Düzeltildi** — doğrulanmayanlar *"kaynak bekliyor"* oldu |
+| **Tasarım** | Tanınabilir kalıplara birebir oturma: harf aralığı açılmış küçük büyük-harf mono etiketler (4 yerde) · kartta renkli sol şerit · `auto-fit` kart ızgarası · her bölümün aynı kompozisyonu · dağıtılmış tek vurgu rengi |
+
+**Kök neden — ve bizim kararımız:** görünüş kaynağı Faz 3'te *"ajan önerir, Erdem seçer"*
+diye bağlanmıştı. Yön verilmemiş bir tasarımda model boşluğu **eğitildiği her şeyin
+ortalamasıyla** doldurur; ortalama tanınabilir. Filtre uygulamak bu boşluğu kapatmaz,
+yalnız sterilleştirir. **Yön dışarıdan gelmek zorunda.**
+
+**Tur 2 — YÖN (2026-08-28, Erdem'in kararı): "önce kart, sonra yoldaş".**
+
+| | İlk açılış | Sonraki açılışlar |
+|---|---|---|
+| ENERJİ | **3** — büyük jest, ilk otuz saniye | **1** — sakin, okunakl |
+| RİTİM | **2** | **2** |
+| HAREKET | **2** — açılış koreografisi | **1** — yalnız geçişler |
+
+**Okuma satırı:** *kişiye özel hediye sayfası · tek okuyucu (Erdem'in ablası) · Türkçe ·
+ilk açılışta jest, sonraki açılışlarda yoldaş.*
+
+**Teknik sonuç:** iki ayrı sayfa değil, **aynı sayfanın iki hâli**; ilk geliş tarayıcıda
+hatırlanır. Jest ağır görselden değil **zamanlamadan** gelir, böylece 2 saniye hedefi durur.
+
+**Tur 2'nin eksiği:** kimlik motifi. Yön belli ama sayfayı *bu aileye ait* kılacak somut
+malzeme henüz yok — Erdem'e soruldu.
 
 ---
 
