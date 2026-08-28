@@ -77,6 +77,22 @@ için (element 19).
 **Yazı tipleri:** Unbounded, Bricolage Grotesque, Martian Mono. Öncekilerden ve krem/serif
 dünyasından uzak.
 
+**TUR 5 — 2026-08-28. Ultrason dili Erdem tarafından ONAYLANDI:** *"ultrason tasarımını çok
+beğendim, böyle kalsın."* Yüzey artık **sabittir**, bundan sonra sapılmaz.
+
+**Düzeltilen hata:** benek miktarı hafta ilerledikçe **hiç azalmıyordu**. Perde inceliyordu
+ama parazit sabit kalıyordu, bu yüzden bebek hiçbir zaman netleşmiyordu. Netlik artık dört
+şeyi birden sürüyor: benek azalır · ışın demeti daralır · yoğunluk eşiği açılır · derinlik
+zayıflaması hafifler. **40. haftada tarama neredeyse tamamen çözülür.** Netlik eğrisi de
+yukarı çekildi (`pow(p,.62)` → `pow(p,.50)`).
+
+**Sıcaklık:** iki durak var ve ikisi de gerçek ultrason paletinin içinde. Erdem karşılaştırıp
+seçecek; seçilen değer buraya yazılacak ve tek kaynak olacak.
+
+**2 saniye:** Erdem esneme payı verdi. Kalite yukarı alındı — ışın 10→12 adım, gürültü 2→3
+oktav, piksel oranı 1,25→1,6. **Gerçek ölçüm Faz 7'de, ablanın telefonunda yapılacak;**
+bu hedef henüz doğrulanmış değil.
+
 **Yayın:** soğuk makineden sıcak çocuğa. Site bu yolu 33 hafta boyunca yürür.
 
 ## Motif — perde

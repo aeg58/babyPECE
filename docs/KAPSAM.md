@@ -576,6 +576,16 @@ ultrason dili çelişmiyor. Ayrıntı ve karşılaştırma tablosu `docs/GORUNUS
 işi **tek bir WebGL gölgelendiricisiyle**, kütüphanesiz yapıyor. Kütüphane gerçekten gerekli
 mi, Faz 7'de yeniden ölçülecek; şimdiden değiştirilmiyor çünkü karar Faz 3'e ait.
 
+**Tur 5 · NETLİK DÜZELTİLDİ, ULTRASON ONAYLANDI — 2026-08-28.**
+Erdem: *"ultrason tasarımını çok beğendim böyle kalsın"*, *"bebek hafta ilerledikçe çok net
+olmuyor"*, *"iki saniyede biraz esneme yapabilirim"*, *"daha sıcak olsa nasıl olur bir
+gösterme şansın var mı"*.
+
+**Yayın:** https://claude.ai/code/artifact/20436ddb-1205-4b55-8e42-9e52bd9ad008
+**Depo sürümü:** `docs/prototip-tur5.html`
+
+Ayrıntı `docs/GORUNUS.md` › *Yüzey*. Sıcaklık seçimi Erdem'de, karşılaştırma düğmesi sayfada.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.
