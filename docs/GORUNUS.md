@@ -19,6 +19,40 @@ ablamın soyadı, baby de bebek.")*
 Ad zaten bir **duyuru**: aileye yeni biri katılıyor. Sitenin kimliği uydurulmadı, adın
 kendisinden çıktı.
 
+## Ad — ekran adı ile teknik ad ayrıdır
+
+*(Erdem'in kararı, 2026-08-28.)*
+
+| Nerede | Ne yazar |
+|---|---|
+| **Ekranda, sitede, sloganda** | **babyPEÇE** (ç ile) |
+| Depo, klasör, dosya adları, `ayarlar.conf` | `babyPECE` |
+
+Gerekçe: site Türkçe ve soyadı **Peçe**; ekranda `PECE` yazmak yazım hatası gibi durur.
+Element 2'nin *"ad her yerde aynı"* kuralı **teknik ad** için geçerlidir.
+
+## Yüzey — ultrason
+
+*(2026-08-28, ikinci düzeltmeden sonra. Ajanın önerisi, gerekçesi aşağıda.)*
+
+**Neden gerekti:** tur 2'nin yapısı doğruydu ama yüzeyi yine krem zemin, serif başlık ve bol
+boşluktu. Bu üçlü, ajanın kendi çekim alanı ve dışarıdan tanınıyor. Motif yapıyı belirledi,
+yüzeyi belirlemedi; yüzey boş kalınca ortalama doldurdu. Ders A23'ün yalnız yarısı uygulanmıştı.
+
+**Yüzey nereden alındı:** ailenin bu bebeğe dair elindeki **tek gerçek görüntü** ultrason.
+Uydurulmadı, konudan çıkarıldı.
+
+| | |
+|---|---|
+| **Zemin** | Neredeyse siyah. Tek temalı, bilerek. Ultrason karanlıktır; *"teknoloji havası"* için değil, konu gereği |
+| **Görüntü** | Gri tonlu, **benekli** (ultrason paraziti), **koni** içinde |
+| **Perde** | Artık örtü değil, **parazit ve karanlık**. Erken haftalarda benek baskın, ilerledikçe görüntü çözülür |
+| **Sıcak renk** | Yalnız **tek yerde**: perde açıldığında görselin kendi teni. Başka hiçbir yerde sıcak renk yok |
+| **Sayılar** | Makine okuması gibi: köşelerde, eşit genişlikli yazıyla. Bu **dekoratif değil**, cihazın gerçekten yaptığı şey |
+| **Final** | *"Aramızda"* ekranı koniden ve parazitten **tamamen çıkar**, düpedüz bir fotoğraf olur. Tek sıcak ekran odur |
+
+**Yayın:** soğuk makineden sıcak çocuğa. Site bu yolu 33 hafta boyunca yürür.
+
 ## Motif — perde
 
 Türkçede *peçe*, yüzü örten örtüdür. Şu an gerçekten olan şey de budur: bebek görünmüyor,
@@ -67,6 +101,8 @@ Jest ağır görselden değil **zamanlamadan** gelir.
 4. Her bölümün aynı kompozisyonda tekrarı
 5. Tek vurgu renginin her yere dağıtılması
 6. Kaynağı doğrulanmamış hiçbir sayı ya da eşleşme *(→ refleks 13)*
+7. **Krem/bej zemin + serif başlık + bol boşluk üçlüsü.** Bu ajanın kendi çekim alanıdır ve
+   dışarıdan tanınır; tur 2'de yasak listesine rağmen buraya düşüldü. *(2026-08-28'de eklendi.)*
 
 **Sınav sorusu:** adı ve motifi değiştirsen bu tasarım yine kendine ait hissettirir mi?
 Cevap *hayır* ise tasarım hazır değildir.

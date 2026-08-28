@@ -544,6 +544,25 @@ jest kendini iptal ediyordu ② hareket azaltma açıkken sayfa kalıcı olarak 
 `babyPECE`"* diyor. Ekran adı ile teknik ad ayrılabilir, ama bu **karar gerektirir** ve
 Erdem'e soruldu.
 
+**Tur 3 · YÜZEY DEĞİŞTİ — 2026-08-28.** Erdem tur 2'yi de reddetti: *"gene aynı krem tonu
+Claude konsepti bir site olmuş."* Haklıydı. Tur 2'de **yapı** yön dosyasından geliyordu ama
+**yüzey** yine ajanın kendi çekim alanından: krem zemin, serif başlık, bol boşluk. Yasak
+listesi vardı ve yine oraya düşüldü, çünkü liste yapıyı koruyordu, yüzeyi değil.
+
+**Düzeltme:** yüzey de konudan alındı. Ailenin bu bebeğe dair elindeki tek gerçek görüntü
+**ultrason**: koni, benek, karanlık. Ayrıntı `docs/GORUNUS.md` › *Yüzey — ultrason*.
+Yasak listesine 7. madde eklendi: krem + serif + bol boşluk üçlüsü.
+
+**Yayın:** https://claude.ai/code/artifact/43ec4131-f938-4b79-aa72-5d6f37bfa353
+**Depo sürümü:** `docs/prototip-tur3.html`
+
+**Ad kararı (Erdem):** ekranda **babyPEÇE**, teknik adlarda `babyPECE`. İkisi ayrı,
+`docs/GORUNUS.md` › *Ad*'da yazılı. Element 2'nin kuralı teknik ad için geçerli.
+
+**Açık risk, Erdem'e soruldu:** ultrason görüntüsü bazı insanda hastane ve kaygı çağrıştırır;
+ayrıca ablanın gördüğü ilk şey karanlık bir ekran olacak. Bu bilerek yapıldı (sıcaklık ancak
+sonda gelirse anlam kazanıyor) ama bir hediyede bedeli olabilir.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.
