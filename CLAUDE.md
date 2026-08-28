@@ -91,7 +91,7 @@ listesinde değildir, izin beklemez. Refleks satırı **ayrı bir karardır** ve
 | Varlık | Kaynak |
 |---|---|
 | **Bilgi** (veri, metin, sayı) | **CEVAPLI** *(2026-08-28, Faz 3)*: boy/ağırlık → erken haftalar **CRL referansları**, 14. haftadan sonra **WHO / INTERGROWTH-21st**; meyve benzetmesi → **NHS İskoçya + Avustralya Sağlık Bakanlığı**. **Her hücrenin kaynağı depoda yazılı olur**; kaynaksız tek sayı girmez. Ayrıntı: `docs/KAPSAM.md` › Faz 3 › element 7 |
-| **Görünüş** (tasarım dili) | *ertelendi — **vade Faz 2 → Faz 4'e taşındı** (2026-08-28)*. Karar: ajan birkaç görünüş örneği hazırlar, **Erdem seçer**; seçilen tek kaynak olur ve sonrasında sapılmaz |
+| **Görünüş** (tasarım dili) | **CEVAPLI** *(2026-08-28, Faz 4)*: tek kaynak `docs/GORUNUS.md`. Sahibi Erdem; ajan yazıya geçirir, üretmez. Motif **perde**, kadranlar orada. Sapma yok |
 | **Kimlik** (marka, logo, ad) | **CEVAPLI** *(2026-08-28)*: ad **babyPECE**; işaret = anne babanın fotoğrafından **yapay zekâyla üretilen bebek görselinin** küçük hâli. Üretimi Erdem kendi hesabında yapar, ajan üretmez |
 
 > **Vade taşındı, sessizce değil.** Üçünün de vadesi Faz 2'ydi; Faz 2'de *değerin kendisi*

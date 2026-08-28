@@ -515,7 +515,15 @@ ilk açılışta jest, sonraki açılışlarda yoldaş.*
 **Teknik sonuç:** iki ayrı sayfa değil, **aynı sayfanın iki hâli**; ilk geliş tarayıcıda
 hatırlanır. Jest ağır görselden değil **zamanlamadan** gelir, böylece 2 saniye hedefi durur.
 
-**Tur 2'nin eksiği:** kimlik motifi. Yön belli ama sayfayı *bu aileye ait* kılacak somut
+**Tur 2 · KİMLİK MOTİFİ BULUNDU (2026-08-28).** Erdem: *"peçe eniştemin doğal olarak ablamın
+soyadı, baby de bebek."* Ad bir duyuru: **Peçe ailesinin bebeği**. Türkçede *peçe* yüzü örten
+örtüdür; motif buradan çıktı ve Erdem onayladı — **perde**, ilk açılışta kalkar, sonra haftaya
+göre saydamlaşır, doğumda açılır. Kelime sitede yazılmaz, yalnız görsel jest olarak yaşar.
+
+**Yön dosyası: `docs/GORUNUS.md`** — görünüş kaynağının tek adresi, sahibi Erdem.
+
+**Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
+ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.
 
 ---
