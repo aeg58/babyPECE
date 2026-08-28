@@ -144,7 +144,7 @@ Her biri ya parça olur ya **gerekçesiyle** dışlanır.
 | 3 | *"gün gün büyüyüşünü"* + *"kaydırdıkça bütün haftalar gezilsin ama ana focus içinde bulunulan zamanın şekli sayısı alanında olsun, focus o tarihte"* [G1, G7] | Sayfa **bugüne odaklanmış** açılıyor; aşağı kaydırınca geçmiş ve gelecek haftalar geziliyor, bugünün merkez olduğu her an belli. **Gün sayısı günlük işler** ("7 hafta 3 gün", geri sayım); **ölçüler haftalık** | ✔ | **bilgi** — bloke |
 | 4 | *"verilerin bilimsel şeylerle desteklendiği"* [G1] | **Her sayının kaynağı depoda yazılı ve doğrulanabilir.** Ekranda kaynak satırı **gösterilmez**. *(2026-08-29'da daraltıldı — Erdem: "kaynak verme, bunlara gerek yok, bunları temizle." Gerekçe: kaynak bloğu bir hediyede yabancı duruyordu.)* | ✔ | **bilgi** |
 | 5 | *"kaynakların doğrulukları araştırılarak, kesin onaylandıktan sonra"* [G1] | Kullanılan her kaynağın adı, tarihi ve **neden güvenilir sayıldığı** depoda yazılı; onaylanmamış kaynaktan tek sayı bile girmemiş | ✘ | **bilgi** — bloke |
-| 6 | *"esprili bir şekilde" / "esprili bir site"* [G1, G3] | Her haftanın benzetmesinin yanında bir espri cümlesi var, **hiçbiri boş değil** | ✔ | üretilecek metin — Erdem onaylar |
+| 6 | *"esprili bir şekilde" / "esprili bir site"* [G1, G3] | **Her haftanın benzetmesinin yanında benzetilen şeyin kendisi görünüyor** (ikon, resim ya da adı), hiçbiri boş değil. *(2026-08-29'da DÜZELTİLDİ — ajan bunu "yazılı espri cümleleri" diye anlamıştı ve turlarca yanlış şey istedi. Erdem: "benim espriden kastım tasarım dilinde espriler, meyveye benzetmemiz... o benzetme kısmında üzüm ikonu hemen yanında gelsin.")* | ✔ | benzetme kaynağı `docs/OLCULER.md` |
 | 7 | *"zengin, üç boyutlu UI UX kütüphaneleri"* [G1] | Sayfada üç boyutlu, hareket eden bir görsel var ve ablasının telefonunda takılmadan çalışıyor | ✔ | **görünüş** — bloke |
 | 8 | *"şu kadar haftalık şu kadar gün sonra aramızda olacak diye bir slogan"* [G1] | Slogan üstte duruyor; içindeki gün sayısı her gün kendiliğinden güncelleniyor | ✔ | bilgi (çapa) + **kimlik** — bloke |
 | 9 | *"tek parça"* sayfa [G1] | Tek sayfa; menü, sekme, başka sayfaya geçiş yok | ✔ | **görünüş** — bloke |
@@ -732,6 +732,26 @@ Aynı tarama **sekiz ölü CSS kuralı** da buldu (kaldırılmış sıcaklık d�
 **Tur 11 ONAYLANDI (2026-08-29).** Erdem: *"yatayda güzel olmuş böyle kalsın."* Sunumun yönü
 ve davranışı `docs/GORUNUS.md` › *"Kime benzeyecek" sunumu*'na tek kaynak olarak yazıldı.
 Reddedilen üç dikey kip de orada kayıtlı.
+
+**Tur 12 · İKON VE SLOGAN TEKRARI — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/2a53dd94-b41a-4b3c-8628-0009117b78cf
+**Depo sürümü:** `docs/prototip-tur12.html` · veri kaynağı `docs/OLCULER.md`
+
+**AJANIN ANLAMA HATASI, turlarca sürdü.** Parça 6'yı *"yazılı espri cümleleri"* diye anlayıp
+Erdem'den **ablasının kişiliğini** istedi ve bunu birkaç turda tekrarladı. Kastedilen
+**tasarım dilindeki oyun**muş: benzetmenin yanında benzetilen şeyin kendisi. Parça 6'nın
+kabul cümlesi düzeltildi. **Ders:** sahibinin kısa bir sözcüğü (*"espri"*) ajanın kafasındaki
+tanımla eşleşmediğinde, ajan **kendi tanımını doğru sanıp** aynı isteği tekrarlıyor; sözcük
+ilk kullanıldığında **örnekle** teyit edilmeliydi.
+
+**Slogan tekrarı kaldırıldı.** Erdem: *"altında bir daha var, bence bu olmamış."* Haklıydı.
+Şimdi ölçünün altında **sayaç** (7/40 hafta + kalan süre), sloganın tamamı yalnız
+**son ekranda**, bir kez.
+
+**Veri:** 8 haftanın ölçüsü ve benzetmesi NHS'ten birebir alındı (7, 8, 10, 12, 16, 20, 24, 32)
+ve `docs/OLCULER.md`'ye kaynak cümlesiyle yazıldı. **26 hafta alınmadı**; sayfa o haftalarda
+*"kaynağından alınmadı"* diyor. **Parça 2'nin kapısı bu satır dolmadan kapanmaz.**
 
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
