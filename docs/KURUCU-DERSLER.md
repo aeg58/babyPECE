@@ -260,6 +260,44 @@ Ayrı bir olayda tek tek makul **üç yasak**, birlikte üretilebilecek alanı �
 
 ---
 
+## Tema 7 · Üretilen çıktının kendisi
+
+### A22 · Arama özeti kaynak değildir — kaynağın kendisi açılır ⚙︎
+Ekrana bir sayı, bir ölçü ya da bir eşleşme yazmadan önce **kaynağın kendi sayfasını aç ve
+oradan oku**. Arama sonucunun özeti, kaynağın söylediği şey değil, **bir aracın kaynak hakkında
+söyledikleridir** — ve o araç senin cümlene kaynak etiketi iliştirmez, sen iliştirirsin.
+
+**Maliyet:** Bir hediye sitesinin ilk tasarım turunda ekrana *"7. hafta: yaban mersini"* yazıldı
+ve altına *"kaynak: NHS"* kondu. NHS'in kendi sayfası **üzüm** diyordu. Eşleşme hatırlanan
+ticari uygulamalardan geliyordu; kaynak etiketi ise ona sonradan eklenmişti. Aynı turda
+haftalık listenin **tamamı** kaynaksız üretilmişti. Bu, aynı projenin *"kaynağı olmayan sayı
+görünmesi"*ni **kabul edilemez kırılma** ilan etmesinden bir gün sonra oldu.
+
+**Neden yapısal:** Kaynak etiketi metnin bir parçasıdır ve **yazması bedavadır**; sayının
+doğruluğuysa ayrı bir iştir. İkisi aynı cümlede yan yana durduğu için, birini yazmak
+diğerini yapmış hissi verir.
+
+### A23 · Yön verilmemiş tasarım, modelin ortalamasına düşer ⚙︎
+Bir görünüş kararı *"sen öner"* diye ajana bırakıldığında ortaya çıkan şey, ajanın **zevki**
+değil, eğitildiği her şeyin **ortalamasıdır**. Ortalama tanınabilir: aynı etiket biçimleri,
+aynı kart ızgarası, aynı bölüm ritmi. Sonuç kötü değildir; **imzasızdır** ve imzasızlığı
+uzaktan okunur.
+
+**Maliyet:** Aynı projede üç görünüş yönü sunuldu ve sahibi ilk bakışta *"tasarımların bariz
+şekilde Claude kokuyor, başka bir yapay zekâ da değil"* dedi. Denetimde tellerin ortak bir
+listeye birebir oturduğu görüldü: harf aralığı açılmış küçük büyük-harf etiketler, kartların
+sol kenarındaki renkli şerit, `auto-fit` kart ızgarası, her bölümün aynı kompozisyonu.
+
+**Neden yapısal:** Bir dil modeli her seçimde **en olası** olanı üretir. Görsel kararda "en
+olası", milyonlarca şablonun ortalamasıdır. Yön verilmemişse boşluğu ortalama doldurur —
+ve filtre uygulamak bu boşluğu **kapatmaz**, yalnızca sterilleştirir. Yön **dışarıdan** gelmek
+zorundadır.
+
+**Kaynak:** `miqdadbadjuber/anti-slop` (551 ★) — *"a sterile result means the direction was
+missing, not that the filter failed"*.
+
+---
+
 ## Yeni ders eklerken
 
 1. **Aynısı var mı** — varsa güçlendir, ikinci madde açma.

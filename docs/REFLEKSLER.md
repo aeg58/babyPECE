@@ -53,6 +53,10 @@ içinde ne olduğu ölçülür ve sayı kayda yazılır. *(Boş yedek de hatası
 **11. Bir ölçüm yaparken hangi zemini ölçtüğünü yaz.** Zemin değişiyorsa önce sabitle —
 değişmekte olan bir hedef üzerinde alınan sayı tekrarlanabilir değildir. → A4
 
+**13. Ekrana bir sayı, ölçü ya da eşleşme yazmadan önce kaynağın kendi sayfasını aç ve oradan
+oku.** Arama özetinden alınan değere kaynak etiketi iliştirilmez.
+*Ölçülebilir ihlal: çıktıdaki bir değerin, altında yazan kaynağın sayfasında bulunamaması.* → A22
+
 **12. Bir kayıt atmadan önce, o oturumda dosya yazdıysan atıf denetimini çalıştır.**
 *Ölçülebilir ihlal: kayıttan sonra çalıştırılan denetimde kırık atıf çıkması.*
 *(2026-08-28'de doğdu: devir notuna olmayan bir dosyaya atıf yazıldı ve ölçülmeden kayda girdi.)*
