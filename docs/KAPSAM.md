@@ -134,12 +134,44 @@ Her biri ya parça olur ya **gerekçesiyle** dışlanır.
 
 ### Parçalar
 
-| # | Parça (sahibinin kelimeleriyle) | Kabul cümlesi | Gösterilebilir mi | Kaynak (bilgi/görünüş/kimlik) |
-|---|---|---|---|---|
-| | | | | |
+*Doldurulma tarihi: 2026-08-28 · adaylar `docs/GORUSME-KAYDI.md`'den [G1]–[G7] etiketleriyle
+çıkarıldı; kabul cümlelerini ajan önerdi, Erdem düzeltti.*
 
-`Karşılığı yazılmamış görüşme ifadesi: ⬜` · `Kabul cümlesi olmayan parça: ⬜`
-`Parça sayısı: ⬜` · `Gösterilebilir parça sayısı: ⬜` → **birleşme eşiği:** ⬜
+| # | Parça (sahibinin kelimeleriyle) | Kabul cümlesi | Göst. | Kaynak |
+|---|---|---|---|---|
+| 1 | *"çocuğun o günkü boyutunu"* [G1] | Sayfa açıldığında bugünün boyutu sayıyla görünüyor (boy + ağırlık), elle hesap yapmadan doğrulanabiliyor | ✔ | **bilgi** — bloke |
+| 2 | *"hangi objeye, meyveye, yiyeceğe, sebzeye benzediğini"* [G1] | Bugünün benzetmesi görünüyor; 40 haftanın **her** günü için bir karşılığı var, boş gün yok | ✔ | **bilgi** — bloke |
+| 3 | *"gün gün büyüyüşünü"* + *"kaydırdıkça bütün haftalar gezilsin ama ana focus içinde bulunulan zamanın şekli sayısı alanında olsun, focus o tarihte"* [G1, G7] | Sayfa **bugüne odaklanmış** açılıyor; aşağı kaydırınca geçmiş ve gelecek haftalar geziliyor ve bugünün merkez olduğu her an belli | ✔ | **bilgi** — bloke |
+| 4 | *"verilerin bilimsel şeylerle desteklendiği"* [G1] | Her sayının yanında nereden geldiği görülebiliyor | ✔ | **bilgi** — bloke |
+| 5 | *"kaynakların doğrulukları araştırılarak, kesin onaylandıktan sonra"* [G1] | Kullanılan her kaynağın adı, tarihi ve **neden güvenilir sayıldığı** depoda yazılı; onaylanmamış kaynaktan tek sayı bile girmemiş | ✘ | **bilgi** — bloke |
+| 6 | *"esprili bir şekilde" / "esprili bir site"* [G1, G3] | Her haftanın benzetmesinin yanında bir espri cümlesi var, **hiçbiri boş değil** | ✔ | üretilecek metin — Erdem onaylar |
+| 7 | *"zengin, üç boyutlu UI UX kütüphaneleri"* [G1] | Sayfada üç boyutlu, hareket eden bir görsel var ve ablasının telefonunda takılmadan çalışıyor | ✔ | **görünüş** — bloke |
+| 8 | *"şu kadar haftalık şu kadar gün sonra aramızda olacak diye bir slogan"* [G1] | Slogan üstte duruyor; içindeki gün sayısı her gün kendiliğinden güncelleniyor | ✔ | bilgi (çapa) + **kimlik** — bloke |
+| 9 | *"tek parça"* sayfa [G1] | Tek sayfa; menü, sekme, başka sayfaya geçiş yok | ✔ | **görünüş** — bloke |
+| 10 | *"Apple'ın scroll mantığıyla kaydırdıkça site devam ediyor"* [G1] | Aşağı kaydırdıkça içerik akıyor; kesik geçiş ya da zıplama yok | ✔ | **görünüş** — bloke |
+| 11 | *"ona ileteceğim link"* [G1] | Tek bağlantı; tıklayınca kurulum, giriş, kayıt olmadan açılıyor | ✘ | — |
+| 12 | *"ablam açıp"* — telefonunda açılması [G3] | Ablasının telefonunda düzgün açılıyor ve okunuyor | ✔ | — |
+| 13 | *"hesapladığımızda şu an tam yedinci haftası oluyor"* [G2, G6] | Bütün sayılar tek bir tarihten türüyor; o tarih tek yerde yazılı, değişince her şey birlikte değişiyor | ✘ | bilgi — **cevaplı**: ablasının beyanı, çapa yukarıda yazılı |
+
+**"Bloke" ne demek:** o parçanın **yapımı** başlamaz; tasarımı, araştırması, planı yapılabilir.
+Kaynak satırları `CLAUDE.md` › *Varlık kaynakları*'nda, vadeleriyle birlikte.
+
+### BOŞTA taraması — hiçbir parçaya girmemiş ifadeler
+
+`docs/GORUSME-KAYDI.md` baştan okundu. Parçaya dönüşmeyen ifadeler ve **gerekçeleri**:
+
+| İfade | Neden parça değil |
+|---|---|
+| *"Repoları arayabilirsin. Araştırmalar yapabilirsin."* [G1] | **Çalışma yöntemi talimatı**, teslim edilecek çıktı değil. Faz 3'te uygulanır |
+| *"Belki ileride yeğenim için bir anı defteri"* [G4] | Sahibi **kapsam dışı** ilan etti: *"şu anki plana dahil değil"* |
+| *"teslim tarihi baskısı yok doğuma epey var"* [G5] | **Kısıt kaydı**, parça değil. Sıra kararlarını etkiler (Faz 6) |
+| *"Bir tavsiye yok"*, *"sadece ablam için"*, *"ablam bir şey yapmayacak"*, *"doğumda bitsin"* [G4] | **Kapsam dışı bırakma** ifadeleri; *Fikir — dört slot* › *Bu işin ne OLMADIĞI*'nda yazılı |
+| *"Ben Erdem'im"*, *"ablam hamile"* [G1] | **Bağlam**; Roller ve çapa bölümlerinde karşılığı var |
+| *"Pardon, tam dün gitti... pardon dün gitmedi"* [G2] | Sahibinin **kendi düzelttiği** ifade; son hâli [G6]'da kesinleşti |
+
+`Karşılığı yazılmamış görüşme ifadesi: 0` · `Kabul cümlesi olmayan parça: 0`
+`Parça sayısı: 13` · `Gösterilebilir parça sayısı: 10` → **birleşme eşiği: SAĞLANMIYOR**
+*(eşik: parça ≤ 3 **ve** gösterilebilir ≤ 1 · ölçüldü 2026-08-28 — Faz 2·3·5·6 ayrı yürür)*
 
 ---
 

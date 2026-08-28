@@ -63,22 +63,22 @@ devir notunda durmaz.*
 
 **Bunlar kusur değil, bilinçli kararlardır — "düzeltmeye" kalkma:**
 
-1. **`docs/FIKIR.md` BİLEREK açılmadı.** Şablonun kendi içinde bir tutarsızlık var: `KURULUM.md`
-   defteri iş tanımını `docs/FIKIR.md`'ye yazdırıyor, `docs/KAPSAM.md` ise aynı bilgiyi kendi
+1. **docs/FIKIR.md BİLEREK açılmadı** *(bağlantı biçiminde yazılmıyor — olmayan dosyaya
+   atıf üretir).* Şablonun kendi içinde bir tutarsızlık var: `KURULUM.md` defteri iş tanımını
+   oraya yazdırıyor, `docs/KAPSAM.md` ise aynı bilgiyi kendi
    dört slotluk tablosuna yazdırıyor. İkisine birden yazmak *"bir bilgi yalnız bir dosyada
    durur"* kuralını çiğnerdi. **Tek kaynak `docs/KAPSAM.md` seçildi**; `CLAUDE.md` oraya
    işaretçi veriyor. Bu, şablonun v2'sine taşınacak bir ders adayıdır.
 2. **Ölçüm araçları modülü KAPALI, ama `scripts/olcum` çalışıyor ve kullanılıyor.** Şartı
    "beklenen oturum > 10" idi, cevap 5–10 geldi. Kapalı olması aracın yokluğu demek değil.
-3. **`ayarlar.conf` içindeki `KAYIT_ONEKI` satırı yorum satırına alındı** — görev kayıtları
-   modülü kapalı; uydurma değer yazmak yerine gerekçesiyle kapatıldı.
-4. **`SURUM.md` içindeki iki boş işaret üst kaynağın kendi v1 yayın tarihidir**, bizim
-   defterimize ait değil, doldurulmayacak.
-5. **Uzak depo değişti.** `origin` artık `aeg58/babyPECE` (**gizli**); şablon deposu `sablon`
+3. **Şablondan gelen iki artık, ikisi de bilerek öyle:** `ayarlar.conf`'taki `KAYIT_ONEKI`
+   satırı yorum satırına alındı (görev kayıtları modülü kapalı, uydurma değer yazılmadı);
+   `SURUM.md`'deki iki boş işaret ise üst kaynağın kendi v1 yayın tarihi — bizim değil.
+4. **Uzak depo değişti.** `origin` artık `aeg58/babyPECE` (**gizli**); şablon deposu `sablon`
    adıyla duruyor. "Uzak depo ve inceleme" modülü yine de **kapalı** — şartı ≥2 kişi ve iş
    tek kişilik.
-6. **Tahmini doğum tarihi (2027-04-16) hesaplanmıştır, ölçülmemiştir.** 280 günden türetildi.
-   Doktorun kendi tarihi öğrenilirse **o geçerlidir** ve çapa yeniden hesaplanır.
+5. **Çapa tarihinin bilinen belirsizlikleri `docs/KAPSAM.md` › *Faz 1 · ÇAPA TARİHİ*'nde
+   yazılı** — tahmini doğum tarihi hesaplandı, ölçülmedi. Buraya kopyalanmıyor.
 
 
 ---

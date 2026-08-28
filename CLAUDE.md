@@ -90,9 +90,13 @@ listesinde değildir, izin beklemez. Refleks satırı **ayrı bir karardır** ve
 
 | Varlık | Kaynak |
 |---|---|
-| **Bilgi** (veri, metin, sayı) | *ertelendi — vade: Faz 2* |
-| **Görünüş** (tasarım dili) | *ertelendi — vade: Faz 2* |
-| **Kimlik** (marka, logo, ad) | *ertelendi — vade: Faz 2* |
+| **Bilgi** (veri, metin, sayı) | *ertelendi — **vade Faz 2 → Faz 3'e taşındı** (2026-08-28)*. Karar: ajan bilimsel kaynakları araştırıp gerekçesiyle sunar, **tek kaynağı Erdem seçer**. Seçilene kadar 1., 2., 4. parçaların yapımı **bloke** |
+| **Görünüş** (tasarım dili) | *ertelendi — **vade Faz 2 → Faz 4'e taşındı** (2026-08-28)*. Karar: ajan birkaç görünüş örneği hazırlar, **Erdem seçer**; seçilen tek kaynak olur ve sonrasında sapılmaz |
+| **Kimlik** (marka, logo, ad) | *ertelendi — **vade Faz 2 → Faz 4'e taşındı** (2026-08-28)*. Karar: ad **babyPECE**; ayrıca basit bir işaret/yazı düzeni üretilecek ve **Erdem onaylayacak** |
+
+> **Vade taşındı, sessizce değil.** Üçünün de vadesi Faz 2'ydi; Faz 2'de *değerin kendisi*
+> değil, **kimin neye göre karar vereceği** kararlaştırılabildi. Taşıma tarihiyle ve yeni
+> vadesiyle yazılıdır. Bir kez daha taşınırsa bu satır **büyümeye** başlar — o da görünür olsun.
 
 **Kaynağı yazılmamış bir varlık üretilmez.** Satır boşsa cevap *"o varlığı henüz
 üretemezsin"*dir — bu kural satır boşken de çalışır.

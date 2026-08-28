@@ -53,6 +53,10 @@ içinde ne olduğu ölçülür ve sayı kayda yazılır. *(Boş yedek de hatası
 **11. Bir ölçüm yaparken hangi zemini ölçtüğünü yaz.** Zemin değişiyorsa önce sabitle —
 değişmekte olan bir hedef üzerinde alınan sayı tekrarlanabilir değildir. → A4
 
+**12. Bir kayıt atmadan önce, o oturumda dosya yazdıysan atıf denetimini çalıştır.**
+*Ölçülebilir ihlal: kayıttan sonra çalıştırılan denetimde kırık atıf çıkması.*
+*(2026-08-28'de doğdu: devir notuna olmayan bir dosyaya atıf yazıldı ve ölçülmeden kayda girdi.)*
+
 ---
 
 ## Büyüme freni
@@ -77,6 +81,7 @@ ve tarihiyle yazarak** yükselt.
 | Tarih | Eski | Yeni | Gerekçe | Ayıklama turunun dökümü |
 |---|---|---|---|---|
 | 2026-08-28 kurulum | — | `ayarlar.conf` › `REFLEKS_TAVANI` ve `REFLEKS_SATIR_TAVANI` | ilk değer, kurulumda belirlendi | — |
+| 2026-08-28 | 90 | `ayarlar.conf` › `DEVIR_TAVANI` | **Devir notu (`DEVIR_TAVANI`).** Faz 0+1 tek oturumda bittiği için not 88/90'a çıktı; iki fazın kararları aynı nota sığmıyor. Erdem yükseltti | **Ayıklama turu yapıldı, aynı gün:** ① `SURUM.md` boş işaret maddesi `KAYIT_ONEKI` maddesiyle BİRLEŞTİRİLDİ (ikisi de "şablon artığı, düzeltme") ② tahmini doğum tarihi maddesi `docs/KAPSAM.md`'ye işaretçiye İNDİRİLDİ (bilgi orada tek kaynakta duruyordu) · **REDDEDİLEN birleştirme:** "ölçüm araçları kapalı ama araç çalışıyor" ile `KAYIT_ONEKI` maddesi — ikisi de kapalı modül artığı ama biri *aracı kullanabilirsin* diyor, diğeri *bu satıra dokunma* diyor; birleşince hangisine ne yapılacağı bulanıklaşıyor |
 
 ---
 
