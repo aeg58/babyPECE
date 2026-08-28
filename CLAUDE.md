@@ -1,16 +1,17 @@
-# ⬜ ÇALIŞMANIN ADI — çalışma kuralları
+# babyPECE — çalışma kuralları
 
 > **Bu dosya bağlayıcıdır ve her oturumda kendiliğinden yüklenir.**
 > Kuralların **tamamı** buradadır. İkinci bir kural deposu yoktur — başka bir dosyada kural
 > metni görürsen o kopyadır ve çürümüştür.
 >
-> **Tavan: ⬜ satır** *(kurulumda belirlendi · `ayarlar.conf`)*. Dolduğunda → *Kural yaşam
+> **Tavan: `ayarlar.conf` › `KURAL_TAVANI`** *(kurulumda belirlendi; sayı yalnız orada yazılıdır)*. Dolduğunda → *Kural yaşam
 > döngüsü*.
 >
 > **Atıflar başlık adıyla yapılır, numarayla değil.** *(Numarayla atıf yapan bir önceki sürümde
 > 101 atfın 29'u, dosya hiç kullanılmadan, olmayan bölümlere gidiyordu.)*
 
-⬜ *Tek cümlelik iş tanımı — kurulumda dolduruldu.*
+*ertelendi — vade: Faz 1 · Fikir turu.* Tek cümlelik iş tanımı ve bitiş tanımı o turda yazılır.
+**Bu satır boşken hiçbir üretim işi başlatılmaz** — vade işlemi tutar.
 
 ---
 
@@ -18,17 +19,28 @@
 
 | Rol | Kim | Ne yapar |
 |---|---|---|
-| **Karar sahibi** | ⬜ | Onaylar. Onaysız geri dönülemez işlem yapılmaz |
-| **Günlük muhatap** | ⬜ | Ajanın konuştuğu kişi |
+| **Karar sahibi** | **Erdem** | Onaylar. Onaysız geri dönülemez işlem yapılmaz |
+| **Günlük muhatap** | **Erdem** | Ajanın konuştuğu kişi |
 | **Ajan** | — | Ölçer, hazırlar, önerir. **Seçmez** |
 
 ### Ajanın yapamayacakları
 
-⬜ *Kurulumda dolduruldu. Boş bırakılamaz.*
+**Kurulumda Erdem tarafından belirlendi · 2026-08-28. Bağlayıcı.**
+
+1. **Dosya ya da klasör silinmez, üzerine yazılmaz.** Geri dönüşü zor her işlem önce yazılı
+   olarak sunulur ve onay beklenir.
+2. **Çalışma alanı yalnız bu depodur.** Deponun dışındaki klasörlere, sistem ayarlarına ve
+   Erdem'in hesaplarına dokunulmaz.
+3. **Kayıt (commit) ve gönderme (push) yasak değildir ama kendiliğinden yapılmaz** — yalnız
+   istendiğinde yapılır.
 
 ### Anlatım dili
 
-Muhatap yapım tekniğini biliyor mu: ⬜
+Muhatap yapım tekniğini biliyor mu: **hayır** *(kurulumda belirlendi)*.
+
+**İletişim dili:** konuşma **Türkçe**; bu çalışmada üretilecek proje çıktıları (kod, kod içi
+açıklama, teknik belge) **İngilizce**. Sistemin kendi kural ve kayıt dosyaları Türkçedir ve
+çevrilmez — aynı kuralın iki dilde durması, birinin sessizce çürümesi demektir.
 
 **Biliyorsa** terim kullanılır. **Bilmiyorsa** hiçbir açıklama terimle başlamaz — ama
 **ayrıntı eksiltilmez**, sade dille kurulur. Eksiltilmiş ayrıntı, anlaşılır anlatım değildir.
@@ -75,9 +87,9 @@ listesinde değildir, izin beklemez. Refleks satırı **ayrı bir karardır** ve
 
 | Varlık | Kaynak |
 |---|---|
-| **Bilgi** (veri, metin, sayı) | ⬜ |
-| **Görünüş** (tasarım dili) | ⬜ |
-| **Kimlik** (marka, logo, ad) | ⬜ |
+| **Bilgi** (veri, metin, sayı) | *ertelendi — vade: Faz 2* |
+| **Görünüş** (tasarım dili) | *ertelendi — vade: Faz 2* |
+| **Kimlik** (marka, logo, ad) | *ertelendi — vade: Faz 2* |
 
 **Kaynağı yazılmamış bir varlık üretilmez.** Satır boşsa cevap *"o varlığı henüz
 üretemezsin"*dir — bu kural satır boşken de çalışır.
@@ -115,7 +127,7 @@ Kapsam ve fazlar: `docs/KAPSAM.md`.
 1. **KAPI — `docs/DEVIR-NOTU.md` okunur, ilk iş budur.** Hangi ek dosyaların okunacağını da o söyler.
 2. **KAPI — Okuma listesi sırayla okunur.** Çekirdek liste: devir notu · bu dosya · `docs/REFLEKSLER.md` · `docs/BEKLEYENLER.md`. *(Modüller listeye ekler.)*
 3. **KAPI — Okundu kanıtı.** Her dosyanın yanına, **o dosya okunmadan üretilemeyecek** somut bir bilgi yazılır: bir sayı, bir tarih, bir cümle. *"Okudum"* kanıt değildir. **Kanıt üretilemeyen dosya okunmamış sayılır ve okunur.**
-4. **Devir notuna rağmen sormak zorunda kaldıklarım:** ⬜ *Boşsa not iyidir. Doluysa eksiklik notu yazan oturuma aittir ve bir sonraki kapanışta düzeltilir.*
+4. **Devir notuna rağmen sormak zorunda kaldıklarım:** *(oturum başı kaydına yazılır)* *Boşsa not iyidir. Doluysa eksiklik notu yazan oturuma aittir ve bir sonraki kapanışta düzeltilir.*
 5. **KAPI — Devralınan açık uçlar tek tek karara bağlanır.** Her madde ya bugüne alınır, ya kayda dönüşür, ya da *bilinçli olarak beklemeye bırakıldığı yazılır*. **Sessizce düşen açık uç, veri kaybıdır.**
 6. Oturumun **tek** hedefi ve beklenen somut çıktısı yazılır; **ele alınmayacaklar** da yazılır.
 
@@ -210,7 +222,8 @@ yapılmış bir işi yapmaya yönlendirir.
 
 ## Onay
 
-⬜ *Onay birebir metinle mi alınacak — kurulumda belirlendi.*
+**Onay birebir metinledir: `ONAYLIYORUM`** *(kurulumda belirlendi · 2026-08-28)*.
+Serbest cevap onay değildir; geri dönülemez işlemden önce tam olarak bu kelime beklenir.
 
 **Geri dönülemez işlemden önce dur, ne yapacağını yaz, açık onay bekle.**
 *"Tamam"* ve *"olur"* onay değildir. Onay **kapsamı kadardır**, devam izni değildir.
@@ -285,4 +298,35 @@ yazılı?"* diye **aranır**; tek nüshaysa önce kalıcı bir adrese **taşın�
 Kurulumda açılan modüllerin metni **bu dosyanın sonuna eklenir.** `docs/moduller/` altındaki
 dosyalar kurulum **kaynağıdır, kural değildir.**
 
-Açık modüller: ⬜
+Açık modüller: **Sürüm kontrolü** · **Olay ve geri alma**. Metinleri aşağıdadır.
+
+Kapalı modüller ve gerekçeleri `ayarlar.conf`'ta (`M_` ile başlayan satırlar).
+
+---
+
+### Sürüm kontrolü
+
+**Korunan dala doğrudan kod yazılmaz.** İş bir dalda yapılır, incelenir, sonra birleşir.
+Korunan dallar ve iş dalı önekleri `ayarlar.conf`'ta.
+
+**Kayıt işlemeden önce iki şey ölçülür:** doğru dalda mıyım · burada benim olmayan değişiklik
+var mı. Yabancı değişiklik varsa dokunulmaz, sahibine bırakılır.
+
+**Makinesi:** `scripts/kancalar/pre-commit`. Kanca bağlı değilse **koruma yoktur** —
+bağlanması kurulum adımıdır ve `olcum kurulum` bunu ölçer.
+
+---
+
+### Olay ve geri alma
+
+Geri dönüşü zor bir işlem olacaksa **önce geri dönüş yolu yazılır**, sonra işlem yapılır.
+
+**Geri dönülemez işlemden önce yedeğin İÇİ sayılır** ve sayı kayda yazılır. *"Yedek alındı"*
+yeterli değildir — boş yedek de hatasız *"başarılı"* der.
+
+**Yedek nerede duruyor?** Yedeklediği şeyin üstünde duran yedek, o şey çökünce birlikte gider.
+
+**Her olay yazılır:** ne oldu · ne zaman ölçüldü · kök neden · ne yapıldı · **hangi refleks
+ya da makine bunu bir daha yakalayacak.** Son alan boşsa olay kapanmamıştır.
+
+Olay kayıtları `docs/olaylar/` altına, `docs/sablonlar/olay-kaydi.md` şablonundan açılır.

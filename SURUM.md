@@ -54,4 +54,4 @@ v0 hiç kullanılmadan denetlendi ve **kendi teşhisine yakalandığı ölçüld
 
 | Proje | Sürüm | Kurulum tarihi | Not |
 |---|---|---|---|
-| | | | |
+| babyPECE | v1 | 2026-08-28 | profil a · açık modüller: sürüm kontrolü, olay ve geri alma |

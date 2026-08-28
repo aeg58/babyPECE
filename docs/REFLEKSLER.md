@@ -76,7 +76,7 @@ ve tarihiyle yazarak** yükselt.
 
 | Tarih | Eski | Yeni | Gerekçe | Ayıklama turunun dökümü |
 |---|---|---|---|---|
-| ⬜ kurulum | — | ⬜ | ilk değer | — |
+| 2026-08-28 kurulum | — | `ayarlar.conf` › `REFLEKS_TAVANI` ve `REFLEKS_SATIR_TAVANI` | ilk değer, kurulumda belirlendi | — |
 
 ---
 
