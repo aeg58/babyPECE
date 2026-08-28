@@ -625,6 +625,25 @@ Aylık görseller haftalık seri gelene kadar sitede kalmaya devam eder.
 **Kod değişikliği bekliyor:** site şu an haftayı aya çevirip görsel seçiyor. Haftalık seri
 gelince bu eşleme kalkar, hafta doğrudan dosyaya bağlanır.
 
+**Tur 8 · HAFTALIK SERİ DEVREDE — 2026-08-29.**
+
+**Yayın:** https://claude.ai/code/artifact/6fe2d6fa-b2ed-4aa8-a4ff-60ce13759517
+**Depo sürümü:** `docs/prototip-tur8.html` · görseller `docs/gorseller/hafta-07..40.jpg`
+
+Erdem 34 haftalık görseli üretti, seçti, **kontrol serisi** hazırladı ve 900 px web
+sürümlerini de kendisi çıkardı. Ajan seriyi gözle denetledi: üslup 34 karede tutarlı,
+7 ve 8. haftalar doğru, geçişler kademeli, eksik hafta yok.
+
+**Hafta → ay eşlemesi kaldırıldı.** Her hafta artık kendi karesine bağlı.
+
+**Ölçülen ve düzeltilen bir şey:** gölgelendirici özneyi zeminden parlaklık farkıyla ayırıyor.
+Ayrım ölçüldü ve **her haftada sağlam çıktı** (0,294–0,463), yalnız 40. hafta sınırda. Ama
+zemin seri boyunca kayıyor (0,96 → 0,83), yani **sabit eşik yanlıştı** ve son haftalarda arka
+planı sisli bırakıyordu. Her haftanın ölçülen zemin değeri koda gömüldü, eşik ona göre kayıyor.
+Döküm: `docs/gorseller/00-OKU.md`.
+
+**Eski aylık seri kullanılmıyor ama silinmedi** — silme Erdem'in onayına bağlı.
+
 **Tur 2'nin kalan eksiği:** ablanın kişiliğine dair malzeme (espriyi ortalamadan kurtaracak
 ikinci katman). Eski eksik olan kimlik motifi: Yön belli ama sayfayı *bu aileye ait* kılacak somut
 malzeme henüz yok — Erdem'e soruldu.

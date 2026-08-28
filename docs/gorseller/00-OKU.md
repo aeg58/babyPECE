@@ -1,30 +1,43 @@
 # Görseller
 
-**Parça 14 — aylık bilimsel gelişim serisi.** `ay-01.jpg` … `ay-10.jpg`, gebelik ayına göre.
+## Parça 14 — HAFTALIK bilimsel gelişim serisi (yürürlükte)
+
+`hafta-07.jpg` … `hafta-40.jpg` · **34 dosya, eksik hafta yok.**
 
 | | |
 |---|---|
-| Üreten | Erdem, kendi hesabında, `docs/GORSEL-PROMPTLARI.md` › Prompt 1 ile |
-| Üretim tarihi | 2026-08-28 |
-| Onay | Erdem üretim kaydında *"klasöre yalnızca seçilen sonuçlar alındı"* dedi — **tek tek seçildi** |
-| Özgün | 1254 × 1254 PNG, toplam 35 MB. Erdem'in kendi diskinde |
-| Depodaki | 900 px, JPEG kalite 72, toplam **720 KB** |
-| Neden küçültüldü | Telefonda 2 saniye hedefi (`docs/KAPSAM.md` › Faz 3 › element 19) |
+| Üreten | Erdem, kendi hesabında, `docs/GORSEL-BRIEF-HAFTALIK.md` brifingiyle |
+| Üretim tarihi | 2026-08-29 |
+| Onay | Erdem üretti, seçti ve **kontrol serisi** hazırladı; ajan seriyi gözle denetledi |
+| Özgün | 1254 × 1254 PNG, toplam 51 MB. Erdem'in kendi diskinde |
+| Depodaki | 900 px JPEG, toplam **1,9 MB** (web sürümlerini Erdem hazırladı) |
 
-**3–6. aylar yeniden üretildi:** ilk denemeler yenidoğan oranlarına fazla yaklaşmıştı; ince
-fetal oran ve gebelik evresi vurgusuyla tekrarlandı. *(Erdem'in üretim kaydından.)*
+**Ajanın denetimi (2026-08-29):** üslup 34 karede tutarlı · 7 ve 8. haftalar doğru (kıvrık
+embriyo, orantısız baş, göz noktası, kuyruk) · geçişler kademeli · eksik hafta yok.
 
-**Bu seride benzerlik yok.** Anne baba fotoğrafı kullanılmadı; kimseyi tanımlamıyor.
+**Ölçülen zemin ayrımı.** Gölgelendirici özneyi zeminden **parlaklık farkıyla** ayırıyor,
+bu yüzden fark ölçüldü:
 
-## Burada OLMAYAN iki seri
+| | |
+|---|---|
+| Ayrım aralığı | 0,294 ile 0,463 arası |
+| Zemin kayması | 7. haftada 0,96 → 40. haftada 0,83 |
+| Sınırdaki tek hafta | **40** (0,294) |
 
-Parça 15 (*"neye benzer"*, 10 görsel) ve parça 16 (*"aramızda"* finali) **bilerek depoya
-alınmadı.** Sebep: ikisi de gerçek kişilerin yüz özelliklerinden türetilmiş ve **bu depo açık**.
-Erdem'in kendi üretim kaydı da aynı şartı yazıyor: *"açık yayından önce ilgili kişilerin rızası
-alınmalı."* Rıza teyit edilene kadar bu dosyalar yalnız Erdem'in diskinde durur.
+Zemin seri boyunca koyulaştığı için **sabit eşik yanlış olurdu**; son haftalarda arka planı
+sisli bırakıyordu. Her haftanın ölçülen zemin değeri koda gömüldü ve eşik ona göre kayıyor.
+
+## Parça 15 ve 16 — benzerlik taşıyan seriler
+
+`benzer-*.jpg` (10 dosya) ve `aramizda.jpg`. Anne babanın fotoğraflarından üretildi.
+Rıza Erdem tarafından alındı (2026-08-28), sonra depoya alındılar.
+
+## Eski aylık seri — kullanılmıyor
+
+`ay-01.jpg` … `ay-10.jpg`. Haftalık seri geldiği için **artık kullanılmıyor** ama
+**silinmedi**: silme Erdem'in onayına bağlı bir işlem. Sitede hiçbir yerden çağrılmıyorlar.
 
 ## Bu klasör nihai yeri değil
 
 Site Faz 7'de kurulunca görseller sitenin kendi varlık klasörüne taşınır. Şimdilik `docs/`
-altındalar çünkü depo kuralında `docs/` dışındaki her yol **kod** sayılıyor ve korunan dala
-doğrudan kod kaydı reddediliyor (`ayarlar.conf` › `KOD_DISI_YOLLAR`).
+altındalar çünkü depo kuralında `docs/` dışındaki her yol **kod** sayılıyor.
