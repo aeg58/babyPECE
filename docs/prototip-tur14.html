@@ -1,6 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,noimageindex">
 <title>babyPEÇE</title>
 <link rel="icon" type="image/png" sizes="32x32" href="gorseller/isaret-32.png">
 <link rel="icon" type="image/png" sizes="180x180" href="gorseller/isaret-180.png">
@@ -311,6 +312,9 @@ var MM={
  39:["50,7 cm","karpuz","\u1F349"],
  40:["51,2 cm","balkabağı",""]};
 function $(i){return document.getElementById(i)}
+/* $o: ÖĞE OLMAYABİLİR. Vitrin denetimleri (sürgü, tekrar düğmesi) yalnız
+   inceleme sayfasında var; yayınlanan sitede yoklar. */
+function $o(i){return document.getElementById(i)}
 function ix(w){return Math.max(0,Math.min(33,w-7))}
 function ik(n){return n<10?"0"+n:""+n}
 var bugun=new Date();bugun.setHours(0,0,0,0);
@@ -498,7 +502,8 @@ function ciz(w,gg){
     ik.removeAttribute("src"); ik.style.display="none"; }
   var gx=m?(2+parseFloat(m[0])*3.4):2;gx=Math.min(gx,96);
   $("gf").style.width=(gx-2)+"%";$("gk").style.left=gx+"%";$("gt").style.left=gx+"%";
-  $("sn").textContent=w+". hafta";$("wlb").textContent=w+". hafta";
+  $("sn").textContent=w+". hafta";
+  var _wl=$o("wlb"); if(_wl)_wl.textContent=w+". hafta";
   var k=Math.max(0,280-gun);var ks=Math.floor(k/7)+" hafta "+(k%7)+" gün";$("kl").textContent=ks;
   $("kalan").textContent=ks.toLocaleUpperCase("tr")+" KALDI";
   $("cn").textContent=w;
@@ -510,9 +515,10 @@ function ac(){var s=$("s1");s.classList.remove("lit");void s.offsetWidth;
 
 glOK=initGL();
 if(!glOK){$("s1").classList.add("nogl")}else{boyut();window.addEventListener("resize",boyut)}
-$("wk").value=hG;ciz(hG,gunG);
+var _wk=$o("wk"); if(_wk)_wk.value=hG;
+ciz(hG,gunG);
 if(glOK)dongu();
-$("wk").addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gunG:null)});
+if(_wk)_wk.addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gunG:null)});
 (function(){
   var el=$("s1");
   function ayarla(cx,cy){var r=el.getBoundingClientRect();
@@ -523,6 +529,6 @@ $("wk").addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gunG:
   el.addEventListener("touchmove",function(e){var p=e.touches[0];if(p)ayarla(p.clientX,p.clientY)},{passive:true});
   el.addEventListener("touchend",function(){tx=0;ty=0});
 })();
-$("rp").addEventListener("click",ac);
+var _rp=$o("rp"); if(_rp)_rp.addEventListener("click",ac);
 ac();
 </script>

@@ -1,0 +1,4 @@
+# babyPEÇE — bu site arama motorlarına kapalıdır (element 14).
+# Adresi bilmeyen bulamamalı: hassas bilgi bir hamileliktir.
+User-agent: *
+Disallow: /

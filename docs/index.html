@@ -1,47 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-babyPEÇE — sayfa üreteci · tur 14
-================================
-BU DOSYA SAYFANIN KAYNAĞIDIR. docs/prototip-tur14.html ELLE DÜZENLENMEZ:
-burası değiştirilir ve bu betik yeniden çalıştırılır.
-
-    python3 docs/uretec-tur14.py
-
-Girdileri depodan okur (docs/gorseller/…), çıktıyı docs/prototip-tur14.html'e yazar.
-Görselleri sayfaya gömmez, göreli yolla bağlar — depodaki sürüm budur.
-
-2026-08-29'da geçici klasörden depoya alındı (Erdem'in kararı): üreteç /tmp altında
-duruyordu, o klasör silinseydi sayfanın kaynağı gidip elde yalnız çıktısı kalacaktı.
-"""
-import io, os, sys
-
-KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CIKTI = os.path.join(KOK, "docs", "prototip-tur14.html")
-
-def g(n):   return "gorseller/" + n
-AY     = [g("hafta-%02d.jpg" % w) for w in range(7, 41)]
-FINAL  = g("aramizda.jpg")
-IKON   = [g("ikon/ikon-%02d.png" % w) for w in range(7, 41)]
-IS32   = g("isaret-32.png")
-IS180  = g("isaret-180.png")
-BZ=[("yenidogan","yenidoğan"),("06ay","6 aylık"),("01yas","1 yaş"),("02yas","2 yaş"),
-    ("03yas","3 yaş"),("04yas","4 yaş"),("05yas","5 yaş"),("06yas","6 yaş"),
-    ("07yas","7 yaş"),("08yas","8 yaş")]
-BENZER=[(g("benzer-%s.jpg"%k),l) for k,l in BZ]
-
-# Her haftanın ÖLÇÜLEN zemin parlaklığı. Gölgelendirici özneyi zeminden parlaklık
-# farkıyla ayırıyor; zemin 7. haftada 0,96'dan 40. haftada 0,83'e iniyor, bu yüzden
-# sabit eşik son haftalarda arka planı sisli bırakıyordu. Ölçüm: docs/gorseller/00-OKU.md
-BG = "0.961,0.945,0.945,0.945,0.953,0.949,0.933,0.933,0.929,0.922,0.922,0.922,0.918,0.91,0.902,0.902,0.898,0.89,0.898,0.89,0.878,0.871,0.863,0.847,0.871,0.871,0.859,0.855,0.847,0.831,0.847,0.839,0.831,0.827"
-
-H = r"""<!doctype html>
+<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive,noimageindex">
 <title>babyPEÇE</title>
-<link rel="icon" type="image/png" sizes="32x32" href="__IS32__">
-<link rel="icon" type="image/png" sizes="180x180" href="__IS180__">
-<link rel="apple-touch-icon" href="__IS180__">
+<link rel="icon" type="image/png" sizes="32x32" href="gorseller/isaret-32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="gorseller/isaret-180.png">
+<link rel="apple-touch-icon" href="gorseller/isaret-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600&family=Martian+Mono:wght@300;400&display=swap">
@@ -62,13 +26,9 @@ body{margin:0;background:var(--void);color:var(--glow);
   color:var(--paper);margin:0 0 8px}
 .hd p{margin:0 0 24px;color:var(--dim);font-size:15px;max-width:58ch}
 
-.dev{width:352px;max-width:100%;margin:0 auto;border-radius:28px;overflow:hidden;background:#000;
-  box-shadow:0 28px 70px -38px rgba(0,0,0,.95)}
-.site{height:718px;overflow-y:auto;overflow-x:hidden;background:var(--void);position:relative}
-.site::-webkit-scrollbar{width:0}
 
 /* ---- tarama ---- */
-.scan{min-height:718px;position:relative;display:flex;flex-direction:column;overflow:hidden}
+.scan{min-height:100vh;min-height:100svh;position:relative;display:flex;flex-direction:column;overflow:hidden}
 #gl{position:absolute;inset:0;width:100%;height:100%;display:block}
 .fallback{position:absolute;inset:0;background-size:cover;background-position:center;
   filter:sepia(1) saturate(2.4) contrast(1.4) brightness(.6) blur(10px);display:none}
@@ -117,7 +77,7 @@ body{margin:0;background:var(--void);color:var(--glow);
 .wks i.n{background:var(--amber);height:100%}
 .wl{display:flex;justify-content:space-between;font-family:"Martian Mono",monospace;font-size:9px;color:var(--dim)}
 
-.fin{min-height:718px;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.fin{min-height:100vh;min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
 .fin img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .fin .scanoff{position:absolute;inset:0;background:var(--void);opacity:1;
   transition:opacity 2.2s cubic-bezier(.22,1,.36,1)}
@@ -192,16 +152,7 @@ input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:3p
 .aft p b{color:var(--paper);font-weight:600}
 @media (prefers-reduced-motion:reduce){.open,.rv{transition:none}}
 </style>
-
-<div class="page">
-  <div class="hd">
-    <h1>babyPEÇE, tur 14</h1>
-    <p><b>Emoji tamamen kalktı.</b> 34 haftanın hepsinde artık senin ürettiğin ikon var. Sürgüyü baştan sona kaydır.</p>
-  </div>
-
-  <div class="dev"><div class="site" id="site">
-
-    <section class="scan" id="s1">
+<section class="scan" id="s1">
       <canvas id="gl"></canvas>
       <div class="fallback" id="fb"></div>
 
@@ -255,60 +206,10 @@ input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:3p
 
   </div></div>
 
-  <div class="ctl">
-    <button class="btn" id="rp" type="button">Açılışı tekrar oynat</button>
-    <div class="sl2">
-      <label for="wk">Haftayı ileri al <span id="wlb">7. hafta</span></label>
-      <input type="range" id="wk" min="7" max="40" value="7">
-    </div>
-
-  </div>
-
-  <div class="aft">
-    <h2>Hatanın kendisi</h2>
-    <p><b>Kaynak görsellerde özne koyu, arka plan açık.</b> Bebek şeftali tonunda, zemin krem. Ultrasonda ise tersi olmalı: zemin karanlık, doku parlak. Ben parlaklığı doğrudan sinyal saymıştım, yani <b>arka planı aydınlatıp özneyi karartmıştım</b>. Hafta ilerledikçe kazancı da yükselttiğim için görüntü tamamen doyuma gidip o krem lekeye dönüşüyordu.</p>
-    <p><b>Düzeltme:</b> sinyal artık parlaklıktan değil, <b>özne ile zemin arasındaki farktan</b> üretiliyor. Ayrıca çıkışa yumuşak bir sıkıştırma kondu; görüntü artık patlamıyor, en parlak yerde bile doku kalıyor.</p>
-    <h2>Perde kaldırıldı</h2>
-    <p>Haklısın, gereksizdi. Beneğin kendisi zaten perde işini görüyor; üstüne bir de karartma koyunca görsel okunmaz oluyordu. Artık tek örtü taramanın kendi paraziti. Erken haftalarda benek baskın, ilerledikçe azalıyor, ama <b>görüntü her hafta okunabilir</b>.</p>
-    <h2>Görsellerin üstünde 3B</h2>
-    <p>Senin ürettiğin görseller düz resim, ama <b>parlaklıkları bir derinlik haritası gibi kullanılıyor</b>. Işın yürütmedeki her dilim farklı hızda kayıyor, yani yakın ve uzak katmanlar ayrışıyor. Sonuç gerçek bir parallaks: görsel ekranın içinde bir hacim gibi duruyor.</p>
-    <p><b>Tarama alanının üstünde parmağını gezdir</b> ya da imleci dolaştır. Bebek bakışını takip ediyor. Dokunmadığın zaman da yavaşça kendi kendine salınıyor, yani ölü durmuyor.</p>
-    <h2>Espriyi yanlış anlamışım</h2>
-    <p>Turlardır senden ablanın kişiliğini istiyordum, çünkü parça 6'yı "yazılı espri cümleleri" diye anlamıştım. Kastettiğin <b>tasarım dilindeki oyun</b>muş: benzetmenin yanında benzetilen şeyin kendisi. Kayıtları düzelttim.</p>
-    <p><b>İkon geldi.</b> Emoji karşılığı olan haftalarda emoji, olmayanlarda adın kendisi yazıyla duruyor. Kayısının, eriğin, ahududunun ve kerevizin emojisi yok; yanlış meyve koymaktansa adını yazdım.</p>
-    <p>İstersen daha ileri götürebiliriz: haftalık görselleri ürettiğimiz gibi <b>34 küçük benzetme ikonu</b> da ürettirebilirsin, aynı sepya dilinde. Brifingini yazarım.</p>
-    <h2>Slogan tekrarı kalktı</h2>
-    <p>Haklıydın, iki kez geçiyordu. Şimdi ölçünün altında <b>sayaç</b> var, sloganın tamamı ise yalnız <b>son ekranda</b>, bir kez. Sayı bilgi olarak bir yerde, duygu olarak bir yerde.</p>
-    <h2>İkonlar geldi</h2>
-    <p><b>Emoji tamamen kaldırıldı.</b> 34 haftanın hepsinde kendi ikonu var; emojisi olmadığı için adı yazıyla duran on dört hafta da artık dolu.</p>
-    <p><b>Şeffaflık makineyle çıkarıldı.</b> Dosya JPEG geldi, yani alfa kanalı yoktu ve damalı desen boyanmıştı. Desen düzenli olduğu için kenardan içeri doğru taşkın doldurmayla ayıklandı; karnabaharın ve kavunların içi bu yüzden delinmedi.</p>
-    <p><b>Eşleme sırayla oturdu:</b> tablodaki 34 hücre tam olarak 7'den 40'a haftalara denk geldi. Kalan iki hücre fazlaydı (bir kabak dilimi ve ikinci bir balkabağı) ve kullanılmadı.</p>
-    <h2>Veri tamamlandı</h2>
-    <p><b>34 haftanın hepsi NHS'in hafta sayfalarından birebir alındı.</b> Ölçü, benzetme ve kaynak cümlesi <code>docs/OLCULER.md</code>'de yazılı. Artık "kaynağından alınmadı" diyen tek bir hafta yok.</p>
-    <p><b>Ölçü tabanı hafta boyunca değişiyor</b> ve NHS bunu kendi cümlesinde söylüyor: erken haftalarda baş-popo, sonra baş-ayak ve baş-topuk. 13 ve 20. haftalarda taban hiç belirtilmemiş. Tabloya olduğu gibi yazıldı, tek tabana zorlanmadı.</p>
-    <p><b>20 benzetmenin emojisi var, 14'ünün yok</b> (ahududu, kayısı, incir, erik, nar, kabak, karnabahar, kestane kabağı, lahana, kereviz, bal kavunu, pırasa, ravent, balkabağı). O haftalarda ad yazıyla duruyor. Yanlış meyve koymadım: balkabağı için oyulmuş kabak emojisi, kabak için salatalık emojisi kullanılmadı.</p>
-    <h2>Yatay sunum</h2>
-    <p><b>Dikey kipler kaldırıldı.</b> Sorun seçeneklerde değil yöndeymiş: aynı çerçevede değişen bir şey değil, yandan gelen bir sunum istiyordun.</p>
-    <p><b>İkisi birden var.</b> Bölüm ekrana girince kendi kendine akmaya başlıyor. Parmağını değdirdiğin an duruyor, kontrol sende oluyor; beş saniye dokunmazsan kaldığı yerden devam ediyor.</p>
-    <p><b>Kaydırma gerçek.</b> Taklit sürükleme değil, tarayıcının kendi yatay kaydırması; telefonda parmağın altında doğal duruyor ve her kare ortaya oturuyor. Yanlardan önceki ve sonraki yaş görünüyor.</p>
-    <h2>Makinenin dışı</h2>
-    <p><b>"Neye benzer" bölümü bilerek taramaya benzemiyor.</b> Kural şuydu: yapay zekâ görselleri bilimsel serilerden görsel olarak ayırt edilebilir olmalı ve yanlarında dayanağı olmadığı yazmalı. Bu yüzden o bölümde koni yok, benek yok, sepya yok; düpedüz renkli fotoğraflar var ve altında uyarı duruyor.</p>
-    <p>Ama ayrım keyfi değil, <b>anlamlı</b>: tarama bir yüz göremez. Bölümün kendisi bunu söylüyor. Makine ne olduğunu gösteriyor, bu bölüm ne olabileceğini.</p>
-    <h2>Son ekran</h2>
-    <p><b>Tarama gerçekten duruyor.</b> Son bölüm göründüğünde ekrandaki benek sönüyor ve arkasından fotoğraf çıkıyor. Otuz üç haftalık yolculuğun bittiği yer burası: soğuk makineden sıcak çocuğa.</p>
-    <h2>Haftalık seri</h2>
-    <p><b>34 hafta, 34 görsel.</b> Hafta artık aya çevrilmiyor; her hafta kendi karesine bağlı. Sürgüyü yavaş kaydır, geçişin kademeli olduğunu göreceksin.</p>
-    <p><b>Eşik artık her görselin kendi zeminine göre.</b> Ölçtüm: zemin 7. haftada 0,96 iken 40. haftada 0,83'e iniyor, yani seri boyunca kayıyor. Sabit bir eşik son haftalarda arka planı sisli bırakıyordu. Şimdi her hafta kendi ölçülen değerini kullanıyor.</p>
-    <h2>Kilitlenenler</h2>
-    <p><b>Sıcaklık: varsayılan.</b> Denendi, seçildi, düğme kaldırıldı. Yön dosyasına tek kaynak olarak yazıldı, bundan sonra sapılmaz.</p>
-    <p><b>Yukarıdan vuran ışık kalktı.</b> O huzme sayfaya sonradan konmuş bir katmandı ve taramanın kendi ışığıyla yarışıyordu. Artık tek ışık kaynağı taramanın kendisi.</p>
-  </div>
-</div>
-
 <script>
-var AY=__AY__, FINAL="__FINAL__";
-var IKON=__IKON__;
-var BG=[__BG__];
+var AY=["gorseller/hafta-07.jpg","gorseller/hafta-08.jpg","gorseller/hafta-09.jpg","gorseller/hafta-10.jpg","gorseller/hafta-11.jpg","gorseller/hafta-12.jpg","gorseller/hafta-13.jpg","gorseller/hafta-14.jpg","gorseller/hafta-15.jpg","gorseller/hafta-16.jpg","gorseller/hafta-17.jpg","gorseller/hafta-18.jpg","gorseller/hafta-19.jpg","gorseller/hafta-20.jpg","gorseller/hafta-21.jpg","gorseller/hafta-22.jpg","gorseller/hafta-23.jpg","gorseller/hafta-24.jpg","gorseller/hafta-25.jpg","gorseller/hafta-26.jpg","gorseller/hafta-27.jpg","gorseller/hafta-28.jpg","gorseller/hafta-29.jpg","gorseller/hafta-30.jpg","gorseller/hafta-31.jpg","gorseller/hafta-32.jpg","gorseller/hafta-33.jpg","gorseller/hafta-34.jpg","gorseller/hafta-35.jpg","gorseller/hafta-36.jpg","gorseller/hafta-37.jpg","gorseller/hafta-38.jpg","gorseller/hafta-39.jpg","gorseller/hafta-40.jpg"], FINAL="gorseller/aramizda.jpg";
+var IKON=["gorseller/ikon/ikon-07.png","gorseller/ikon/ikon-08.png","gorseller/ikon/ikon-09.png","gorseller/ikon/ikon-10.png","gorseller/ikon/ikon-11.png","gorseller/ikon/ikon-12.png","gorseller/ikon/ikon-13.png","gorseller/ikon/ikon-14.png","gorseller/ikon/ikon-15.png","gorseller/ikon/ikon-16.png","gorseller/ikon/ikon-17.png","gorseller/ikon/ikon-18.png","gorseller/ikon/ikon-19.png","gorseller/ikon/ikon-20.png","gorseller/ikon/ikon-21.png","gorseller/ikon/ikon-22.png","gorseller/ikon/ikon-23.png","gorseller/ikon/ikon-24.png","gorseller/ikon/ikon-25.png","gorseller/ikon/ikon-26.png","gorseller/ikon/ikon-27.png","gorseller/ikon/ikon-28.png","gorseller/ikon/ikon-29.png","gorseller/ikon/ikon-30.png","gorseller/ikon/ikon-31.png","gorseller/ikon/ikon-32.png","gorseller/ikon/ikon-33.png","gorseller/ikon/ikon-34.png","gorseller/ikon/ikon-35.png","gorseller/ikon/ikon-36.png","gorseller/ikon/ikon-37.png","gorseller/ikon/ikon-38.png","gorseller/ikon/ikon-39.png","gorseller/ikon/ikon-40.png"];
+var BG=[0.961,0.945,0.945,0.945,0.953,0.949,0.933,0.933,0.929,0.922,0.922,0.922,0.918,0.91,0.902,0.902,0.898,0.89,0.898,0.89,0.878,0.871,0.863,0.847,0.871,0.871,0.859,0.855,0.847,0.831,0.847,0.839,0.831,0.827];
 var CAPA=new Date(2026,6,10);
 /* NHS hafta sayfalarından birebir alındı. Kaynak dökümü docs/OLCULER.md'de.
    Biçim: [ölçü, benzetme, ikon]. İkon yoksa ad yazıyla gösterilir. */
@@ -356,7 +257,7 @@ function ik(n){return n<10?"0"+n:""+n}
 var bugun=new Date();bugun.setHours(0,0,0,0);
 var gunG=Math.floor((bugun-CAPA)/86400000), hG=Math.floor(gunG/7);
 $("fi").src=FINAL;
-var BENZER=__BENZER__;
+var BENZER=[["gorseller/benzer-yenidogan.jpg","yenidoğan"],["gorseller/benzer-06ay.jpg","6 aylık"],["gorseller/benzer-01yas.jpg","1 yaş"],["gorseller/benzer-02yas.jpg","2 yaş"],["gorseller/benzer-03yas.jpg","3 yaş"],["gorseller/benzer-04yas.jpg","4 yaş"],["gorseller/benzer-05yas.jpg","5 yaş"],["gorseller/benzer-06yas.jpg","6 yaş"],["gorseller/benzer-07yas.jpg","7 yaş"],["gorseller/benzer-08yas.jpg","8 yaş"]];
 (function(){
   var dk=$("dk"),lab=$("yl"),dts=$("dt2"),n=BENZER.length;
   var o="",q="";
@@ -568,82 +469,3 @@ if(_wk)_wk.addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gu
 var _rp=$o("rp"); if(_rp)_rp.addEventListener("click",ac);
 ac();
 </script>
-"""
-H=H.replace("__IS32__",IS32).replace("__IS180__",IS180).replace("__AY__","["+",".join('"%s"'%a for a in AY)+"]").replace("__FINAL__",FINAL).replace("__BG__",BG).replace("__IKON__","["+",".join('"%s"'%u for u in IKON)+"]").replace("__BENZER__","["+",".join('["%s","%s"]'%(u,l) for u,l in BENZER)+"]")
-io.open(CIKTI,"w",encoding="utf-8").write(H)
-print("yazıldı:", CIKTI, os.path.getsize(CIKTI), "bayt")
-
-
-# ─────────────────────────────────────────────────────────────────────────────
-# YAYINLANACAK SİTE — aynı kaynaktan türetilir
-#
-# prototip-tur14.html bir VİTRİNDİR: sahte telefon çerçevesi, "tur 14" başlığı,
-# denetim düğmeleri ve ajanın tur yorumları içerir. Bunların hiçbiri ablanın
-# göreceği sayfaya ait değildir.
-#
-# index.html aynı işaretlemeden türetilir — ikinci bir kopya TUTULMAZ, yoksa
-# biri sessizce bayatlar. Her kesim ÇAPAYLA yapılır ve çapa sayılır; bulunamayan
-# çapa hatadır, sessiz atlama değil.
-# ─────────────────────────────────────────────────────────────────────────────
-SITE_CIKTI = os.path.join(KOK, "docs", "index.html")
-
-def kes(metin, bas, son, ad, birlikte=True):
-    """bas..son arasını döndürür; çapa tam bir kez geçmezse durur."""
-    if metin.count(bas) != 1 or metin.count(son) != 1:
-        sys.exit("ÇAPA HATASI (%s): bas=%d son=%d — 1/1 bekleniyor"
-                 % (ad, metin.count(bas), metin.count(son)))
-    i = metin.index(bas); j = metin.index(son, i)
-    return metin[i:j + (len(son) if birlikte else 0)]
-
-def sil(metin, parca, ad):
-    if metin.count(parca) != 1:
-        sys.exit("ÇAPA HATASI (%s): %d kez bulundu — 1 bekleniyor" % (ad, metin.count(parca)))
-    return metin.replace(parca, "")
-
-BAS = kes(H, "<!doctype html>", "</style>", "başlık ve biçem")
-GOVDE = kes(H, '<div class="dev"><div class="site" id="site">',
-               "  </div></div>", "sitenin kendi işaretlemesi")
-GOVDE = sil(GOVDE, '<div class="dev"><div class="site" id="site">', "çerçeve açılışı")
-BETIK = kes(H, "<script>", "</script>", "betik")
-
-# Çerçeve 718 pikselik bir kutuydu; gerçek telefonda bölümler EKRANI doldurur.
-# 100svh: adres çubuğu açıkken de doğru olan yükseklik. 100vh önce yazılır ki
-# eskisini anlamayan tarayıcı boşta kalmasın.
-# Sahte telefon çerçevesinin biçemi yayınlanan sayfaya hiç girmez: çerçeve yok,
-# 352 piksellik kutu yok, 718 piksellik iç kaydırma yok. Sayfa telefonun kendi
-# ekranını doldurur ve tarayıcının kendi kaydırması çalışır.
-CERCEVE = (".dev{width:352px;max-width:100%;margin:0 auto;border-radius:28px;overflow:hidden;background:#000;\n"
-           "  box-shadow:0 28px 70px -38px rgba(0,0,0,.95)}\n"
-           ".site{height:718px;overflow-y:auto;overflow-x:hidden;background:var(--void);position:relative}\n"
-           ".site::-webkit-scrollbar{width:0}\n")
-BAS = sil(BAS, CERCEVE, "çerçeve biçemi")
-
-for etiket, kural in (("tarama", ".scan{min-height:718px;"), ("final", ".fin{min-height:718px;")):
-    if BAS.count(kural) != 1:
-        sys.exit("ÇAPA HATASI (%s yüksekliği): %d kez bulundu" % (etiket, BAS.count(kural)))
-    BAS = BAS.replace(kural, kural.replace("min-height:718px;",
-                      "min-height:100vh;min-height:100svh;"))
-
-SITE = BAS + "\n" + GOVDE.strip() + "\n\n" + BETIK + "\n"
-
-# Ölçüm: vitrine ait hiçbir şey sızmamalı.
-sizinti = [a for a in ('class="page"', 'class="hd"', 'class="dev"', 'class="aft"',
-                       'class="ctl"', 'id="rp"', 'id="wk"', "tur 14", "718px") if a in SITE]
-if sizinti:
-    sys.exit("SIZINTI: yayınlanacak sayfada vitrin artığı var → %s" % sizinti)
-
-io.open(SITE_CIKTI, "w", encoding="utf-8").write(SITE)
-print("yazıldı:", SITE_CIKTI, os.path.getsize(SITE_CIKTI), "bayt")
-
-
-# ─── robots.txt — element 14: site arama motorlarına kapatılır ───────────────
-# Depo ve site açık; dizine düşmemek geriye kalan tek korumadır. Sayfa içi
-# işaret (noindex) biçemin üstünde, bu dosya da yayının kökünde durur.
-ROBOTS = os.path.join(KOK, "docs", "robots.txt")
-io.open(ROBOTS, "w", encoding="utf-8").write(
-    "# babyPEÇE — bu site arama motorlarına kapalıdır (element 14).\n"
-    "# Adresi bilmeyen bulamamalı: hassas bilgi bir hamileliktir.\n"
-    "User-agent: *\n"
-    "Disallow: /\n")
-print("yazıldı:", ROBOTS, os.path.getsize(ROBOTS), "bayt")
-

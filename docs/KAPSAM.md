@@ -919,7 +919,7 @@ yarıları · bugün sorulup **cevabı gelmemiş** üç görünüş kararı.
 | Sıra | İş | Hangi parçadan | Bağımlılık | Teslim ölçütü |
 |---|---|---|---|---|
 | 1 | **Bekleyen üç görünüş kararı** — sıcak süzgeç · 40. hafta balkabağı takası · espri katmanının dört sorusu | parça 6, 16 · `docs/GORUNUS.md` › *Henüz boş* | — | `docs/GORUNUS.md`'de **boş alan = 0**; iki ikon kararı yazılı. *(Malzeme hazır: `docs/karar-2026-08-29.html`)* |
-| 2 | **Arama motoruna kapatma** — `robots.txt` + sayfa içi işaret | element 14 | — | Yayındaki adreste `/robots.txt` **200** dönüyor **ve** sayfa kaynağında `noindex` var. İkisi de ölçülür |
+| 2 | **Arama motoruna kapatma** — `docs/robots.txt` + sayfa içi işaret | element 14 | — | Yayındaki adreste robots dosyası **200** dönüyor **ve** sayfa kaynağında `noindex` var. İkisi de ölçülür · **YAPILDI 2026-08-29**, yayın adresinde yeniden ölçülecek |
 | 3 | **Çatı kararını gerçeğe uydur** | element 16 | — | Element 16 **ya** gerçeğe göre güncellenmiş **ya** ürün karara göre yeniden kurulmuş; hangisi olduğu gerekçesiyle yazılı |
 | 4 | **Kabul edilemez kırılma ① · tarih kontrolü makinesi** | element 20 | — | Bilinen tarihlere karşı sınanıp geçiyor: çapa 2026-07-10 → 2026-08-28'de **7 hafta 0 gün**, 2027-04-16'da **40 hafta 0 gün** |
 | 5 | **Kabul edilemez kırılma ③ · kaynaksız satır ölçümü** | element 20 | — | Veri dosyasında **kaynağı boş satır = 0**, makineyle ölçülüyor *(ölçüm aracı önce bilerek bozuk bir satıra karşı sınanır)* |
