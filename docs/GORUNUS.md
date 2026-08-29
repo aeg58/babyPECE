@@ -188,8 +188,26 @@ Jest ağır görselden değil **zamanlamadan** gelir.
 **Sınav sorusu:** adı ve motifi değiştirsen bu tasarım yine kendine ait hissettirir mi?
 Cevap *hayır* ise tasarım hazır değildir.
 
-## Henüz boş — Erdem'den bekleniyor
+## Espri katmanı — dört yer soruldu, üçü kapandı *(2026-08-29)*
 
-Sayfayı bu **aileye** ait kılacak ikinci katman: ablanın nasıl biri olduğu, aralarındaki
-dalganın dili, sevdiği şeyler, haberi nasıl verdiği. Yön bunlarsız da yürür ama **espri**
-bunlarsız ortalama kalır — ve bitiş ölçütü onun gülümsemesi.
+Sayfayı bu **aileye** ait kılacak ikinci katman. Ajan sitede **dört yer** gösterdi ve her
+biri için Erdem'e ayrı ayrı sordu. Cevaplar:
+
+| Yer | Sitede neresi | KARAR |
+|---|---|---|
+| **① Açılış** | Tarama açılırken görünen `babyPEÇE` | **DOKUNULMAYACAK** — Erdem: *"açılış ekranı için babyPEÇE yeterli gibi geliyor bana."* |
+| **② Benzetme satırı** | *"Yaklaşık bir üzüm kadar."* | **DOKUNULMAYACAK** — Erdem: *"ekstra bir şey yapmak kalsın, şu an o değil, güzel."* |
+| **③ Final ekranı** | *"…sonra aramızda."* | **ŞİMDİ DEĞİL** — Erdem: *"hissettiği, senin önerdiğine gerek yok, şu anlık askıya alabiliriz."* **Tetik:** Erdem yeniden açarsa. **Yasak:** o ekrana kendiliğinden kişisel cümle eklenmez |
+| **④ *"Kime benzeyecek"* bölümü** | Yaş serisi ve altındaki uyarı | **YAPILACAK** — Erdem: *"esprili yorumlara ekleyebiliriz."* **İçeriği henüz gelmedi**, tek açık kalan yer burası |
+
+**Ölçü:** dört yerin **üçü kapandı**, biri açık. Açık olan yalnız ④ ve eksik olan **içeriktir**,
+karar değil.
+
+### Aile dili — Erdem'den alınan
+
+**Ablasının ailedeki adı: "züzü".** *(2026-08-29, Erdem'in kendi ağzından.)*
+**Henüz hiçbir yerde kullanılmıyor** — Erdem bunu ① sorusuna cevap verirken söyledi ama aynı
+cümlede açılışın olduğu gibi kalmasını istedi. **④'te kullanılıp kullanılmayacağı Erdem'in
+kararıdır; ajan kendiliğinden yerleştirmez.**
+
+*(Buraya yazılmasının sebebi: bu bilgi başka hiçbir yerde yok ve oturum kapanınca kaybolurdu.)*
