@@ -896,14 +896,96 @@ kapsam dışının yazılı hâli. Bölüm boşsa faz kapanmaz.
 > kapanmış kayıtlar bir daha okunmaz; oraya yazılan cümle **yazıldığı gün son kez görülmüştür.**
 > Damıtıldığı projede açık iş envanterinin **%46'sı** böyle kaybolmuştu.
 
+### Yürütülüşü — 2026-08-29, oturum 02
+
+**Erdem açtı, taslak sunuldu, itirazsız onaylandı.** Kalan işler üç kaynaktan toplandı:
+Faz 5'te ertelenen parçalar · Faz 3 elementlerinin **kararı verilmiş ama üretilmemiş**
+yarıları · bugün sorulup **cevabı gelmemiş** üç görünüş kararı.
+
+**Sıra çıkarılırken bulunan üç şey** *(hiçbiri sessizce geçirilmedi)*:
+
+1. **Bugün sorulan üç karar arada kalmıştı** — sıcak süzgeç, balkabağı takası, espri
+   katmanının dört sorusu. Faz 5'e geçilince düştüler. **İş sırasının 1. maddesi yapıldı.**
+2. **Element 14'ün kararı var, üretimi yok:** *"arama motorlarına kapatılır (robots.txt ve
+   sayfa içi işaret — henüz üretilmedi)."* Depo ve site açık; **dizine düşmemek geriye kalan
+   tek korumadır** ve indekslendikten sonra geri almak yavaştır. **Yayının önüne kapı olarak
+   konuldu.**
+3. **Element 16 ürünle tutmuyor:** kayıt *"Vite + React + TypeScript + react-three-fiber +
+   drei"* diyor; ürün **tek elle yazılmış HTML, kütüphanesiz, derleme adımı yok.** Bugün
+   kaynaklarda bulunan sapmanın aynısı. **3. madde olarak sıraya alındı.**
+
 ### İş sırası
 
 | Sıra | İş | Hangi parçadan | Bağımlılık | Teslim ölçütü |
 |---|---|---|---|---|
-| | | | | |
+| 1 | **Bekleyen üç görünüş kararı** — sıcak süzgeç · 40. hafta balkabağı takası · espri katmanının dört sorusu | parça 6, 16 · `docs/GORUNUS.md` › *Henüz boş* | — | `docs/GORUNUS.md`'de **boş alan = 0**; iki ikon kararı yazılı. *(Malzeme hazır: `docs/karar-2026-08-29.html`)* |
+| 2 | **Arama motoruna kapatma** — `robots.txt` + sayfa içi işaret | element 14 | — | Yayındaki adreste `/robots.txt` **200** dönüyor **ve** sayfa kaynağında `noindex` var. İkisi de ölçülür |
+| 3 | **Çatı kararını gerçeğe uydur** | element 16 | — | Element 16 **ya** gerçeğe göre güncellenmiş **ya** ürün karara göre yeniden kurulmuş; hangisi olduğu gerekçesiyle yazılı |
+| 4 | **Kabul edilemez kırılma ① · tarih kontrolü makinesi** | element 20 | — | Bilinen tarihlere karşı sınanıp geçiyor: çapa 2026-07-10 → 2026-08-28'de **7 hafta 0 gün**, 2027-04-16'da **40 hafta 0 gün** |
+| 5 | **Kabul edilemez kırılma ③ · kaynaksız satır ölçümü** | element 20 | — | Veri dosyasında **kaynağı boş satır = 0**, makineyle ölçülüyor *(ölçüm aracı önce bilerek bozuk bir satıra karşı sınanır)* |
+| 6 | **Yayın · GitHub Pages'in açılması** | parça 11 · element 5 | **2 bitmeden geçilmez** | Tek bağlantı; kurulum, giriş, kayıt olmadan tarayıcıda açılıyor |
+| 7 | **Kabul edilemez kırılma ② · gerçek telefon ölçümü** | parça 12, 7 | 6 | Gerçek bir telefonda açılıyor ve okunuyor. **Bugüne kadar hiç ölçülmedi** |
+| 8 | **2 saniye hedefinin ölçümü** | element 19 | 6 | Gerçek telefonda ölçülen açılış süresi **≤ 2 sn** — ya da aşıldıysa **aşıldığı yazılı** |
+| 9 | **Ablaya gönderme** | bitiş tanımı | 1–8 | Erdem bağlantıyı gönderiyor; ablası açıp gülümsüyor |
+
+**1–5 birbirinden bağımsızdır**, sırayla ya da paralel yürüyebilir. **6 bir KAPIDIR:** 2
+bitmeden geçilmez. **7, 8 ve 9 ancak yayından sonra ölçülebilir** — bu üçü bugün *tahmin*
+hâlindedir ve tahmin oldukları yazılıdır.
+
+**İLK İŞ: 1 numara.** Sebebi Faz 7'nin kendi geri dönüş kuralı: *algılanan çıktıyı değiştiren
+her yeni istek Faz 4'e döner.* Bu üç karar tam olarak algılanan çıktıyı değiştiriyor;
+yayından sonra verilirlerse faz geri sarar.
 
 ### Bu listede OLMAYANLAR
 
 | Ne | Neden | *"yapılmayacak"* mı *"şimdi değil"* mi |
 |---|---|---|
-| | | |
+| Bebeğin ağırlığı | Kaynak veri **14. haftada** başlıyor, site 7'den başlıyor; ablanın göreceği ilk yedi hafta boş kalırdı ve kaynaksız değer üretilemez *(Faz 5)* | **YAPILMAYACAK** |
+| 1–6. haftalar | Ablanın geçmişinde kaldı; NHS o haftalara ölçü yayımlamıyor *(Faz 5)* | **YAPILMAYACAK** |
+| Ekranda kaynak satırı | Erdem'in 2026-08-29 kararı: hediyede yabancı duruyordu. Kaynak **kaydı** `docs/OLCULER.md`'de duruyor | **YAPILMAYACAK** |
+| Aylık *"neye benzer"* serisi | Erdem sildirdi, yerine yaş serisi üretildi ve yatay sunum kilitlendi | **YAPILMAYACAK** |
+| Sloganın üstte de durması | Tur 12'de iki kez geçtiği tespit edildi, son ekrana alındı *(Faz 5)* | **YAPILMAYACAK** |
+| Site işaretinin 16 pikselde okunması | Hiçbir fotoğraf o boyutta okunmaz; okunur işaret **çizilmiş** olmalıydı ama kimlik kaynağı *"bebek görselinin küçük hâli"* diyor. **Kabul edilmiş sınır** | **YAPILMAYACAK** |
+| 35. kutucuk · kavun dilimi | Kullanımı bulunamadı; 34. hafta kavunu ile 35. hafta bal kavunu zaten ayırt ediliyor | **YAPILMAYACAK** |
+| Özel alan adı | **Tetik:** site bitip Erdem beğendiğinde · **yasak:** alan adına bağlı hiçbir iş (DNS, sertifika, adres taşıma) başlatılmaz · **bilinen bedel:** taşınırsa bağlantı değişir, ablaya ikinci kez gönderilir | **ŞİMDİ DEĞİL** |
+| Ziyaretçi ölçümü ve *"başarı"* tanımı | **Tetik:** site ilk kez yayına çıktığında · **yasak:** hiçbir ölçüm kodu siteye eklenmez | **ŞİMDİ DEĞİL** |
+| Test araçları ve kapsam oranı | **Tetik:** ilk kırılmadan sonra. Çekirdek kırılma listesi *(element 20)* bugünden geçerli, ertelenen yalnız araç ve oran | **ŞİMDİ DEĞİL** |
+| Anı defteri | Sahibi kapsam dışı ilan etti *("şu anki plana dahil değil")* · **tetik:** doğum sonrası | **ŞİMDİ DEĞİL** |
+
+### Ölçüt
+
+| Ölçüt | Beklenen | Ölçülen | Geçti mi |
+|---|---|---|---|
+| Sırası / bağımlılığı / teslim ölçütü eksik iş | 0 | **0 / 9** | ✔ |
+| *"Bu listede olmayanlar"* bölümü boş **değil** | boş değil | **11 satır**, boş satır 0 | ✔ |
+| Etiketsiz *"olmayanlar"* satırı | 0 | **0** — 7 *yapılmayacak* + 4 *şimdi değil* | ✔ |
+| Vadesi geçmiş defter satırı | 0 | **0** *(elle sayıldı — aşağı bak)* | ✋ ELLE |
+
+**Kalibrasyon.** Sayacı **bilerek bozuk** üç örnekle sınadım ve buldu: ① sağlam tabloda yanlış
+alarm vermedi ② **boş bağımlılık** alanını yakaladı ③ **boş teslim ölçütü** alanını yakaladı.
+*(Kalibre edilmemiş sayım geçersizdir — kırık alet de tam olarak beklenen cevabı verir.)*
+
+**Ölçüm zemini.** `docs/KAPSAM.md`'nin **2026-08-29 03:12 +03** hâli — bu bölüm dahil bütün
+Faz 6 metni yazıldıktan **sonra**. İlk sayım 03:0x'te alınmıştı; sonra bu bölüm düzenlendiği
+için **zemin değişti ve sayım tekrarlandı**, iki sayı da aynı çıktı. Sayım dosyanın
+kendisinden yapıldı, elle liste yazılarak değil.
+
+**Vadesi geçmiş defter satırı neden ✋ ELLE.** `olcum bayat` bu ölçümü **yapamıyor**:
+*"taranacak madde tanımlanmadı — ayarlar.conf'a eklenir."* Araç yapılandırılmamış, dolayısıyla
+**çıktısı kanıt değil**. Elle sayıldı: element tablosundaki *Pencere* alanlarının hepsi
+**olaya bağlı tetikler**, hiçbiri takvim tarihi taşımıyor; `CEVAPSIZ` satırı `CLAUDE.md`'de
+ve bu dosyada **0**; `docs/BEKLEYENLER.md` boş. **Vadesi geçmiş satır: 0.**
+*Bu bir eksikliktir ve aracın kendisine aittir; `KURAL_TAVANI` gibi bir eşik değil,
+yapılandırılmamış bir tarama.*
+
+**Bilinçli bırakılmış tek "dikkat".** `olcum atif`, yukarıdaki **2. iş satırında** adı geçen
+arama-motoru dosyası için **2 adet kırık atıf** bildiriyor. **Bu bir kusur değil, ileriye
+dönük bir atıftır:** dosya henüz yok, çünkü onu üretmek **iş sırasının 2. maddesidir.**
+2. madde bitince uyarı kendiliğinden düşer. **Sonraki oturum bunu "düzeltmeye" kalkmasın.**
+*(Bu açıklamada dosya adı bilerek tekrar yazılmadı — yazılsaydı açıklamanın kendisi sayacı
+şişirirdi.)*
+
+### FAZ 6 KAPISI GEÇİLDİ · 2026-08-29
+
+**Kararı veren:** Erdem *(taslak sunuldu, itirazsız onaylandı)*.
+**Sıradaki:** Faz 7 · Yapım. **İlk iş: sıra 1** — bekleyen üç görünüş kararı.
