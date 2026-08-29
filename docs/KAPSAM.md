@@ -139,14 +139,14 @@ Her biri ya parça olur ya **gerekçesiyle** dışlanır.
 
 | # | Parça (sahibinin kelimeleriyle) | Kabul cümlesi | Göst. | Kaynak |
 |---|---|---|---|---|
-| 1 | *"çocuğun o günkü boyutunu"* [G1] | Sayfa açıldığında **bulunulan haftanın** boyu ve ağırlığı görünüyor; her değerin yanında hangi kaynaktan geldiği yazılı. *(2026-08-28'de daraltıldı: ölçüler haftalık, ara gün değeri üretilmez.)* | ✔ | **bilgi** — bloke |
-| 2 | *"hangi objeye, meyveye, yiyeceğe, sebzeye benzediğini"* [G1] | Bulunulan haftanın benzetmesi görünüyor; **40 haftanın her haftası** için bir karşılığı var, boş hafta yok. *(2026-08-28'de daraltıldı: haftalık — kaynaklar haftalık yayınlıyor.)* | ✔ | **bilgi** — bloke |
+| 1 | *"çocuğun o günkü boyutunu"* [G1] | Sayfa açıldığında **bulunulan haftanın** boyu görünüyor. *(2026-08-28'de daraltıldı: ölçüler haftalık, ara gün değeri üretilmez.)* *(2026-08-29 · Faz 5 · Erdem: **kaynak şartı düşürüldü** — ekranda kaynak gösterilmediği için parça 4 ile çelişiyordu. **AĞIRLIK KAPSAM DIŞI** — araştırma yapıldı, Erdem *"ağırlık yapma"* dedi. Gerekçe: ağırlık verisi en erken **14. haftada** başlıyor, site 7. haftadan başlıyor; ablanın göreceği ilk yedi hafta boş kalırdı ve kaynaksız değer üretilemez. Dosya sonuna kadar döküm: `docs/OLCULER.md` › *Ağırlık — araştırma dökümü*. Reddedilen: 14–40 arası ağırlık koyup 7–13'ü boş bırakmak.)* | ✔ | **bilgi** — bloke |
+| 2 | *"hangi objeye, meyveye, yiyeceğe, sebzeye benzediğini"* [G1] | Bulunulan haftanın benzetmesi görünüyor; **7'den 40'a kadar 34 haftanın her biri** için bir karşılığı var, boş hafta yok. *(2026-08-28'de daraltıldı: haftalık — kaynaklar haftalık yayınlıyor.)* *(2026-08-29 · Faz 5 · Erdem: 40'tan 34'e daraltıldı. Gerekçe: 1–6. haftalar ablanın **geçmişinde** kaldı ve NHS o haftalar için ölçü yayımlamıyor. Reddedilen: kaynaksız değer üretmek.)* | ✔ | **bilgi** — bloke |
 | 3 | *"gün gün büyüyüşünü"* + *"kaydırdıkça bütün haftalar gezilsin ama ana focus içinde bulunulan zamanın şekli sayısı alanında olsun, focus o tarihte"* [G1, G7] | Sayfa **bugüne odaklanmış** açılıyor; aşağı kaydırınca geçmiş ve gelecek haftalar geziliyor, bugünün merkez olduğu her an belli. **Gün sayısı günlük işler** ("7 hafta 3 gün", geri sayım); **ölçüler haftalık** | ✔ | **bilgi** — bloke |
 | 4 | *"verilerin bilimsel şeylerle desteklendiği"* [G1] | **Her sayının kaynağı depoda yazılı ve doğrulanabilir.** Ekranda kaynak satırı **gösterilmez**. *(2026-08-29'da daraltıldı — Erdem: "kaynak verme, bunlara gerek yok, bunları temizle." Gerekçe: kaynak bloğu bir hediyede yabancı duruyordu.)* | ✔ | **bilgi** |
 | 5 | *"kaynakların doğrulukları araştırılarak, kesin onaylandıktan sonra"* [G1] | Kullanılan her kaynağın adı, tarihi ve **neden güvenilir sayıldığı** depoda yazılı; onaylanmamış kaynaktan tek sayı bile girmemiş | ✘ | **bilgi** — bloke |
 | 6 | *"esprili bir şekilde" / "esprili bir site"* [G1, G3] | **Her haftanın benzetmesinin yanında benzetilen şeyin kendisi görünüyor** (ikon, resim ya da adı), hiçbiri boş değil. *(2026-08-29'da DÜZELTİLDİ — ajan bunu "yazılı espri cümleleri" diye anlamıştı ve turlarca yanlış şey istedi. Erdem: "benim espriden kastım tasarım dilinde espriler, meyveye benzetmemiz... o benzetme kısmında üzüm ikonu hemen yanında gelsin.")* | ✔ | benzetme kaynağı `docs/OLCULER.md` |
 | 7 | *"zengin, üç boyutlu UI UX kütüphaneleri"* [G1] | Sayfada üç boyutlu, hareket eden bir görsel var ve ablasının telefonunda takılmadan çalışıyor | ✔ | **görünüş** — bloke |
-| 8 | *"şu kadar haftalık şu kadar gün sonra aramızda olacak diye bir slogan"* [G1] | Slogan üstte duruyor; içindeki gün sayısı her gün kendiliğinden güncelleniyor | ✔ | bilgi (çapa) + **kimlik** — bloke |
+| 8 | *"şu kadar haftalık şu kadar gün sonra aramızda olacak diye bir slogan"* [G1] | Sloganın tamamı **son ekranda, bir kez** duruyor; içindeki gün sayısı her gün kendiliğinden güncelleniyor. Sayı, bilgi olarak ölçünün altındaki sayaçta ayrıca var. *(2026-08-29 · Faz 5 · Erdem: *"üstte duruyor"* şartı kaldırıldı — tur 12'de sloganın iki kez geçtiğini kendisi tespit etti: "Haklıydın, iki kez geçiyordu." Reddedilen: sloganı üstte de bırakmak.)* | ✔ | bilgi (çapa) + **kimlik** — bloke |
 | 9 | *"tek parça"* sayfa [G1] | Tek sayfa; menü, sekme, başka sayfaya geçiş yok | ✔ | **görünüş** — bloke |
 | 10 | *"Apple'ın scroll mantığıyla kaydırdıkça site devam ediyor"* [G1] | Aşağı kaydırdıkça içerik akıyor; kesik geçiş ya da zıplama yok | ✔ | **görünüş** — bloke |
 | 11 | *"ona ileteceğim link"* [G1] | Tek bağlantı; tıklayınca kurulum, giriş, kayıt olmadan açılıyor | ✘ | — |
@@ -184,7 +184,7 @@ ay... Bana güzel bir prompt hazırlarsan böyle bir şey yapabiliriz."*
 | # | Parça | Kabul cümlesi | Göst. | Kaynak |
 |---|---|---|---|---|
 | 14 | **Haftalık** bilimsel gelişim görselleri | **34 haftanın her biri** için bir görsel var (7 → 40), hepsi aynı üslupta, eksik hafta yok; her görselin o haftaki gerçek gelişim evresine dayandığı yazılı. *(2026-08-29'da aylıktan haftalığa çıkarıldı.)* | ✔ | üretilecek görsel — Erdem onaylar |
-| 15 | Aylık **"neye benzer"** görselleri | 10 ayın her biri için bir görsel var; hepsi bilimsel görsellerden **görsel olarak apayrı** sunuluyor ve yanında **"bu bir tahmindir, bilimsel dayanağı yoktur"** ibaresi duruyor | ✔ | YZ üretimi (Erdem'in hesabı) |
+| 15 | **"Neye benzer"** görselleri — **yaş serisi** *(2026-08-29'da aylıktan yaşa çevrildi)* | **On yaş durağının her biri** için bir görsel var (yenidoğan · 6 aylık · 1–8 yaş); hepsi bilimsel görsellerden **görsel olarak apayrı** sunuluyor ve yanında **"bu bir tahmindir, bilimsel dayanağı yoktur"** ibaresi duruyor. *(2026-08-29 · Faz 5 · Erdem: aylık seri **silindi**, yerine yaş serisi üretildi ve yatay sunum kilitlendi. Reddedilen: aylık seriyi geri getirmek — Erdem sildirdi, geri dönüş yolu `git checkout f7a4ff8`.)* | ✔ | YZ üretimi (Erdem'in hesabı) |
 | 16 | *"Aramızda"* final ekranı ve kimlik işareti | Tahmini doğum tarihi geçince beliren ekranda anne babadan üretilmiş bebek görseli var; aynı görselin küçük hâli sitenin **kimlik işareti** olarak kullanılıyor | ✔ | YZ üretimi (Erdem'in hesabı) |
 
 `Karşılığı yazılmamış görüşme ifadesi: 0` · `Kabul cümlesi olmayan parça: 0`
@@ -401,7 +401,7 @@ Tek cümle.)*
 
 | # | Element | Durum | Kim verir | Karar | Gerekçe | Reddedilenler ve neden | Pencere |
 |---|---|---|---|---|---|---|---|
-| 8 | Kayıt verisi | **KARAR** | ajan → onay | Veri **tek bir metin dosyası** olarak depoda durur: hafta → boy · ağırlık · benzetme · espri · **kaynak**. Site hiçbir şey kaydetmez | Ablan hiçbir şey doldurmuyor ([G4]); saklanacak canlı veri yok. Tek dosya, göç gerekirse elle taşınır | **(a) Veritabanı** — reddedildi: sunucu ve ücret gerektirir, yazılacak veri yok. **(b) Tarayıcıda saklama** — reddedildi: saklanacak bir şey yok | — |
+| 8 | Kayıt verisi | **KARAR** | ajan → onay | Veri **tek bir metin dosyası** olarak depoda durur: hafta → boy · benzetme · espri · **kaynak**. Site hiçbir şey kaydetmez. *(2026-08-29 · Faz 5: **ağırlık alanı düşürüldü** — parça 1 ile birlikte kapsam dışı kaldı.)* | Ablan hiçbir şey doldurmuyor ([G4]); saklanacak canlı veri yok. Tek dosya, göç gerekirse elle taşınır | **(a) Veritabanı** — reddedildi: sunucu ve ücret gerektirir, yazılacak veri yok. **(b) Tarayıcıda saklama** — reddedildi: saklanacak bir şey yok | — |
 | 9 | Dosya ve varlık depolama | **KONU DIŞI** | ajan → onay | Yükleme yok; görseller depoda sabit dosya | Veri girişi kapsam dışı bırakıldı | — | **Tetik:** ablan bir fotoğraf ya da not yükleyebilecek hâle gelirse bu madde açılır |
 | 10 | Mimari kalıp | **KARAR** | ajan → onay | **Tamamen durağan site.** Sunucu yok, arka uç yok; dosyalar olduğu gibi servis edilir | Kısıt sorusunun cevabı: aynı anda aynı kaydı değiştirecek iki kişi **yok** (tek okuyucu, yazma yok). Senin bilgisayarın dışında çalışacak: evet — durağan dosya bunu en ucuz karşılar | **(a) Sunucu tarafı uygulama** — reddedildi: yazma işlemi yok; sunucu bakım, ücret ve çökme yüzeyi ekler. **(b) Sunucuda üretim (SSR)** — reddedildi: içerik herkes için aynı, kişiye özel üretim gerekmiyor | — |
 | 11 | Ortamlar | **KONU DIŞI** | ajan → onay | Tek ortam: geliştirme senin bilgisayarında, yayın GitHub Pages'te | Kurulumda ayrı yayın ortamı olmadığı ölçüldü; tek okuyuculu bir hediye sitesi için ara ortam tören masrafıdır | **Ayrı bir deneme ortamı** — reddedildi: her yayın zaten geri alınabilir ve izleyici tek kişi | **Tetik:** site ablan dışında birine açılırsa, ya da yayına çıkmadan denenmesi gereken bir değişiklik doğarsa bu madde açılır |
@@ -815,6 +815,74 @@ yığın bırakılmaz; her sorunun yanında **"bunu bilmezsem ne olur"** karşı
 > **Peş peşe ikinci karar turu açılacaksa gerekçesi yazılır.** Karar üretmek ilerleme hissi
 > verir, ürün vermez — damıtıldığı projede bir haftalık dönemde 20 değişikliğin 19'u belgeye
 > gitti; bir günde 22 kalem karara bağlandı, 1 üretim çıktı.
+
+### Yürütülüşü — 2026-08-29, oturum 02
+
+**Erdem açtı, Erdem karara bağladı.** On altı parça **üç grupta** sunuldu: ① bitmiş ve
+ölçülmüş · ② bitmiş ama eksiği kalan · ③ hiç başlanmamış. Her parçanın durumu **prototipe
+karşı ölçüldü** — kabul cümlesi okundu, sitede karşılığı arandı.
+
+**Faz 5'in kendine özgü durumu:** bu, sıfırdan bir karar turu değildi. On altı parçanın on
+üçü Faz 4'te zaten yapılmıştı, dolayısıyla turun büyük kısmı *"neyin bittiğini yazıya
+geçirmek"* oldu. **İkinci bir karar turu açılmadı.**
+
+### Ölçülen ve karara bağlanan on altı parça
+
+| # | Ölçülen durum | KARAR | Gerekçe · reddedilen |
+|---|---|---|---|
+| 1 | Boy var, **ağırlık yok** · kabul cümlesi ağırlık istiyordu | **YAPMA** *(ağırlık)* | Ağırlık verisi en erken **14. haftada** başlıyor, site 7'den başlıyor; ablanın göreceği ilk yedi hafta boş kalırdı, kaynaksız değer yasak. **Reddedilen:** 14–40 arası koyup 7–13'ü boş bırakmak. Araştırma dökümü `docs/OLCULER.md` |
+| 1 | Kabul cümlesindeki *"kaynağı yazılı"* şartı parça 4 ile çelişiyordu | **DÜŞÜRÜLDÜ** | İki cümle aynı anda doğru olamazdı; ekranda kaynak gösterilmiyor *(parça 4, Erdem'in 2026-08-29 kararı)* |
+| 2 | 34 hafta var (7–40), kabul cümlesi 40 diyordu | **CÜMLE DÜZELTİLDİ** | 1–6. haftalar ablanın geçmişinde; NHS o haftalara ölçü yayımlamıyor. **Reddedilen:** kaynaksız değer üretmek |
+| 3 | Sürgü açılışta bugünün haftasına konuyor, 7–40 geziliyor | **YAPILDI · KAPANDI** | Ölçüldü: `$("wk").value=hG` |
+| 4 | Kaynak kaydı depoda, ekranda yok | **YAPILDI · KAPANDI** | Erdem'in 2026-08-29 kararı yürürlükte |
+| 5 | Kaynak dökümünde **alan adı yoktu**; kayıtlı kaynak planı ile fiilen kullanılan kaynak tutmuyordu | **YAPILDI** | Adres tamamlandı, üç hafta yerinden doğrulandı, sapma gerekçesiyle kayda geçti. **Reddedilen:** veriyi kayıtlı plandaki kaynaklardan yeniden çekmek — o kaynaklar meyve benzetmesi vermiyor, eşleştirme kaynaksız kalırdı |
+| 6 | 34 haftanın 34'ünde ikon var, emoji sıfır | **YAPILDI · KAPANDI** | Ölçüldü |
+| 7 | Üç boyutlu görsel çalışıyor; **gerçek telefonda ölçülmedi** | **ERTELE** · tetik: **ilk yayın** | Parça 12'ye bağlı |
+| 8 | Slogan üstte değil, son ekranda | **CÜMLE DÜZELTİLDİ** | Erdem tur 12'de sloganın iki kez geçtiğini tespit etti. **Reddedilen:** üstte de bırakmak |
+| 9 | Menü, sekme, ikinci sayfa yok | **YAPILDI · KAPANDI** | Ölçüldü |
+| 10 | Tek akış, zıplama yok | **YAPILDI · KAPANDI** | Ölçüldü |
+| 11 | Site **yayına alınmadı** | **ERTELE** · tetik: **ilk yayın** | Faz 7'nin işi |
+| 12 | Ablanın telefonunda **ölçülmedi** | **ERTELE** · tetik: **ilk yayın** | Erdem: *"yayına almadan karar veremem, beklemek zorunda"* |
+| 13 | Çapa kodda tek yerde: `2026-07-10` | **YAPILDI · KAPANDI** | Ölçüldü, kapsamdaki tarihle birebir |
+| 14 | 7'den 40'a 34 görsel, eksik yok | **YAPILDI · KAPANDI** | Ölçüldü |
+| 15 | 10 görsel var ama **ay değil yaş** | **CÜMLE DÜZELTİLDİ** | Aylık seri Erdem'in kararıyla silinmişti. **Reddedilen:** aylık seriyi geri getirmek |
+| 16 | Final ekranı ✔, **kimlik işareti yoktu** | **YAPILDI** | Mevcut bebek görselinden üç kırpım sunuldu, **Erdem A'yı seçti**. `isaret-32.png` ve `isaret-180.png` üretildi ve sayfaya bağlandı. **Reddedilen:** B *(daha yakın yüz)* ve C *(en yakın)* |
+
+### Ölçüt
+
+`Kararı yazılmamış parça: 0` *(2026-08-29'da ölçüldü — on altı parçanın on altısı yukarıdaki
+tabloda karara bağlı.)*
+
+### Faz 5 sırasında ölçülen ve düzeltilen iki şey — parçalardan bağımsız
+
+**1 · Sayfanın başlığında üç zorunlu satır eksikti** *(2026-08-29'da ölçüldü, Erdem
+düzeltilmesini istedi)*. Sayfa sunucuya konup tarayıcıya soruldu:
+
+| | Önce | Sonra |
+|---|---|---|
+| Karakter kodu | `windows-1252` → sekmede **`babyPEÃ‡E`** | `UTF-8` → `babyPEÇE` |
+| Görüntüleme kipi | quirks *(eski uyumluluk)* | `CSS1Compat` *(standart)* |
+| Telefon genişliği | bildirim **yok** → telefon ~980 px varsayıp uzaklaştırırdı | `width=device-width` |
+
+**375 px genişlikte yeniden ölçüldü:** sayfa genişliği 375, **yatay taşma yok**, ölçek **1:1**
+*(uzaklaştırma yok)*, telefon çerçevesi 335 px'e oturuyor. **Parça 12'nin riskini doğrudan
+azaltır** ama onun yerine geçmez — gerçek telefon ölçümü hâlâ yapılmadı.
+
+**2 · Sayfayı üreten betik geçici klasörde duruyordu** *(`/private/tmp/…`)*. Depoda yalnız
+üretilmiş HTML vardı; o klasör silinseydi **kaynak gider, elde yalnız çıktı kalırdı.**
+Erdem *"betiği depoya al"* dedi.
+
+> **Üreteç artık depoda: `docs/uretec-tur14.py`.**
+> Sayfa **elle düzenlenmez** — betik değiştirilir ve `python3 docs/uretec-tur14.py` çalıştırılır.
+>
+> **Doğrulandı:** betik çalıştırıldı, çıktısı depodaki sayfayla **yalnız onaylanan üç satır
+> kadar** farklı çıktı; başka hiçbir bayt değişmedi. Yani üreteç sayfanın gerçek kaynağıdır,
+> yaklaşık bir kopyası değil.
+
+**Kabul edilmiş sınır:** 16 numaralı işaret **16 pikselde okunmuyor**, pembemsi bir daire
+olarak görünüyor. Hiçbir fotoğraf o boyutta okunmaz; okunur bir işaret **çizilmiş** olmalıydı,
+ama kimlik kaynağı *"bebek görselinin küçük hâli"* diyor *(`CLAUDE.md` › Varlık kaynakları)*.
+Sınır ajan tarafından söylendi, Erdem üstlendi.
 
 ---
 

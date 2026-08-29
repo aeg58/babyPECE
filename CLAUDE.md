@@ -90,7 +90,7 @@ listesinde değildir, izin beklemez. Refleks satırı **ayrı bir karardır** ve
 
 | Varlık | Kaynak |
 |---|---|
-| **Bilgi** (veri, metin, sayı) | **CEVAPLI** *(2026-08-28, Faz 3)*: boy/ağırlık → erken haftalar **CRL referansları**, 14. haftadan sonra **WHO / INTERGROWTH-21st**; meyve benzetmesi → **NHS İskoçya + Avustralya Sağlık Bakanlığı**. **Her hücrenin kaynağı depoda yazılı olur**; kaynaksız tek sayı girmez. Ayrıntı: `docs/KAPSAM.md` › Faz 3 › element 7 |
+| **Bilgi** (veri, metin, sayı) | **CEVAPLI** *(2026-08-28, Faz 3 · **2026-08-29, Faz 5'te düzeltildi**)*: boy **ve** meyve benzetmesi → **NHS** (`www.nhs.uk` hafta sayfaları), ikisi aynı cümleden. **Her hücrenin kaynağı depoda yazılı olur**; kaynaksız tek sayı girmez. Adresler, yerinden doğrulama ve **2026-08-28'de yazılan plandan neden sapıldığı**: `docs/OLCULER.md` › *Kaynağın tam adresi* ve *SAPMA*. Ağırlık kaynağı ayrı karardır, aynı dosyada |
 | **Görünüş** (tasarım dili) | **CEVAPLI** *(2026-08-28, Faz 4)*: tek kaynak `docs/GORUNUS.md`. Sahibi Erdem; ajan yazıya geçirir, üretmez. Motif **perde**, kadranlar orada. Sapma yok |
 | **Kimlik** (marka, logo, ad) | **CEVAPLI** *(2026-08-28)*: ad **babyPECE**; işaret = anne babanın fotoğrafından **yapay zekâyla üretilen bebek görselinin** küçük hâli. Üretimi Erdem kendi hesabında yapar, ajan üretmez |
 

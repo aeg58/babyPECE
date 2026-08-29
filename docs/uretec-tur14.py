@@ -1,10 +1,46 @@
-<!doctype html>
+# -*- coding: utf-8 -*-
+"""
+babyPEÇE — sayfa üreteci · tur 14
+================================
+BU DOSYA SAYFANIN KAYNAĞIDIR. docs/prototip-tur14.html ELLE DÜZENLENMEZ:
+burası değiştirilir ve bu betik yeniden çalıştırılır.
+
+    python3 docs/uretec-tur14.py
+
+Girdileri depodan okur (docs/gorseller/…), çıktıyı docs/prototip-tur14.html'e yazar.
+Görselleri sayfaya gömmez, göreli yolla bağlar — depodaki sürüm budur.
+
+2026-08-29'da geçici klasörden depoya alındı (Erdem'in kararı): üreteç /tmp altında
+duruyordu, o klasör silinseydi sayfanın kaynağı gidip elde yalnız çıktısı kalacaktı.
+"""
+import io, os, sys
+
+KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CIKTI = os.path.join(KOK, "docs", "prototip-tur14.html")
+
+def g(n):   return "gorseller/" + n
+AY     = [g("hafta-%02d.jpg" % w) for w in range(7, 41)]
+FINAL  = g("aramizda.jpg")
+IKON   = [g("ikon/ikon-%02d.png" % w) for w in range(7, 41)]
+IS32   = g("isaret-32.png")
+IS180  = g("isaret-180.png")
+BZ=[("yenidogan","yenidoğan"),("06ay","6 aylık"),("01yas","1 yaş"),("02yas","2 yaş"),
+    ("03yas","3 yaş"),("04yas","4 yaş"),("05yas","5 yaş"),("06yas","6 yaş"),
+    ("07yas","7 yaş"),("08yas","8 yaş")]
+BENZER=[(g("benzer-%s.jpg"%k),l) for k,l in BZ]
+
+# Her haftanın ÖLÇÜLEN zemin parlaklığı. Gölgelendirici özneyi zeminden parlaklık
+# farkıyla ayırıyor; zemin 7. haftada 0,96'dan 40. haftada 0,83'e iniyor, bu yüzden
+# sabit eşik son haftalarda arka planı sisli bırakıyordu. Ölçüm: docs/gorseller/00-OKU.md
+BG = "0.961,0.945,0.945,0.945,0.953,0.949,0.933,0.933,0.929,0.922,0.922,0.922,0.918,0.91,0.902,0.902,0.898,0.89,0.898,0.89,0.878,0.871,0.863,0.847,0.871,0.871,0.859,0.855,0.847,0.831,0.847,0.839,0.831,0.827"
+
+H = r"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>babyPEÇE</title>
-<link rel="icon" type="image/png" sizes="32x32" href="gorseller/isaret-32.png">
-<link rel="icon" type="image/png" sizes="180x180" href="gorseller/isaret-180.png">
-<link rel="apple-touch-icon" href="gorseller/isaret-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="__IS32__">
+<link rel="icon" type="image/png" sizes="180x180" href="__IS180__">
+<link rel="apple-touch-icon" href="__IS180__">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600&family=Martian+Mono:wght@300;400&display=swap">
@@ -269,9 +305,9 @@ input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:3p
 </div>
 
 <script>
-var AY=["gorseller/hafta-07.jpg","gorseller/hafta-08.jpg","gorseller/hafta-09.jpg","gorseller/hafta-10.jpg","gorseller/hafta-11.jpg","gorseller/hafta-12.jpg","gorseller/hafta-13.jpg","gorseller/hafta-14.jpg","gorseller/hafta-15.jpg","gorseller/hafta-16.jpg","gorseller/hafta-17.jpg","gorseller/hafta-18.jpg","gorseller/hafta-19.jpg","gorseller/hafta-20.jpg","gorseller/hafta-21.jpg","gorseller/hafta-22.jpg","gorseller/hafta-23.jpg","gorseller/hafta-24.jpg","gorseller/hafta-25.jpg","gorseller/hafta-26.jpg","gorseller/hafta-27.jpg","gorseller/hafta-28.jpg","gorseller/hafta-29.jpg","gorseller/hafta-30.jpg","gorseller/hafta-31.jpg","gorseller/hafta-32.jpg","gorseller/hafta-33.jpg","gorseller/hafta-34.jpg","gorseller/hafta-35.jpg","gorseller/hafta-36.jpg","gorseller/hafta-37.jpg","gorseller/hafta-38.jpg","gorseller/hafta-39.jpg","gorseller/hafta-40.jpg"], FINAL="gorseller/aramizda.jpg";
-var IKON=["gorseller/ikon/ikon-07.png","gorseller/ikon/ikon-08.png","gorseller/ikon/ikon-09.png","gorseller/ikon/ikon-10.png","gorseller/ikon/ikon-11.png","gorseller/ikon/ikon-12.png","gorseller/ikon/ikon-13.png","gorseller/ikon/ikon-14.png","gorseller/ikon/ikon-15.png","gorseller/ikon/ikon-16.png","gorseller/ikon/ikon-17.png","gorseller/ikon/ikon-18.png","gorseller/ikon/ikon-19.png","gorseller/ikon/ikon-20.png","gorseller/ikon/ikon-21.png","gorseller/ikon/ikon-22.png","gorseller/ikon/ikon-23.png","gorseller/ikon/ikon-24.png","gorseller/ikon/ikon-25.png","gorseller/ikon/ikon-26.png","gorseller/ikon/ikon-27.png","gorseller/ikon/ikon-28.png","gorseller/ikon/ikon-29.png","gorseller/ikon/ikon-30.png","gorseller/ikon/ikon-31.png","gorseller/ikon/ikon-32.png","gorseller/ikon/ikon-33.png","gorseller/ikon/ikon-34.png","gorseller/ikon/ikon-35.png","gorseller/ikon/ikon-36.png","gorseller/ikon/ikon-37.png","gorseller/ikon/ikon-38.png","gorseller/ikon/ikon-39.png","gorseller/ikon/ikon-40.png"];
-var BG=[0.961,0.945,0.945,0.945,0.953,0.949,0.933,0.933,0.929,0.922,0.922,0.922,0.918,0.91,0.902,0.902,0.898,0.89,0.898,0.89,0.878,0.871,0.863,0.847,0.871,0.871,0.859,0.855,0.847,0.831,0.847,0.839,0.831,0.827];
+var AY=__AY__, FINAL="__FINAL__";
+var IKON=__IKON__;
+var BG=[__BG__];
 var CAPA=new Date(2026,6,10);
 /* NHS hafta sayfalarından birebir alındı. Kaynak dökümü docs/OLCULER.md'de.
    Biçim: [ölçü, benzetme, ikon]. İkon yoksa ad yazıyla gösterilir. */
@@ -316,7 +352,7 @@ function ik(n){return n<10?"0"+n:""+n}
 var bugun=new Date();bugun.setHours(0,0,0,0);
 var gunG=Math.floor((bugun-CAPA)/86400000), hG=Math.floor(gunG/7);
 $("fi").src=FINAL;
-var BENZER=[["gorseller/benzer-yenidogan.jpg","yenidoğan"],["gorseller/benzer-06ay.jpg","6 aylık"],["gorseller/benzer-01yas.jpg","1 yaş"],["gorseller/benzer-02yas.jpg","2 yaş"],["gorseller/benzer-03yas.jpg","3 yaş"],["gorseller/benzer-04yas.jpg","4 yaş"],["gorseller/benzer-05yas.jpg","5 yaş"],["gorseller/benzer-06yas.jpg","6 yaş"],["gorseller/benzer-07yas.jpg","7 yaş"],["gorseller/benzer-08yas.jpg","8 yaş"]];
+var BENZER=__BENZER__;
 (function(){
   var dk=$("dk"),lab=$("yl"),dts=$("dt2"),n=BENZER.length;
   var o="",q="";
@@ -526,3 +562,7 @@ $("wk").addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gunG:
 $("rp").addEventListener("click",ac);
 ac();
 </script>
+"""
+H=H.replace("__IS32__",IS32).replace("__IS180__",IS180).replace("__AY__","["+",".join('"%s"'%a for a in AY)+"]").replace("__FINAL__",FINAL).replace("__BG__",BG).replace("__IKON__","["+",".join('"%s"'%u for u in IKON)+"]").replace("__BENZER__","["+",".join('["%s","%s"]'%(u,l) for u,l in BENZER)+"]")
+io.open(CIKTI,"w",encoding="utf-8").write(H)
+print("yazıldı:", CIKTI, os.path.getsize(CIKTI), "bayt")
