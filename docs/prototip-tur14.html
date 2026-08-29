@@ -75,7 +75,12 @@ body{margin:0;background:var(--void);color:var(--glow);
 .gauge .t{position:absolute;top:calc(50% - 26px);font-family:"Martian Mono",monospace;font-size:10px;
   color:var(--glow);transform:translateX(-50%)}
 
-.wks{display:flex;align-items:flex-end;gap:2px;height:50px;margin:18px 0 8px}
+.wks{display:flex;align-items:flex-end;gap:2px;height:50px;margin:18px 0 8px;
+  /* parmakla gezilir: dikey kaydırma tarayıcıda kalır, yatayı biz alırız */
+  touch-action:pan-y;cursor:ew-resize;position:relative;
+  padding:9px 0;margin-top:9px;box-sizing:content-box}
+.wks:focus-visible{outline:2px solid var(--amber);outline-offset:4px}
+.wks.tut i.n{box-shadow:0 0 0 1px rgba(247,211,166,.55)}
 .wks i{flex:1;height:20%;background:var(--edge)}
 .wks i.p{background:rgba(138,74,32,.85)}
 .wks i.n{background:var(--amber);height:100%}
@@ -134,6 +139,8 @@ body{margin:0;background:var(--void);color:var(--glow);
 .bnz p{margin:0;color:var(--dim);font-size:15px}
 .bnz p b{color:var(--paper);font-weight:500}
 .kaldi{margin:14px 0 0;font-family:"Martian Mono",monospace;font-size:10.5px;color:var(--mid)}
+.ipucu{margin:11px 0 0;text-align:center;font-family:"Martian Mono",monospace;
+  font-size:9px;color:var(--mid);line-height:1.7}
 
 /* sayaç */
 .say40{display:flex;align-items:baseline;gap:9px;margin:0 0 16px}
@@ -191,13 +198,15 @@ input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:3p
 
     <section class="blk">
       <div class="say40"><span class="n" id="cn">7</span><span class="d">/ 40 hafta</span></div>
-      <div class="wks" id="wk2"></div>
+      <div class="wks" id="wk2" tabindex="0" role="slider"
+           aria-label="Hafta seç" aria-valuemin="7" aria-valuemax="40" aria-valuenow="7"></div>
       <div class="wl"><span>1</span><span id="sn">7. hafta</span><span>40</span></div>
+      <p class="ipucu">ŞERİDİN ÜZERİNDE PARMAĞINI GEZDİR</p>
       <p class="kaldi" id="kalan">32 HAFTA 6 GÜN KALDI</p>
     </section>
 
     <section class="fin" id="fin">
-      <img id="fi" alt=""><div class="sh"></div>
+      <img id="fi" loading="lazy" decoding="async" alt=""><div class="sh"></div>
       <div class="scanoff"><canvas id="off" width="90" height="180"></canvas></div>
       <div class="tx">
         <p class="sl">babyPEÇE<br><b id="kl">33 hafta 0 gün</b><br>sonra aramızda.</p>
@@ -324,7 +333,7 @@ var BENZER=[["gorseller/benzer-yenidogan.jpg","yenidoğan"],["gorseller/benzer-0
 (function(){
   var dk=$("dk"),lab=$("yl"),dts=$("dt2"),n=BENZER.length;
   var o="",q="";
-  for(var i=0;i<n;i++){o+='<div class="slide"><img src="'+BENZER[i][0]+'" alt=""></div>';q+='<i></i>';}
+  for(var i=0;i<n;i++){o+='<div class="slide"><img loading="lazy" decoding="async" src="'+BENZER[i][0]+'" alt=""></div>';q+='<i></i>';}
   dk.innerHTML=o;dts.innerHTML=q;
   var sl=dk.querySelectorAll(".slide"),dd=dts.querySelectorAll("i");
   var cur=0,timer=null,uyku=null,sessiz=false;
@@ -507,8 +516,12 @@ function ciz(w,gg){
   var k=Math.max(0,280-gun);var ks=Math.floor(k/7)+" hafta "+(k%7)+" gün";$("kl").textContent=ks;
   $("kalan").textContent=ks.toLocaleUpperCase("tr")+" KALDI";
   $("cn").textContent=w;
-  var o="";for(var i=1;i<=40;i++)o+='<i class="'+(i<w?"p":(i===w?"n":""))+'"></i>';
-  $("wk2").innerHTML=o;
+  var ws=$("wk2");
+  if(ws.childElementCount!==40){var o="";for(var i=1;i<=40;i++)o+="<i></i>";ws.innerHTML=o;}
+  var cs=ws.children;
+  for(var i=0;i<40;i++){var h=i+1;cs[i].className=(h<w?"p":(h===w?"n":""));}
+  ws.setAttribute("aria-valuenow",w);
+  ws.setAttribute("aria-valuetext",w+". hafta");
 }
 function ac(){var s=$("s1");s.classList.remove("lit");void s.offsetWidth;
   setTimeout(function(){s.classList.add("lit")},520)}
@@ -519,6 +532,51 @@ var _wk=$o("wk"); if(_wk)_wk.value=hG;
 ciz(hG,gunG);
 if(glOK)dongu();
 if(_wk)_wk.addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gunG:null)});
+
+/* ── HAFTA ŞERİDİ · parmakla gezme ─────────────────────────────────────────
+   Erdem'in kararı (2026-08-29): haftalar şeridin ÜZERİNDE parmakla gezilir.
+   Şeridin kendisi denetim olur; yeni bir düğme ya da sürgü EKLENMEZ.
+
+   REDDEDİLEN: ekranı sağa sola kaydırmak. İki yerde çakışıyordu — tarama
+   ekranındaki "bebek bakışı takip ediyor" etkisi de parmağın yatay hareketini
+   kullanıyor, ve yaş serisi zaten kendi içinde yatay kayıyor. Üstelik telefonda
+   kenardan yatay kaydırma "geri" demek.
+
+   7–40 ARASINA KİLİTLİ: 1–6. haftalar için kaynakta ölçü yok, oraya gidilmez.
+   Şeritte 40 çubuk görünmeye devam eder — geçmiş görünür, gidilemez. */
+(function(){
+  var ws=$o("wk2"); if(!ws)return;
+  var suruyor=false, son=hG;
+  function haftaya(x){
+    var r=ws.getBoundingClientRect();
+    if(!r.width)return son;
+    var h=Math.round(1+((x-r.left)/r.width)*39);
+    return Math.max(7,Math.min(40,h));
+  }
+  function git(w){
+    if(w===son)return;
+    son=w;
+    ciz(w, w===hG?gunG:null);
+    if(_wk)_wk.value=w;              /* inceleme sayfasındaki sürgü de eşleşsin */
+  }
+  ws.addEventListener("pointerdown",function(e){
+    suruyor=true; ws.classList.add("tut");
+    if(ws.setPointerCapture)ws.setPointerCapture(e.pointerId);
+    git(haftaya(e.clientX));
+  });
+  ws.addEventListener("pointermove",function(e){ if(suruyor)git(haftaya(e.clientX)); });
+  function birak(){ suruyor=false; ws.classList.remove("tut"); }
+  ws.addEventListener("pointerup",birak);
+  ws.addEventListener("pointercancel",birak);
+  /* Klavye: parmağı olmayan da gezebilsin. */
+  ws.addEventListener("keydown",function(e){
+    var d=e.key==="ArrowLeft"||e.key==="ArrowDown"?-1:
+          e.key==="ArrowRight"||e.key==="ArrowUp"?1:0;
+    if(d){e.preventDefault();git(Math.max(7,Math.min(40,son+d)));return;}
+    if(e.key==="Home"){e.preventDefault();git(7);}
+    if(e.key==="End"){e.preventDefault();git(40);}
+  });
+})();
 (function(){
   var el=$("s1");
   function ayarla(cx,cy){var r=el.getBoundingClientRect();
