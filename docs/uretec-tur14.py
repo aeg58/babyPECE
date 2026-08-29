@@ -242,7 +242,7 @@ input[type=range]:focus-visible{outline:2px solid var(--amber);outline-offset:3p
     </section>
 
     <section class="fin" id="fin">
-      <img id="fi" loading="lazy" decoding="async" alt=""><div class="sh"></div>
+      <img id="fi" decoding="async" alt=""><div class="sh"></div>
       <div class="scanoff"><canvas id="off" width="90" height="180"></canvas></div>
       <div class="tx">
         <p class="sl">babyPEÇE<br><b id="kl">33 hafta 0 gün</b><br>sonra aramızda.</p>
@@ -364,12 +364,13 @@ function ix(w){return Math.max(0,Math.min(33,w-7))}
 function ik(n){return n<10?"0"+n:""+n}
 var bugun=new Date();bugun.setHours(0,0,0,0);
 var gunG=Math.floor((bugun-CAPA)/86400000), hG=Math.floor(gunG/7);
-$("fi").src=FINAL;
+/* Final görseli de görünmeye yaklaşınca yüklenir — yukarıdaki gözcüye bırakıldı. */
+$("fi").setAttribute("data-src",FINAL);
 var BENZER=__BENZER__;
 (function(){
   var dk=$("dk"),lab=$("yl"),dts=$("dt2"),n=BENZER.length;
   var o="",q="";
-  for(var i=0;i<n;i++){o+='<div class="slide"><img loading="lazy" decoding="async" src="'+BENZER[i][0]+'" alt=""></div>';q+='<i></i>';}
+  for(var i=0;i<n;i++){o+='<div class="slide"><img decoding="async" data-src="'+BENZER[i][0]+'" alt=""></div>';q+='<i></i>';}
   dk.innerHTML=o;dts.innerHTML=q;
   var sl=dk.querySelectorAll(".slide"),dd=dts.querySelectorAll("i");
   var cur=0,timer=null,uyku=null,sessiz=false;
@@ -568,6 +569,37 @@ var _wk=$o("wk"); if(_wk)_wk.value=hG;
 ciz(hG,gunG);
 if(glOK)dongu();
 if(_wk)_wk.addEventListener("input",function(){var w=+this.value;ciz(w,w===hG?gunG:null)});
+
+/* ── GEÇ YÜKLEME · gözcü ───────────────────────────────────────────────────
+   ÖLÇÜLDÜ 2026-08-29: loading="lazy" TEK BAŞINA YETMEDİ. Tarayıcı hızlı
+   bağlantıda görüş alanının çok altındakileri de indiriyor; canlı adreste
+   kaydırma 0'ken alttaki on bir fotoğrafın on biri de inmişti.
+   Bu yüzden src HİÇ verilmiyor: data-src'de bekliyor ve ancak bölüm yaklaşınca
+   gerçek src'ye çevriliyor. Gözcüsü olmayan tarayıcıda hepsi hemen yüklenir —
+   yavaş açılır ama EKSİK AÇILMAZ. */
+(function(){
+  var bekleyen=[].slice.call(document.querySelectorAll("img[data-src]"));
+  if(!bekleyen.length)return;
+  function ac(im){var d=im.getAttribute("data-src"); if(!d)return;
+    im.removeAttribute("data-src"); im.src=d;}
+  function bolum(im){return im.closest?(im.closest("section")||im.parentNode):im.parentNode;}
+  if(!("IntersectionObserver" in window)){bekleyen.forEach(ac);return;}
+  /* Gözcü GÖRSELİ değil BÖLÜMÜ izler: bölüm yaklaşınca içindeki görsellerin
+     HEPSİ birden yüklenir. Tek tek izlenseydi yaş serisi kendi içinde yatay
+     kaydığı için kareler sırayla ve gözle görülür biçimde "patlardı".
+     Ölçüldü: tek tek izlemede dibe inildikten 3 saniye sonra bile 7 kare
+     yüklenmemiş kalıyordu. */
+  var bolumler=[];
+  bekleyen.forEach(function(im){var b=bolum(im); if(bolumler.indexOf(b)<0)bolumler.push(b);});
+  var g=new IntersectionObserver(function(kayitlar){
+    kayitlar.forEach(function(k){
+      if(!k.isIntersecting)return;
+      g.unobserve(k.target);
+      [].slice.call(k.target.querySelectorAll("img[data-src]")).forEach(ac);
+    });
+  },{rootMargin:"400px 0px"});
+  bolumler.forEach(function(b){g.observe(b);});
+})();
 
 /* ── HAFTA ŞERİDİ · parmakla gezme ─────────────────────────────────────────
    Erdem'in kararı (2026-08-29): haftalar şeridin ÜZERİNDE parmakla gezilir.
